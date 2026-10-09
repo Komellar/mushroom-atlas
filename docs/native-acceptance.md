@@ -1,6 +1,12 @@
 # Standalone Android acceptance record
 
-Status: pending. No device, APK, installation, runtime timing, or native result has been recorded. Browser checks and Android exports are development evidence only.
+Status: partial native acceptance. A standalone internal test APK was built, verified, and freshly installed; see [the build record](android-release.md). First launch with airplane mode on and Wi-Fi off passed with Metro stopped. Full navigation, exhaustive content, layout/accessibility, and measurements remain pending.
+
+Target: an already-running Pixel 10 Pro emulator (`sdk_gphone16k_x86_64`) reporting Android 17/API 37, 1280 × 2856 pixels, density 480, and font scale 1.0. The app was absent before installation. The user explicitly authorized ADB installation/testing and temporary settings changes. No emulator was installed or launched. Physical-device acceptance remains pending.
+
+On 2026-10-09, ADB installation returned `Success`; airplane mode read `1` and Wi-Fi read `0` before the first `MainActivity` start. Android reported a cold activity launch with `TotalTime: 2187` ms and `WaitTime: 2191` ms. These are one platform activity-start sample, not time-to-usable-atlas measurements or a three-start median. The first screenshot and hierarchy showed the Polish atlas, safety guidance, 30 entries, bottom navigation, and a bundled photograph. [First-launch screenshot](acceptance/phase-8-first-launch.png).
+
+The Borowik details page rendered offline with identification text and a local photograph. Android back returned to the atlas with its list position preserved. Native `luszczak` search produced one Łuszczak result. Subsequent other input changed screens and replaced the query during automated checks, invalidating the remaining sequence. Testing stopped without treating that sequence as a pass or an app defect. Original settings were restored and verified: airplane mode `0`, Wi-Fi `1`, font scale `1.0`, physical display 1280 × 2856/density 480 with no overrides. Uninterrupted emulator access is needed before resuming.
 
 Record tester, date, device model, Android version, display size, system font scale, APK hash, signing certificate fingerprint, source revision, app version, and dataset version before testing. Do not record personal device identifiers.
 
@@ -23,18 +29,18 @@ Measure cold startup over at least three fresh process starts and record the ind
 
 ## Results
 
-| Check                                             | Result  | Evidence / device / issue |
-| ------------------------------------------------- | ------- | ------------------------- |
-| Fresh first launch in airplane mode               | Pending | —                         |
-| Polish UI and 30 entries                          | Pending | —                         |
-| Every detail page and all 66 photographs          | Pending | —                         |
-| Search, combined filters, reset, restoration      | Pending | —                         |
-| Selection, duplicate rejection, swap, replacement | Pending | —                         |
-| Curated and generic comparisons offline           | Pending | —                         |
-| Full navigation flow and system back              | Pending | —                         |
-| Safe areas, small screen, large fonts, TalkBack   | Pending | —                         |
-| Offline force-close and restart                   | Pending | —                         |
-| Cold startup and list responsiveness              | Pending | —                         |
-| APK and installation size                         | Pending | —                         |
+| Check                                             | Result  | Evidence / device / issue                                          |
+| ------------------------------------------------- | ------- | ------------------------------------------------------------------ |
+| Fresh first launch in airplane mode               | Passed  | Fresh standalone install; network settings verified; Metro stopped |
+| Polish UI and 30 entries                          | Passed  | Native screenshot and hierarchy                                    |
+| Every detail page and all 66 photographs          | Pending | —                                                                  |
+| Search, combined filters, reset, restoration      | Partial | `luszczak` → one Łuszczak result; interrupted sequence needs rerun |
+| Selection, duplicate rejection, swap, replacement | Pending | —                                                                  |
+| Curated and generic comparisons offline           | Pending | —                                                                  |
+| Full navigation flow and system back              | Partial | Borowik details → system back → atlas restored list position       |
+| Safe areas, small screen, large fonts, TalkBack   | Pending | —                                                                  |
+| Offline force-close and restart                   | Pending | —                                                                  |
+| Cold startup and list responsiveness              | Pending | —                                                                  |
+| APK and installation size                         | Partial | APK 130,473,159 bytes; installation measurement pending            |
 
 Native sign-off remains pending until evidence is recorded. Content approval is a separate requirement in [independent content review](content-review.md).

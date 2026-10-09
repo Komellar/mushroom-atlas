@@ -15,11 +15,11 @@ Project location: `C:\projects\mushroom-atlas`.
 
 Phases 1–7 development is implemented: 30 sourced species, 66 locally bundled photographs with smaller thumbnails, local search/filters, complete species details, and two-species comparison. Twelve curated pairs include source references and relevant qualifications. Search accepts Polish synonyms and recorded scientific synonyms. Dataset version: `0.7.0`.
 
-Specialist content review, native validation, and the installable release remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
+Specialist content review, native validation, and the tested release remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
 
-Phase 8 release preparation includes a standalone APK build profile, documented local/cloud build paths, and [native acceptance steps](docs/native-acceptance.md). See [Android release preparation](docs/android-release.md) and [dependency assessment](docs/dependency-assessment.md). APK compilation and native testing are recorded separately from passing exports.
+Phase 8 produced a standalone internal test APK from revision `8e20e93`. Its signature and archive contents passed verification, including all 66 photographs, 66 thumbnails, JavaScript, and fonts. The local artifact is `dist/releases/mushroom-atlas-0.1.0-8e20e93.apk`; APKs are ignored by Git. See [the build record](docs/android-release.md), [native acceptance steps](docs/native-acceptance.md), and [dependency assessment](docs/dependency-assessment.md). The APK uses the generated debug certificate; production signing and native testing remain pending.
 
-Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
+Fresh native first launch passed on the existing Pixel 10 Pro emulator with airplane mode on, Wi-Fi off, and Metro stopped. The Polish atlas, 30 entries, and local imagery rendered. ADB testing was explicitly authorized; no emulator was installed or launched. Other input interrupted the remaining native sequence, so settings were restored and full acceptance remains pending. See [the native record](docs/native-acceptance.md); physical-device acceptance remains pending.
 
 See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.
 
@@ -132,7 +132,7 @@ The phase 1 npm audit, after running `npm audit fix`, still reported 29 vulnerab
 
 Phase 8 rechecked these findings on 2026-10-09. A compatible fix dry run proposed zero changes; the installed SDK 57 dependency set passed compatibility checks and all 21 Expo Doctor checks. The runtime URI-decoding finding and toolchain findings remain open, with exposure and remediation paths in [dependency assessment](docs/dependency-assessment.md).
 
-## Device validation pending emulator setup
+## Native validation pending
 
 1. Launch the app on Android.
 2. Switch between the atlas and comparison tabs.
@@ -140,4 +140,4 @@ Phase 8 rechecked these findings on 2026-10-09. A compatible fix dry run propose
 4. Navigate from details to comparison and back to the atlas.
 5. Check safe areas, small screens, and larger system font sizes.
 
-First-launch offline validation requires a later standalone application build with the species dataset and photographs included. Development mode relies on Metro.
+Use the standalone test APK for first-launch offline validation. Development mode relies on Metro; its browser preview server was stopped before native acceptance preparation.

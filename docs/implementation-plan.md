@@ -15,18 +15,18 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Current status and sequencing
 
-| Phase                                    | Status                                                       |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| 1 — Project foundation                   | Development implemented; native validation pending           |
-| 2 — Data model and initial species       | Development implemented; native/content review pending       |
-| 3 — UI design and shared components      | Development implemented; native accessibility checks pending |
-| 4 — Atlas, search, and filters           | Development implemented; native validation pending           |
-| 5 — Species details                      | Development implemented; native/content review pending       |
-| 6 — Comparison                           | Development implemented; native/content review pending       |
-| 7 — Complete content and offline support | Development implemented; native/content review pending       |
-| 8 — Validation and installable release   | Validation/build preparation in progress; native pending     |
+| Phase                                    | Status                                                                              |
+| ---------------------------------------- | ----------------------------------------------------------------------------------- |
+| 1 — Project foundation                   | Development implemented; native validation pending                                  |
+| 2 — Data model and initial species       | Development implemented; native/content review pending                              |
+| 3 — UI design and shared components      | Development implemented; native accessibility checks pending                        |
+| 4 — Atlas, search, and filters           | Development implemented; native validation pending                                  |
+| 5 — Species details                      | Development implemented; native/content review pending                              |
+| 6 — Comparison                           | Development implemented; native/content review pending                              |
+| 7 — Complete content and offline support | Development implemented; native/content review pending                              |
+| 8 — Validation and installable release   | Internal APK built; first offline launch passed; full native/content review pending |
 
-Emulator-dependent checks are deferred at the user's request. Do not install or launch an emulator until the user is ready. Subsequent data and code work can proceed independently if requested; native validation remains an acceptance requirement.
+The user authorized ADB testing on an existing emulator; first standalone offline launch passed. Other input interrupted further tests, and temporary settings were restored. No emulator was installed or launched during this work. Do not install or launch an emulator without a new user request. Full native validation remains an acceptance requirement.
 
 ## Phase 1 — Project foundation
 
@@ -47,9 +47,9 @@ Emulator-dependent checks are deferred at the user's request. Do not install or 
 6. Verify code checks, Expo configuration, bundle exports, and browser navigation.
 7. When the emulator is ready, verify Android startup, navigation, system back behavior, and safe areas. Perform a physical-device check when a device is available.
 
-**Acceptance:** the app launches with Polish UI and working navigation. Development is implemented; native launch validation remains pending.
+**Acceptance:** the app launches with Polish UI and working navigation. Development is implemented; native first launch passed, while full native navigation validation remains pending.
 
-Acceptance rerun on 2026-10-09: code checks, Android bundle export, and browser launch/navigation checks passed. See [the Phase 1 acceptance report](acceptance/phase-1.md). Native acceptance remains pending.
+Acceptance rerun on 2026-10-09: code checks, Android bundle export, and browser launch/navigation checks passed. The later standalone APK passed fresh native offline launch with Polish UI; full native navigation remains pending. See [the Phase 1 acceptance report](acceptance/phase-1.md).
 
 ## Phase 2 — Data model and initial species dataset
 
@@ -144,7 +144,7 @@ Development acceptance on 2026-10-09: all ten bundled pairs rendered complete al
 
 **Acceptance:** the complete dataset and required photographs are available from the first offline launch, with documented content verification and asset rights.
 
-Development acceptance on 2026-10-09: dataset `0.7.0` contains 30 source-checked species, 66 photographs with local thumbnails, and 12 curated pairs. All 132 photograph/thumbnail hashes were found among the declared Android export assets. Thirty detail pages and both orders of all curated pairs passed browser checks. See [the Phase 7 report](acceptance/phase-7.md), [photo credits](photo-credits.md), and [pending content review](content-review.md). Independent identification review has not been arranged or completed; standalone first-launch offline acceptance remains pending.
+Development acceptance on 2026-10-09: dataset `0.7.0` contains 30 source-checked species, 66 photographs with local thumbnails, and 12 curated pairs. All 132 photograph/thumbnail hashes were found among the declared Android export assets and in the standalone APK. Thirty detail pages and both orders of all curated pairs passed browser checks. Fresh native first offline launch passed; exhaustive native content checks remain pending. See [the Phase 7 report](acceptance/phase-7.md), [photo credits](photo-credits.md), and [pending content review](content-review.md). Independent identification review has not been arranged or completed.
 
 ## Phase 8 — Validation, optimization, and installable release
 

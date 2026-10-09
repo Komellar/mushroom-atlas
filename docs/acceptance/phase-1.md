@@ -4,7 +4,7 @@ Validation date: 2026-10-09.
 
 Acceptance criterion: the app launches with Polish UI and working navigation.
 
-Result: development checks and browser acceptance passed. Native launch acceptance remains pending.
+Result: development checks and browser acceptance passed. A later native rerun on the complete app passed fresh offline launch with Polish UI; full native navigation acceptance remains pending.
 
 ## Completed checks
 
@@ -21,7 +21,7 @@ Result: development checks and browser acceptance passed. Native launch acceptan
 | Unknown route                                  | Passed; Polish missing-page message and working atlas recovery link    |
 | Browser console                                | No captured warnings or errors during the checked flows                |
 
-Browser validation used the local Expo web development preview in the Codex in-app browser at a 390 × 844 viewport. The atlas, comparison, and details screens visibly label their content as work in progress. The details preview is a navigation placeholder, not a verified species entry.
+Original Phase 1 browser validation used the local Expo web development preview in the Codex in-app browser at a 390 × 844 viewport. At that stage the atlas, comparison, and details screens visibly labeled their content as work in progress. The details preview was a navigation placeholder, not a verified species entry. Later phases replaced it with the local dataset and full details.
 
 ![Polish atlas screen at 390 × 844](phase-1-atlas.jpg)
 
@@ -31,9 +31,9 @@ Expo telemetry was disabled for the acceptance commands with `EXPO_NO_TELEMETRY=
 
 ## Pending native acceptance
 
-The Android export is a JavaScript/Hermes bundle, not an APK or evidence of native startup. No emulator was installed or launched, and no physical device was tested.
+The original Android export was a JavaScript/Hermes bundle. A later standalone APK from revision `8e20e93` passed fresh first offline launch on the existing Pixel 10 Pro emulator. Polish UI and 30 entries rendered; details/system back/list restoration were observed. Other input interrupted remaining navigation checks, which require a rerun. See [the partial native record](../native-acceptance.md). No emulator was installed or launched, and no physical device was tested.
 
-- Launch on Android and confirm Polish UI.
+- Fresh offline launch and Polish UI passed on the current standalone app.
 - Switch tabs and open details on Android.
 - Verify Android system back behavior and details → comparison → atlas navigation.
 - Check native safe areas, small screens, and larger system font sizes.

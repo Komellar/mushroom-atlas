@@ -1,6 +1,6 @@
 # Android build and acceptance procedure
 
-Status on 2026-10-09: a standalone preview APK profile is prepared. No APK has been built or installed. Native acceptance and independent content review remain pending. Android is the first release target; iOS build and device acceptance are outside this validation run.
+Status on 2026-10-09: a standalone internal test APK was built and its archive and signature verified. Fresh installation and first launch in airplane mode passed on the existing Pixel 10 Pro emulator. Full native acceptance and independent content review remain pending. Android is the first release target; iOS build and device acceptance are outside this validation run.
 
 ## Build prerequisites
 
@@ -35,15 +35,16 @@ The local build uses the full JDK 17 and host SDK. Gradle installs required miss
 $env:JAVA_HOME = 'C:/projects/mushroom-atlas/.expo/toolchains/temurin-17/jdk-17.0.20.1+1'
 $env:ANDROID_HOME = 'C:/Users/adria/AppData/Local/Android/Sdk'
 $env:ANDROID_SDK_ROOT = $env:ANDROID_HOME
-$env:GRADLE_USER_HOME = 'C:/projects/mushroom-atlas/.expo/gradle-home'
+$env:GRADLE_USER_HOME = 'C:/projects/mushroom-atlas/.expo/g'
 $env:EXPO_NO_TELEMETRY = '1'
 $env:CI = '1'
 $env:NODE_ENV = 'production'
+$env:PATH = "$env:JAVA_HOME/bin;$env:PATH"
 Set-Location C:/projects/mushroom-atlas/android
 .\gradlew.bat :app:assembleRelease --no-daemon --console=plain '-Pandroid.builder.sdkDownload=true'
 ```
 
-The generated wrapper is Gradle 9.3.1. The build also downloads Gradle and Maven dependencies into the build cache. Native installation and launch are separate actions. Verify the resulting archive before installation:
+The generated wrapper is Gradle 9.3.1. The short cache path avoids Ninja's 260-character Windows filename limit: the previous `.expo/gradle-home` path produced a 266-character React Native header path. The build also downloads Gradle and Maven dependencies into the build cache. Native installation and launch are separate actions. Verify the resulting archive before installation:
 
 ```powershell
 Set-Location C:/projects/mushroom-atlas
@@ -56,17 +57,23 @@ Do not install or launch an emulator without a new user request. EAS `--local` o
 
 ## Release record
 
-| Field                              | Current record                                               |
-| ---------------------------------- | ------------------------------------------------------------ |
-| Source revision                    | Pending final build                                          |
-| Dataset                            | 0.7.0                                                        |
-| App version / Android version code | 0.1.0 / 1; confirm from built manifest                       |
-| Build service / build ID           | Pending                                                      |
-| Build image / tool versions        | Profile prepared; actual log pending                         |
-| APK path / bytes / SHA-256         | Pending                                                      |
-| Signing identity                   | Pending; record certificate fingerprint, never a private key |
-| Test device and Android version    | Pending                                                      |
-| Native first-launch offline result | Pending                                                      |
-| Independent content review         | Pending                                                      |
+| Field                              | Current record                                                                  |
+| ---------------------------------- | ------------------------------------------------------------------------------- |
+| Source revision                    | `8e20e938de83f19994248e197b3244b6ee4ca7db`                                      |
+| Dataset                            | 0.7.0                                                                           |
+| App version / Android version code | 0.1.0 / 1; confirmed by `aapt`                                                  |
+| Build service / build ID           | Local Gradle `:app:assembleRelease`; 9m 34s                                     |
+| Build image / tool versions        | Windows; Temurin 17.0.20.1+1, Gradle 9.3.1, SDK 36, NDK 27.1.12297006           |
+| APK path / bytes / SHA-256         | `dist/releases/mushroom-atlas-0.1.0-8e20e93.apk`; 130,473,159 bytes; hash below |
+| Signing identity                   | Generated Android Debug certificate; v2 signature verified; fingerprint below   |
+| Test device and Android version    | Existing Pixel 10 Pro emulator; Android 17/API 37                               |
+| Native first-launch offline result | Passed fresh install, airplane mode on and Wi-Fi off; Metro stopped             |
+| Independent content review         | Pending                                                                         |
 
-The build procedure is prepared; it has not yet produced a tested installation package.
+APK SHA-256: `e97fa02f5ca9af19cfeb1d244a3431f85660e67916221a3fdeb587b4ae8d55f2`.
+
+Signing certificate SHA-256: `fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c`. This publicly known generated debug key is for internal testing, not production distribution.
+
+Archive verification matched all 66 source photographs and 66 thumbnails by SHA-256, with nonempty standalone JavaScript and bundled fonts. Manifest inspection confirmed package `pl.mushroomatlas.app`, Polish label `Atlas grzybów`, launcher `MainActivity`, minimum SDK 24, target SDK 36, and `armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64` libraries. The manifest has no `debuggable` attribute. Embedded version-control metadata reported `NO_SUPPORTED_VCS_FOUND`; source provenance is recorded from the checked-out pushed Git revision, not claimed from that metadata. Only documentation changed while compiling.
+
+The APK is a local ignored artifact. Full native checks and measurements are recorded separately in [native acceptance](native-acceptance.md); independent content approval and production signing remain pending.
