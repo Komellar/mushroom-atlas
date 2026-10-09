@@ -5,7 +5,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { AppText } from '@/components/app-text';
 import { EdibilityBadge } from '@/components/edibility-badge';
 import { getPhoto } from '@/data/atlas';
-import { photoAssets } from '@/data/photo-assets';
+import { thumbnailAssets } from '@/data/photo-assets';
 import { pl } from '@/locales/pl';
 import { theme } from '@/theme/theme';
 import type { Mushroom } from '@/types/atlas';
@@ -21,7 +21,7 @@ export function SpeciesCard({ mushroom }: { mushroom: Mushroom }) {
       >
         {photo && (
           <Image
-            source={photoAssets[photo.id]}
+            source={thumbnailAssets[photo.id]}
             accessibilityLabel={photo.caption}
             style={styles.image}
             contentFit="cover"
@@ -31,10 +31,11 @@ export function SpeciesCard({ mushroom }: { mushroom: Mushroom }) {
           <EdibilityBadge edibility={mushroom.edibility} />
           <AppText variant="heading">{mushroom.polishName}</AppText>
           <AppText style={styles.scientific}>{mushroom.scientificName}</AppText>
+          <AppText>{mushroom.edibilityNote}</AppText>
           {photo && (
             <AppText
               style={styles.credit}
-            >{`${pl.photos.author}: ${photo.author} · ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}</AppText>
+            >{`${pl.photos.author}: ${photo.author} · ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license} · ${pl.photos.thumbnail}`}</AppText>
           )}
         </View>
       </Pressable>

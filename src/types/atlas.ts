@@ -21,6 +21,7 @@ export interface Mushroom {
   id: string;
   polishName: string;
   scientificName: string;
+  scientificSynonyms?: string[];
   synonyms: string[];
   edibility: Edibility;
   edibilityNote: string;
@@ -46,6 +47,9 @@ export interface MushroomPhoto {
   id: string;
   mushroomId: string;
   assetPath: string;
+  thumbnailPath: string;
+  thumbnailSha256: string;
+  thumbnailModifications: string;
   caption: string;
   perspective: 'whole' | 'cap' | 'underside' | 'stem' | 'cross-section';
   stage: 'young' | 'mature' | 'mixed';
@@ -67,6 +71,7 @@ export interface PairDifference {
   mushroomIds: [string, string];
   differences: { feature: string; values: [string, string] }[];
   referenceIds: string[];
+  note?: string;
   reviewedAt: string;
   reviewStatus: 'source-checked' | 'expert-reviewed';
 }

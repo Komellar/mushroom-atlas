@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, stat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 
 import { validateAtlas } from './atlas-validation.mjs';
 
@@ -22,6 +23,16 @@ for (const photo of photos) {
     const literal = `'${photo.id}': require('../../${photo.assetPath}')`;
     if (!registry.includes(literal)) errors.push(`${photo.id}: missing static asset import`);
     await stat(fileURLToPath(new URL(photo.assetPath, root)));
+    const thumbnail = await readFile(new URL(photo.thumbnailPath, root));
+    if (thumbnail[0] !== 0xff || thumbnail[1] !== 0xd8 || thumbnail.length < 1024)
+      errors.push(`${photo.id}: invalid thumbnail JPEG`);
+    if (createHash('sha256').update(thumbnail).digest('hex') !== photo.thumbnailSha256)
+      errors.push(`${photo.id}: thumbnail hash mismatch`);
+    if (!registry.includes(`'${photo.id}': require('../../${photo.thumbnailPath}')`))
+      errors.push(`${photo.id}: missing static thumbnail import`);
+    const thumbnailSize = await sharp(thumbnail).metadata();
+    if (thumbnailSize.width > 480 || thumbnailSize.height > 480)
+      errors.push(`${photo.id}: thumbnail exceeds 480 pixels`);
   } catch (error) {
     errors.push(`${photo.id}: ${error.message}`);
   }

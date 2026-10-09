@@ -35,8 +35,8 @@
       }
     ],
     "photoIds": ["boletus-edulis-1", "boletus-edulis-2", "boletus-edulis-3"],
-    "referenceIds": ["fn-boletus-edulis", "lp-safe-foraging"],
-    "datasetVersion": "0.2.0",
+    "referenceIds": ["fn-boletus-edulis", "lp-safe-foraging", "fn-tylopilus-felleus"],
+    "datasetVersion": "0.7.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -76,8 +76,8 @@
       }
     ],
     "photoIds": ["tylopilus-felleus-1", "tylopilus-felleus-2", "tylopilus-felleus-3"],
-    "referenceIds": ["fn-tylopilus-felleus", "lp-safe-foraging"],
-    "datasetVersion": "0.2.0",
+    "referenceIds": ["fn-tylopilus-felleus", "lp-safe-foraging", "fn-boletus-edulis"],
+    "datasetVersion": "0.7.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -112,12 +112,17 @@
       {
         "polishName": "Lisówka pomarańczowa",
         "scientificName": "Hygrophoropsis aurantiaca",
-        "difference": "Ma cienkie, gęste blaszki, a nie grube, tępe fałdy pieprznika."
+        "difference": "Ma cienkie, gęste blaszki, a nie grube, tępe fałdy pieprznika.",
+        "mushroomId": "hygrophoropsis-aurantiaca"
       }
     ],
     "photoIds": ["cantharellus-cibarius-2", "cantharellus-cibarius-1", "cantharellus-cibarius-3"],
-    "referenceIds": ["fn-cantharellus-cibarius", "lp-safe-foraging"],
-    "datasetVersion": "0.2.0",
+    "referenceIds": [
+      "fn-cantharellus-cibarius",
+      "lp-safe-foraging",
+      "fn-hygrophoropsis-aurantiaca"
+    ],
+    "datasetVersion": "0.7.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -139,7 +144,10 @@
     ],
     "cap": "Początkowo wypukły, później rozpostarty; czerwony, czasem pomarańczowy, z białymi resztkami osłony.",
     "stem": "Biały, z wiszącym pierścieniem; u podstawy bulwa z koncentrycznymi resztkami osłony.",
-    "hymenophore": { "type": "gills", "description": "Gęste, jasne blaszki, wolne od trzonu." },
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, jasne blaszki, wolne od trzonu."
+    },
     "flesh": "Przeważnie biały; pod skórką kapelusza może mieć żółtawy odcień.",
     "damageReaction": "Bez czerwienienia charakterystycznego dla muchomora czerwieniejącego.",
     "habitat": "Lasy iglaste i liściaste, szczególnie przy brzozach, sosnach i świerkach.",
@@ -149,12 +157,13 @@
       {
         "polishName": "Muchomor czerwieniejący",
         "scientificName": "Amanita rubescens",
-        "difference": "Miąższ i uszkodzone miejsca czerwienieją; jego kapelusz nie ma typowej czerwieni muchomora czerwonego."
+        "difference": "Miąższ i uszkodzone miejsca czerwienieją; jego kapelusz nie ma typowej czerwieni muchomora czerwonego.",
+        "mushroomId": "amanita-rubescens"
       }
     ],
     "photoIds": ["amanita-muscaria-1", "amanita-muscaria-2", "amanita-muscaria-3"],
-    "referenceIds": ["fn-amanita-muscaria"],
-    "datasetVersion": "0.2.0",
+    "referenceIds": ["fn-amanita-muscaria", "fn-amanita-rubescens"],
+    "datasetVersion": "0.7.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -176,7 +185,10 @@
     ],
     "cap": "Wypukły, potem płaski; oliwkowy, żółtozielony lub biały, zwykle gładki.",
     "stem": "Jasny, z delikatnym wzorem i zwisającym pierścieniem; bulwiasta nasada w białej, workowatej pochwie.",
-    "hymenophore": { "type": "gills", "description": "Gęste, wolne blaszki, białe do kremowych." },
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, wolne blaszki, białe do kremowych."
+    },
     "flesh": "Biały. Kolor i zapach nie pozwalają ocenić bezpieczeństwa.",
     "damageReaction": "Bez wyraźnego sinienia lub czerwienienia miąższu.",
     "habitat": "Lasy liściaste i mieszane, szczególnie w sąsiedztwie dębów.",
@@ -184,9 +196,10 @@
     "occurrenceNote": "Termin orientacyjny dla Polski; zależny od pogody i stanowiska.",
     "similarSpecies": [
       {
-        "polishName": "Pieczarka łąkowa",
+        "polishName": "Pieczarka polna",
         "scientificName": "Agaricus campestris",
-        "difference": "Bez workowatej pochwy; blaszki dojrzewając zmieniają barwę na różową i brązową."
+        "difference": "Bez workowatej pochwy; blaszki dojrzewając zmieniają barwę na różową i brązową.",
+        "mushroomId": "agaricus-campestris"
       },
       {
         "polishName": "Gołąbek zielonawy",
@@ -195,8 +208,1073 @@
       }
     ],
     "photoIds": ["amanita-phalloides-1", "amanita-phalloides-2", "amanita-phalloides-3"],
-    "referenceIds": ["fn-amanita-phalloides", "lp-safe-foraging"],
-    "datasetVersion": "0.2.0",
+    "referenceIds": ["fn-amanita-phalloides", "lp-safe-foraging", "fn-agaricus-campestris"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "imleria-badia",
+    "polishName": "Podgrzyb brunatny",
+    "scientificName": "Imleria badia",
+    "scientificSynonyms": ["Boletus badius", "Xerocomus badius"],
+    "synonyms": ["podgrzybek brunatny"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Kasztanowy kapelusz.",
+      "Żółtawe pory sinieją przy ucisku.",
+      "Brązowy trzon bez siateczki."
+    ],
+    "identificationTips": [
+      "Sprawdź reakcję porów i powierzchnię trzonu.",
+      "Sama barwa kapelusza nie wystarcza."
+    ],
+    "cap": "Kasztanowobrązowy, gładki; młody lekko aksamitny, przy wilgoci lepki.",
+    "stem": "Brązowy, z podłużnymi włókienkami; bez pierścienia i siateczki.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Żółtawe, kanciaste pory; przy ucisku sinieją lub zielenieją."
+    },
+    "flesh": "Białawy lub żółtawy, pod skórką może mieć winny odcień.",
+    "damageReaction": "Pory sinieją wyraźnie; miąższ zwykle słabiej, szczególnie nad rurkami.",
+    "habitat": "Lasy iglaste i mieszane, często przy sosnach i świerkach; także pod drzewami liściastymi.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "boletus-edulis",
+        "polishName": "Borowik szlachetny",
+        "scientificName": "Boletus edulis",
+        "difference": "Ma jasną siateczkę na trzonie; pory i miąższ nie sinieją."
+      }
+    ],
+    "photoIds": ["imleria-badia-1", "imleria-badia-2"],
+    "referenceIds": ["fn-imleria-badia", "fn-boletus-edulis"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "suillus-luteus",
+    "polishName": "Maślak zwyczajny",
+    "scientificName": "Suillus luteus",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej; może powodować dolegliwości pokarmowe.",
+    "keyFeatures": ["Brązowy, śliski kapelusz.", "Żółte pory.", "Wyraźny pierścień na trzonie."],
+    "identificationTips": [
+      "Obejrzyj osłonę porów i pierścień.",
+      "W suchą pogodę kapelusz może być mniej lepki."
+    ],
+    "cap": "Brązowy, wypukły; mokra powierzchnia bardzo śluzowata.",
+    "stem": "Jasnożółty; nad pierścieniem drobne punkty, niżej brązowe włókienka. Pierścień początkowo biały, później ciemnieje.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Żółte, okrągławe pory; u młodych osłonięte białą błoną."
+    },
+    "flesh": "Jasny, miękki w kapeluszu.",
+    "damageReaction": "Bez charakterystycznego sinienia; barwę oceniaj łącznie z innymi cechami.",
+    "habitat": "Przy sosnach, często wzdłuż leśnych dróg i na obrzeżach młodników.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "suillus-granulatus",
+        "polishName": "Maślak ziarnisty",
+        "scientificName": "Suillus granulatus",
+        "difference": "Nie ma pierścienia; młode pory wydzielają mleczne krople."
+      }
+    ],
+    "photoIds": ["suillus-luteus-1", "suillus-luteus-2"],
+    "referenceIds": ["fn-suillus-luteus", "fn-suillus-granulatus"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "suillus-granulatus",
+    "polishName": "Maślak ziarnisty",
+    "scientificName": "Suillus granulatus",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej; u części osób powoduje dolegliwości pokarmowe.",
+    "keyFeatures": [
+      "Brak pierścienia.",
+      "Młode pory wydzielają mleczne krople.",
+      "Ziarenka w górnej części trzonu."
+    ],
+    "identificationTips": [
+      "Brak pierścienia sprawdzaj na całym trzonie.",
+      "Krople wysychają i ciemnieją z wiekiem."
+    ],
+    "cap": "Cynamonowy do pomarańczowobrązowego, wypukły, lepki przy wilgoci.",
+    "stem": "Jasnożółty, bez pierścienia; u góry drobne ziarniste punkty.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Drobne, okrągłe, żółte; młode mogą wydzielać mleczne krople."
+    },
+    "flesh": "Bladożółty, miękki.",
+    "damageReaction": "Miąższ nie zmienia wyraźnie barwy po przekrojeniu.",
+    "habitat": "Przy sosnach, zwłaszcza sośnie zwyczajnej; często gromadnie.",
+    "occurrenceMonths": [7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "suillus-luteus",
+        "polishName": "Maślak zwyczajny",
+        "scientificName": "Suillus luteus",
+        "difference": "Ma błonę osłaniającą młode pory i pierścień na trzonie."
+      }
+    ],
+    "photoIds": ["suillus-granulatus-1", "suillus-granulatus-2"],
+    "referenceIds": ["fn-suillus-granulatus", "fn-suillus-luteus"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "leccinum-scabrum",
+    "polishName": "Koźlarz babka",
+    "scientificName": "Leccinum scabrum",
+    "scientificSynonyms": [],
+    "synonyms": ["babka"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Brązowy kapelusz.",
+      "Jasny trzon z ciemnymi łuseczkami.",
+      "Rośnie przy brzozach."
+    ],
+    "identificationTips": [
+      "Ustal drzewo towarzyszące.",
+      "Podobne koźlarze mogą wymagać cech mikroskopowych; zdjęcie nie rozstrzyga."
+    ],
+    "cap": "W odcieniach brązu, czasem szarawy; młody aksamitny, później gładszy.",
+    "stem": "Jasny, pokryty ciemnymi, chropowatymi łuseczkami, zwykle smuklejszy z wiekiem.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Drobne, białawe, z wiekiem szarobrązowe; ucisk może powoli powodować brązowienie."
+    },
+    "flesh": "Biały, w trzonie włóknisty.",
+    "damageReaction": "Może lekko różowieć; nie powinien wyraźnie sinieć.",
+    "habitat": "Przy brzozach w lasach, zadrzewieniach i na ich obrzeżach.",
+    "occurrenceMonths": [7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "boletus-edulis",
+        "polishName": "Borowik szlachetny",
+        "scientificName": "Boletus edulis",
+        "difference": "Na trzonie ma jasną siateczkę zamiast ciemnych łuseczek; nie jest związany wyłącznie z brzozą."
+      }
+    ],
+    "photoIds": ["leccinum-scabrum-1", "leccinum-scabrum-2"],
+    "referenceIds": ["fn-leccinum-scabrum", "fn-boletus-edulis"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "hydnum-repandum",
+    "polishName": "Kolczak obłączasty",
+    "scientificName": "Hydnum repandum",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Jasny, nieregularny kapelusz.",
+      "Pod kapeluszem miękkie kolce.",
+      "Kolce zbiegają na trzon."
+    ],
+    "identificationTips": [
+      "Obejrzyj spód kapelusza: kolce, nie blaszki.",
+      "Porównaj barwę i przyczep kolców podobnych kolczaków."
+    ],
+    "cap": "Kremowy do bladoochrowego, nierówny, z falistym brzegiem i delikatnie aksamitną powierzchnią.",
+    "stem": "Białawy, pełny, niekiedy osadzony poza środkiem kapelusza.",
+    "hymenophore": {
+      "type": "teeth",
+      "description": "Jasne, miękkie kolce zwisające ze spodu i zbiegające na trzon."
+    },
+    "flesh": "Biały, zwarty i kruchy.",
+    "damageReaction": "Powierzchnia może lekko rudzieć przy dotykaniu; brak charakterystycznego sinienia.",
+    "habitat": "Wilgotne lasy, w ściółce i mchu; czasem w grupach lub kręgach.",
+    "occurrenceMonths": [8, 9, 10, 11, 12],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "polishName": "Kolczak rudawy",
+        "scientificName": "Hydnum rufescens",
+        "difference": "Zwykle mniejszy i bardziej rudy; kolce przylegają do trzonu zamiast wyraźnie na niego zbiegać."
+      }
+    ],
+    "photoIds": ["hydnum-repandum-2", "hydnum-repandum-1"],
+    "referenceIds": ["fn-hydnum-repandum"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "craterellus-tubaeformis",
+    "polishName": "Pieprznik trąbkowy",
+    "scientificName": "Craterellus tubaeformis",
+    "scientificSynonyms": ["Cantharellus tubaeformis", "Cantharellus infundibuliformis"],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Brązowy, lejkowaty kapelusz.",
+      "Rozgałęzione, zbiegające fałdy.",
+      "Smukły, pusty trzon."
+    ],
+    "identificationTips": [
+      "Sprawdź fałdy i pusty trzon.",
+      "Nie rozpoznawaj drobnych brązowych grzybów wyłącznie po barwie."
+    ],
+    "cap": "Cienki, brązowy, lejkowaty, z silnie falistym i jaśniejszym brzegiem.",
+    "stem": "Smukły, żółtawy, pusty, często spłaszczony.",
+    "hymenophore": {
+      "type": "ridges",
+      "description": "Rozwidlone fałdy zbiegające na trzon; początkowo żółtawe, potem szare."
+    },
+    "flesh": "Cienki, jasny.",
+    "damageReaction": "Bez charakterystycznego sinienia lub czerwienienia.",
+    "habitat": "Wilgotne lasy iglaste, często na kwaśnym podłożu; gromadnie.",
+    "occurrenceMonths": [9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "cantharellus-cibarius",
+        "polishName": "Pieprznik jadalny",
+        "scientificName": "Cantharellus cibarius",
+        "difference": "Zwykle większy, żółty i z pełnym trzonem."
+      }
+    ],
+    "photoIds": ["craterellus-tubaeformis-1", "craterellus-tubaeformis-2"],
+    "referenceIds": ["fn-craterellus-tubaeformis", "fn-cantharellus-cibarius"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "hygrophoropsis-aurantiaca",
+    "polishName": "Lisówka pomarańczowa",
+    "scientificName": "Hygrophoropsis aurantiaca",
+    "scientificSynonyms": [],
+    "synonyms": ["fałszywa kurka"],
+    "edibility": "inedible",
+    "edibilityNote": "Niezalecana do spożycia; nie traktuj jej jako zamiennika kurki.",
+    "keyFeatures": [
+      "Pomarańczowy kapelusz.",
+      "Cienkie, gęste, wielokrotnie rozwidlone blaszki.",
+      "Blaszki mocno zbiegają na trzon."
+    ],
+    "identificationTips": [
+      "Rozróżniaj cienkie blaszki od tępych fałdów kurki.",
+      "Barwa bywa bardzo jasna lub intensywnie pomarańczowa."
+    ],
+    "cap": "Pomarańczowy lub żółtopomarańczowy, z czasem płytko lejkowaty; brzeg często podwinięty.",
+    "stem": "Smukły, podobnej barwy do kapelusza lub ciemniejszy, u podstawy jaśniejszy.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Wąskie, pomarańczowe, wielokrotnie rozwidlone i zbiegające."
+    },
+    "flesh": "Cienki, delikatny.",
+    "damageReaction": "Brak charakterystycznego sinienia nie potwierdza jadalności.",
+    "habitat": "Często lasy iglaste, na kwaśnym podłożu, wśród ściółki i rozkładających się szczątków.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "cantharellus-cibarius",
+        "polishName": "Pieprznik jadalny",
+        "scientificName": "Cantharellus cibarius",
+        "difference": "Ma grube, tępe fałdy zamiast cienkich, gęstych blaszek."
+      }
+    ],
+    "photoIds": ["hygrophoropsis-aurantiaca-2", "hygrophoropsis-aurantiaca-1"],
+    "referenceIds": [
+      "fn-hygrophoropsis-aurantiaca",
+      "fn-cantharellus-cibarius",
+      "psse-common-confusions"
+    ],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "macrolepiota-procera",
+    "polishName": "Czubajka kania",
+    "scientificName": "Macrolepiota procera",
+    "scientificSynonyms": [],
+    "synonyms": ["kania", "sowa"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalna po pewnym rozpoznaniu i obróbce termicznej. Możliwa pomyłka z niebezpiecznymi gatunkami.",
+    "keyFeatures": [
+      "Duży kapelusz z łuskami i garbkiem.",
+      "Długi trzon z brązowym wzorem.",
+      "Ruchomy, podwójny pierścień."
+    ],
+    "identificationTips": [
+      "Sprawdź wzór trzonu i reakcję miąższu.",
+      "Nie stosuj jednej cechy ani samego rozmiaru jako potwierdzenia gatunku."
+    ],
+    "cap": "Młody kulisty, później rozpostarty z garbkiem; jasne tło i brązowe łuski.",
+    "stem": "Długi, smukły, z brązowym wzorem przypominającym skórę węża; bulwiasty u podstawy, z ruchomym pierścieniem.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Jasne, gęste, wolne od trzonu."
+    },
+    "flesh": "Biały; w trzonie włóknisty.",
+    "damageReaction": "Miąższ zwykle nie zmienia wyraźnie barwy po przecięciu.",
+    "habitat": "Polany, obrzeża lasów, trawiaste tereny i pastwiska.",
+    "occurrenceMonths": [7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "chlorophyllum-rhacodes",
+        "polishName": "Czubajka czerwieniejąca",
+        "scientificName": "Chlorophyllum rhacodes",
+        "difference": "Miąższ czerwienieje; trzon nie ma charakterystycznego brązowego wzoru kani."
+      }
+    ],
+    "photoIds": ["macrolepiota-procera-1", "macrolepiota-procera-2"],
+    "referenceIds": ["fn-macrolepiota-procera", "fn-chlorophyllum-rhacodes"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "chlorophyllum-rhacodes",
+    "polishName": "Czubajka czerwieniejąca",
+    "scientificName": "Chlorophyllum rhacodes",
+    "scientificSynonyms": ["Macrolepiota rhacodes", "Chlorophyllum rachodes"],
+    "synonyms": ["sinoblaszek czerwieniejący"],
+    "edibility": "poisonous",
+    "edibilityNote": "Może powodować zatrucia. Oceny jadalności w starszych źródłach są rozbieżne; nie zbieraj do spożycia.",
+    "keyFeatures": [
+      "Kapelusz z odstającymi łuskami.",
+      "Trzon bez wzoru charakterystycznego dla kani.",
+      "Miąższ czerwienieje po uszkodzeniu."
+    ],
+    "identificationTips": [
+      "Podobne gatunki Chlorophyllum bywają trudne do odróżnienia.",
+      "Czerwienienie nie oznacza, że grzyb można zjeść."
+    ],
+    "cap": "Początkowo kulistawy, później wypukły, z grubymi odstającymi łuskami.",
+    "stem": "Jasny, z bulwiastą podstawą i podwójnym pierścieniem; bez brązowego wzoru kani.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Białe, gęste i wolne; uszkodzone mogą czerwienieć."
+    },
+    "flesh": "Jasny, zmieniający barwę po uszkodzeniu.",
+    "damageReaction": "Miąższ kapelusza i trzonu czerwienieje po przecięciu lub ucisku.",
+    "habitat": "Lasy i ich obrzeża; czasem bogata w próchnicę gleba w ogrodach.",
+    "occurrenceMonths": [6, 7, 8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "macrolepiota-procera",
+        "polishName": "Czubajka kania",
+        "scientificName": "Macrolepiota procera",
+        "difference": "Ma brązowy wzór na trzonie i zwykle nie czerwienieje."
+      }
+    ],
+    "photoIds": ["chlorophyllum-rhacodes-1", "chlorophyllum-rhacodes-2"],
+    "referenceIds": [
+      "fn-chlorophyllum-rhacodes",
+      "fn-macrolepiota-procera",
+      "psse-common-confusions"
+    ],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-pantherina",
+    "polishName": "Muchomor plamisty",
+    "scientificName": "Amanita pantherina",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "poisonous",
+    "edibilityNote": "Trujący. Nie zbieraj do spożycia.",
+    "keyFeatures": [
+      "Brązowy kapelusz, zwykle z białymi łatkami.",
+      "Jasny pierścień.",
+      "Bulwiasta podstawa z obrączkowatymi resztkami osłony."
+    ],
+    "identificationTips": [
+      "Deszcz może zmyć łatki z kapelusza.",
+      "Obejrzyj całą podstawę; barwa kapelusza nie wystarcza."
+    ],
+    "cap": "Brązowy do szarobrązowego, z delikatnie prążkowanym brzegiem i zwykle białymi łatkami.",
+    "stem": "Biały, z wiszącym pierścieniem; podstawa bulwiasta, z brzegiem pochwy i obrączkami.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Białe, gęste, wolne od trzonu."
+    },
+    "flesh": "Biały.",
+    "damageReaction": "Nie czerwienieje jak muchomor czerwieniejący.",
+    "habitat": "Lasy, zwłaszcza przy dębach i bukach.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "amanita-rubescens",
+        "polishName": "Muchomor czerwieniejący",
+        "scientificName": "Amanita rubescens",
+        "difference": "Uszkodzony miąższ różowieje lub czerwienieje; łatki zwykle szarawe. Potrzebna ocena całego owocnika."
+      }
+    ],
+    "photoIds": ["amanita-pantherina-1", "amanita-pantherina-2"],
+    "referenceIds": ["fn-amanita-pantherina", "fn-amanita-rubescens"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-rubescens",
+    "polishName": "Muchomor czerwieniejący",
+    "scientificName": "Amanita rubescens",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Surowy jest trujący. Jadalność dotyczy pewnie rozpoznanego, dokładnie ugotowanego gatunku; łatwo pomylić go z trującymi muchomorami. Nie polecamy zbierania do spożycia.",
+    "keyFeatures": [
+      "Miąższ różowieje lub czerwienieje.",
+      "Szarawe lub brudnobiałe łatki na kapeluszu.",
+      "Zwisający, zwykle prążkowany pierścień."
+    ],
+    "identificationTips": [
+      "Barwa kapelusza jest bardzo zmienna.",
+      "Ocena wymaga całego owocnika; czerwienienie samo nie rozstrzyga."
+    ],
+    "cap": "Bardzo zmienny, zwykle brązoworóżowy; z nieregularnymi resztkami osłony, które deszcz może zmyć.",
+    "stem": "Jasny powyżej pierścienia, niżej często różowobrązowy; podstawa zgrubiała, bez wyraźnych obrączek pochwy.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Jasne, gęste, przyrośnięte do niemal wolnych; uszkodzone różowieją."
+    },
+    "flesh": "Biały, z czasem różowiejący w uszkodzonych miejscach.",
+    "damageReaction": "Miąższ i blaszki zmieniają barwę na różową lub czerwonawą.",
+    "habitat": "Lasy iglaste i liściaste, często na kwaśnych glebach.",
+    "occurrenceMonths": [6, 7, 8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "amanita-pantherina",
+        "polishName": "Muchomor plamisty",
+        "scientificName": "Amanita pantherina",
+        "difference": "Ma zwykle czysto białe łatki; jego miąższ nie czerwienieje."
+      }
+    ],
+    "photoIds": ["amanita-rubescens-1", "amanita-rubescens-2"],
+    "referenceIds": ["fn-amanita-rubescens", "fn-amanita-pantherina"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-citrina",
+    "polishName": "Muchomor cytrynowy",
+    "scientificName": "Amanita citrina",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "inedible",
+    "edibilityNote": "Nie zbieraj do spożycia; ryzyko pomyłki ze śmiertelnie trującymi muchomorami.",
+    "keyFeatures": [
+      "Cytrynowy lub biały kapelusz z resztkami osłony.",
+      "Duża, odcięta bulwa u podstawy.",
+      "Jasne blaszki i pierścień."
+    ],
+    "identificationTips": [
+      "Sprawdź budowę podstawy, nie tylko kolor.",
+      "Zapach surowego ziemniaka bywa słaby i nie potwierdza gatunku."
+    ],
+    "cap": "Cytrynowożółty, czasem biały, zwykle z dużymi fragmentami osłony.",
+    "stem": "Jasny, z pierścieniem i dużą bulwą; pochwa przylega do podstawy z wyraźnym brzegiem.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Białe, gęste i wolne od trzonu."
+    },
+    "flesh": "Jasny; młody może pachnieć surowym ziemniakiem.",
+    "damageReaction": "Brak wyraźnego czerwienienia nie pozwala ocenić bezpieczeństwa.",
+    "habitat": "Lasy mieszane, przy drzewach liściastych i iglastych, często pod bukami.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "amanita-phalloides",
+        "polishName": "Muchomor zielonawy",
+        "scientificName": "Amanita phalloides",
+        "difference": "Ma zwykle gładki kapelusz i workowatą pochwę wokół podstawy; jest śmiertelnie trujący."
+      }
+    ],
+    "photoIds": ["amanita-citrina-1", "amanita-citrina-2"],
+    "referenceIds": ["fn-amanita-citrina", "fn-amanita-phalloides"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-virosa",
+    "polishName": "Muchomor jadowity",
+    "scientificName": "Amanita virosa",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "poisonous",
+    "edibilityNote": "Śmiertelnie trujący. Nie zbieraj do spożycia; nie próbuj smaku.",
+    "keyFeatures": [
+      "Biały kapelusz i blaszki.",
+      "Delikatny pierścień wysoko na trzonie.",
+      "Podstawa w workowatej pochwie."
+    ],
+    "identificationTips": [
+      "Pochwa może być głęboko schowana w ziemi.",
+      "Białe grzyby nie mogą być oceniane jako jadalne na podstawie zdjęcia."
+    ],
+    "cap": "Biały, młody jajowaty, później dzwonkowaty lub z szerokim garbkiem; brzeg nieprążkowany.",
+    "stem": "Biały, włóknisty, czasem wygięty; delikatny pierścień wysoko i workowata pochwa u podstawy.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Białe, gęste, wolne od trzonu."
+    },
+    "flesh": "Biały; zapach nie jest wiarygodnym testem bezpieczeństwa.",
+    "damageReaction": "Brak charakterystycznej zmiany barwy nie odróżnia go bezpiecznie od innych białych gatunków.",
+    "habitat": "Obrzeża lasów liściastych i mieszanych, także w terenach górskich.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "agaricus-campestris",
+        "polishName": "Pieczarka polna",
+        "scientificName": "Agaricus campestris",
+        "difference": "Blaszki różowieją i ciemnieją; nie ma workowatej pochwy. Młode zamknięte owocniki są szczególnie niebezpieczne do rozpoznawania."
+      }
+    ],
+    "photoIds": ["amanita-virosa-1", "amanita-virosa-2"],
+    "referenceIds": ["fn-amanita-virosa", "fn-agaricus-campestris"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "agaricus-campestris",
+    "polishName": "Pieczarka polna",
+    "scientificName": "Agaricus campestris",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalna po pewnym rozpoznaniu i obróbce termicznej. Możliwe pomyłki z trującymi pieczarkami i białymi muchomorami.",
+    "keyFeatures": [
+      "Jasny kapelusz.",
+      "Blaszki różowe, później ciemnobrązowe.",
+      "Delikatny, nietrwały pierścień."
+    ],
+    "identificationTips": [
+      "Sprawdź blaszki i całą podstawę.",
+      "Nie rozpoznawaj zamkniętych młodych owocników do spożycia."
+    ],
+    "cap": "Białawy lub kremowy, czasem z drobnymi łuskami; brzeg podwinięty.",
+    "stem": "Jasny, z delikatnym pierścieniem zanikającym z wiekiem; bez workowatej pochwy.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Wolne, początkowo różowe, później ciemnobrązowe do niemal czarnych."
+    },
+    "flesh": "Biały, czasem lekko różowiejący.",
+    "damageReaction": "Nie żółknie intensywnie po uszkodzeniu.",
+    "habitat": "Łąki, pastwiska, trawiaste parki; czasem w kręgach.",
+    "occurrenceMonths": [6, 7, 8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "agaricus-xanthodermus",
+        "polishName": "Pieczarka karbolowa",
+        "scientificName": "Agaricus xanthodermus",
+        "difference": "Uszkodzona szybko żółknie, zwłaszcza u podstawy trzonu; może pachnieć fenolem."
+      },
+      {
+        "mushroomId": "amanita-virosa",
+        "polishName": "Muchomor jadowity",
+        "scientificName": "Amanita virosa",
+        "difference": "Ma białe blaszki i workowatą pochwę; jest śmiertelnie trujący."
+      }
+    ],
+    "photoIds": ["agaricus-campestris-1", "agaricus-campestris-2"],
+    "referenceIds": ["fn-agaricus-campestris", "fn-agaricus-xanthodermus", "fn-amanita-virosa"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "agaricus-xanthodermus",
+    "polishName": "Pieczarka karbolowa",
+    "scientificName": "Agaricus xanthodermus",
+    "scientificSynonyms": [],
+    "synonyms": ["pieczarka żółtawa"],
+    "edibility": "poisonous",
+    "edibilityNote": "Trująca; może wywołać zatrucie pokarmowe. Nie zbieraj do spożycia.",
+    "keyFeatures": [
+      "Kapelusz szybko żółknie przy uszkodzeniu.",
+      "Podstawa trzonu intensywnie żółknie.",
+      "Zapach fenolu lub atramentu."
+    ],
+    "identificationTips": [
+      "Zapach bywa zmienny; nie stosuj go jako jedynego testu.",
+      "Obejrzyj reakcję podstawy i pozostałe cechy."
+    ],
+    "cap": "Początkowo biały, czasem spłaszczony u szczytu; później szarzeje. Uszkodzenia żółkną i brunatnieją.",
+    "stem": "Jasny, gładki, z dużym pierścieniem i zgrubiałą podstawą.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Wolne, młode jasne, następnie różowe i szarobrązowe."
+    },
+    "flesh": "Biały, z możliwym zapachem fenolu, jodyny lub atramentu.",
+    "damageReaction": "Szybko staje się intensywnie żółty, szczególnie w podstawie trzonu.",
+    "habitat": "Parki, ogrody, żywopłoty i obrzeża zadrzewień, na przekształconych glebach.",
+    "occurrenceMonths": [6, 7, 8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "agaricus-campestris",
+        "polishName": "Pieczarka polna",
+        "scientificName": "Agaricus campestris",
+        "difference": "Nie żółknie intensywnie i nie ma charakterystycznego fenolowego zapachu."
+      }
+    ],
+    "photoIds": ["agaricus-xanthodermus-1", "agaricus-xanthodermus-2"],
+    "referenceIds": ["fn-agaricus-xanthodermus", "fn-agaricus-campestris"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "russula-cyanoxantha",
+    "polishName": "Gołąbek zielonawofioletowy",
+    "scientificName": "Russula cyanoxantha",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po pewnym rozpoznaniu i obróbce termicznej. Rozpoznawanie gołąbków często wymaga specjalistycznej oceny.",
+    "keyFeatures": [
+      "Bardzo zmienna barwa kapelusza.",
+      "Jasne, wyjątkowo giętkie blaszki.",
+      "Biały trzon bez pierścienia."
+    ],
+    "identificationTips": [
+      "Kolor nie wystarcza do rozpoznania gołąbka.",
+      "Nie stosuj próby smaku do rozpoznawania nieznanych grzybów."
+    ],
+    "cap": "Fioletowy, zielonkawy, szary lub brązowawy; z czasem płaski i lekko zagłębiony.",
+    "stem": "Biały, czasem z fioletowym odcieniem, cylindryczny, bez pierścienia.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Białe, gęste, czasem rozwidlone; giętkie i mniej kruche niż u wielu gołąbków."
+    },
+    "flesh": "Biały, zwarty w kapeluszu.",
+    "damageReaction": "Miąższ nie ma charakterystycznego sinienia; giętkość blaszek oceniaj wraz z innymi cechami.",
+    "habitat": "Lasy liściaste, szczególnie przy dębach i bukach; także iglaste.",
+    "occurrenceMonths": [7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "amanita-phalloides",
+        "polishName": "Muchomor zielonawy",
+        "scientificName": "Amanita phalloides",
+        "difference": "Zielonkawe formy mogą łudząco przypominać gołąbki. Muchomor ma pierścień i workowatą pochwę u podstawy."
+      }
+    ],
+    "photoIds": ["russula-cyanoxantha-1", "russula-cyanoxantha-2"],
+    "referenceIds": ["fn-russula-cyanoxantha", "fn-amanita-phalloides"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "russula-emetica",
+    "polishName": "Gołąbek wymiotny",
+    "scientificName": "Russula emetica",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "poisonous",
+    "edibilityNote": "Trujący; nie zbieraj do spożycia i nie próbuj smaku.",
+    "keyFeatures": [
+      "Czerwony kapelusz, mogący blaknąć.",
+      "Jasne blaszki i biały trzon.",
+      "Często przy iglastych, w wilgotnych miejscach."
+    ],
+    "identificationTips": [
+      "Wiele czerwonych gołąbków wygląda podobnie.",
+      "Rozpoznanie może wymagać mikroskopu i klucza specjalistycznego."
+    ],
+    "cap": "Szkarłatny, gładki, z czasem lekko zagłębiony; wilgoć może powodować blaknięcie.",
+    "stem": "Biały, z wiekiem czasem żółtawy, cylindryczny do lekko maczugowatego.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Białe do kremowych, gęste, przyrośnięte lub niemal wolne."
+    },
+    "flesh": "Jasny, pod skórką kapelusza różowy.",
+    "damageReaction": "Miąższ jest kruchy; brak sinienia nie oznacza jadalności.",
+    "habitat": "Głównie przy sosnach i świerkach, także wilgotne mszyste stanowiska.",
+    "occurrenceMonths": [8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "polishName": "Gołąbek buczynowy",
+        "scientificName": "Russula nobilis",
+        "difference": "Również trujący i podobny; rośnie przy bukach. Rozróżnienie wymaga wielu cech, czasem mikroskopowych."
+      }
+    ],
+    "photoIds": ["russula-emetica-1", "russula-emetica-2"],
+    "referenceIds": ["fn-russula-emetica"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "lactarius-deliciosus",
+    "polishName": "Mleczaj rydz",
+    "scientificName": "Lactarius deliciosus",
+    "scientificSynonyms": [],
+    "synonyms": ["rydz"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po pewnym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Pomarańczowy kapelusz.",
+      "Pomarańczowe mleczko z uszkodzonych blaszek.",
+      "Zieleniejące uszkodzenia."
+    ],
+    "identificationTips": [
+      "Sprawdź barwę mleczka i drzewo towarzyszące.",
+      "Nie każdy pomarańczowy mleczaj to rydz."
+    ],
+    "cap": "Pomarańczowy, z czasem lejkowaty, często strefowany; uszkodzenia mogą zielenieć.",
+    "stem": "Krótki, pusty, z pomarańczowymi dołeczkami.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, pomarańczowe, lekko zbiegające; uszkodzone wydzielają pomarańczowoczerwone mleczko."
+    },
+    "flesh": "Jasny do pomarańczowawego, z mleczkiem.",
+    "damageReaction": "Uszkodzone powierzchnie zielenieją; mleczko z czasem ciemnieje.",
+    "habitat": "Lasy iglaste, szczególnie przy sosnach.",
+    "occurrenceMonths": [8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "lactarius-torminosus",
+        "polishName": "Mleczaj wełnianka",
+        "scientificName": "Lactarius torminosus",
+        "difference": "Ma wełnisty brzeg kapelusza i białe mleczko; rośnie przy brzozach."
+      }
+    ],
+    "photoIds": ["lactarius-deliciosus-1", "lactarius-deliciosus-2"],
+    "referenceIds": ["fn-lactarius-deliciosus", "fn-lactarius-torminosus"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "lactarius-torminosus",
+    "polishName": "Mleczaj wełnianka",
+    "scientificName": "Lactarius torminosus",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "poisonous",
+    "edibilityNote": "Trujący; może wywołać silne dolegliwości pokarmowe. Nie zbieraj do spożycia.",
+    "keyFeatures": [
+      "Różowawy, strefowany kapelusz.",
+      "Wełnisty, podwinięty brzeg.",
+      "Białe mleczko."
+    ],
+    "identificationTips": [
+      "Sprawdź owłosienie brzegu i barwę mleczka.",
+      "Nie próbuj smaku nieznanych mleczajów."
+    ],
+    "cap": "Różowawy do ochroworóżowego, z koncentrycznymi strefami; brzeg podwinięty i wełnisty.",
+    "stem": "Jaśniejszy od kapelusza, młody pełny, później pusty; bez pierścienia.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, bladoróżowawe, lekko zbiegające; wydzielają białe lub kremowe mleczko."
+    },
+    "flesh": "Biały, kruchy.",
+    "damageReaction": "Mleczko pozostaje białe lub kremowe podczas wysychania.",
+    "habitat": "Przy brzozach, zwykle w wilgotnych miejscach.",
+    "occurrenceMonths": [8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "lactarius-deliciosus",
+        "polishName": "Mleczaj rydz",
+        "scientificName": "Lactarius deliciosus",
+        "difference": "Ma pomarańczowe mleczko i niewełnisty brzeg; związany jest z sosnami."
+      }
+    ],
+    "photoIds": ["lactarius-torminosus-1", "lactarius-torminosus-2"],
+    "referenceIds": ["fn-lactarius-torminosus", "fn-lactarius-deliciosus"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "armillaria-mellea",
+    "polishName": "Opieńka miodowa",
+    "scientificName": "Armillaria mellea",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalność dotyczy pewnie rozpoznanych owocników po odpowiedniej obróbce termicznej. Opieńki mogą powodować zatrucia; część źródeł odradza spożycie. Nie polecamy zbierania do spożycia.",
+    "keyFeatures": [
+      "Miodowy do brązowego kapelusz z drobnymi łuskami.",
+      "Trwały, jasny pierścień.",
+      "Często wiązki na drewnie i przy korzeniach."
+    ],
+    "identificationTips": [
+      "Gatunki opieniek mogą być trudne do rozróżnienia.",
+      "Wiązkowy wzrost i pierścień nie potwierdzają jadalności."
+    ],
+    "cap": "Miodowożółty do czerwonobrązowego, z ciemniejszym środkiem i drobnymi łuskami zanikającymi z wiekiem.",
+    "stem": "Jasny, potem żółtobrązowy, włóknisty, z jasnym żółtawym pierścieniem.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, przyrośnięte lub lekko zbiegające; jasne, później żółtawe z rdzawymi plamkami."
+    },
+    "flesh": "Biały i zwarty.",
+    "damageReaction": "Brak wyraźnej zmiany barwy nie pozwala rozpoznać opieńki ani ocenić jej jadalności.",
+    "habitat": "Na drzewach liściastych, ich korzeniach i martwym drewnie; także w sadach.",
+    "occurrenceMonths": [7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "hypholoma-fasciculare",
+        "polishName": "Maślanka wiązkowa",
+        "scientificName": "Hypholoma fasciculare",
+        "difference": "Ma żółtozielone blaszki i nie ma trwałego błoniastego pierścienia; jest trująca."
+      }
+    ],
+    "photoIds": ["armillaria-mellea-1", "armillaria-mellea-2"],
+    "referenceIds": ["fn-armillaria-mellea", "fn-hypholoma-fasciculare", "psse-common-confusions"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "hypholoma-fasciculare",
+    "polishName": "Maślanka wiązkowa",
+    "scientificName": "Hypholoma fasciculare",
+    "scientificSynonyms": [],
+    "synonyms": ["maślanka siarkowa"],
+    "edibility": "poisonous",
+    "edibilityNote": "Trująca; nie zbieraj do spożycia i nie próbuj smaku.",
+    "keyFeatures": [
+      "Siarkowożółte owocniki w wiązkach.",
+      "Blaszki żółte, potem oliwkowozielone.",
+      "Brak trwałego błoniastego pierścienia."
+    ],
+    "identificationTips": [
+      "Oceń blaszki i trzon, nie sam wiązkowy wzrost.",
+      "Grzyby mogą rosnąć na drewnie ukrytym pod ziemią."
+    ],
+    "cap": "Siarkowożółty, w środku często ochrowobrązowy; wypukły, czasem z garbkiem.",
+    "stem": "Żółtawy, smukły, często wygięty i ciemniejszy u podstawy.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, przyrośnięte, młode siarkowożółte, później oliwkowozielone i ciemne."
+    },
+    "flesh": "Siarkowożółty, dość zwarty w kapeluszu.",
+    "damageReaction": "Brak charakterystycznego sinienia nie jest testem jadalności.",
+    "habitat": "Wiązki na martwym drewnie drzew liściastych, rzadziej iglastych; także na zakopanych korzeniach.",
+    "occurrenceMonths": [6, 7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "armillaria-mellea",
+        "polishName": "Opieńka miodowa",
+        "scientificName": "Armillaria mellea",
+        "difference": "Ma jasny, trwały pierścień i blaszki bez charakterystycznego oliwkowozielonego odcienia maślanki."
+      }
+    ],
+    "photoIds": ["hypholoma-fasciculare-1", "hypholoma-fasciculare-2"],
+    "referenceIds": ["fn-hypholoma-fasciculare", "fn-armillaria-mellea"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "pleurotus-ostreatus",
+    "polishName": "Boczniak ostrygowaty",
+    "scientificName": "Pleurotus ostreatus",
+    "scientificSynonyms": [],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Muszlowaty kapelusz.",
+      "Jasne, zbiegające blaszki.",
+      "Krótki, boczny trzon lub jego brak."
+    ],
+    "identificationTips": [
+      "Sprawdź przyczep do drewna i przebieg blaszek.",
+      "Barwa i kształt są zmienne; nie każdy grzyb na pniu jest boczniakiem."
+    ],
+    "cap": "Muszlowaty lub wachlarzowaty, szary, brązowawy do kremowego; często zachodzi na sąsiednie owocniki.",
+    "stem": "Krótki, jasny, zwykle boczny; czasem niewidoczny, bez pierścienia.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Jasne, gęste, mocno zbiegające, z wiekiem lekko ochrowe."
+    },
+    "flesh": "Jasny, zwarty; starszy może być łykowaty.",
+    "damageReaction": "Bez charakterystycznego sinienia lub czerwienienia.",
+    "habitat": "Na obumierających i martwych drzewach liściastych, pniach oraz dużych gałęziach.",
+    "occurrenceMonths": [7, 8, 9, 10, 11, 12],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "polishName": "Boczniak dębowy",
+        "scientificName": "Pleurotus dryinus",
+        "difference": "Ma oszronioną powierzchnię kapelusza i nietrwały pierścień na trzonie."
+      }
+    ],
+    "photoIds": ["pleurotus-ostreatus-1", "pleurotus-ostreatus-2"],
+    "referenceIds": ["fn-pleurotus-ostreatus"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "paxillus-involutus",
+    "polishName": "Krowiak podwinięty",
+    "scientificName": "Paxillus involutus",
+    "scientificSynonyms": [],
+    "synonyms": ["olszówka"],
+    "edibility": "poisonous",
+    "edibilityNote": "Trujący, może spowodować śmiertelne zatrucie także po wcześniejszym spożywaniu bez objawów. Gotowanie nie czyni go bezpiecznym.",
+    "keyFeatures": [
+      "Brązowawy kapelusz z podwiniętym brzegiem.",
+      "Gęste, zbiegające blaszki.",
+      "Uszkodzone blaszki szybko brązowieją."
+    ],
+    "identificationTips": [
+      "Dawne opinie o jadalności są nieaktualne.",
+      "Nie próbuj smaku; samo brązowienie nie rozstrzyga gatunku."
+    ],
+    "cap": "Ochrowy do brązowego, z czasem zagłębiony, z podwiniętym brzegiem; mokry lepki.",
+    "stem": "Ochrowy do brązowego, często wygięty, ciemniejący przy ucisku.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, silnie zbiegające, żółtawoochrowe, później brązowe."
+    },
+    "flesh": "Jasny do ochrowego, z czasem ciemniejący.",
+    "damageReaction": "Blaszki i trzon po uszkodzeniu brązowieją.",
+    "habitat": "Przy brzozach i innych drzewach liściastych, szczególnie na kwaśnych glebach.",
+    "occurrenceMonths": [7, 8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "lactarius-torminosus",
+        "polishName": "Mleczaj wełnianka",
+        "scientificName": "Lactarius torminosus",
+        "difference": "Ma różowawy, wełnisty brzeg i wydziela białe mleczko; również jest trujący."
+      }
+    ],
+    "photoIds": ["paxillus-involutus-1", "paxillus-involutus-2"],
+    "referenceIds": ["fn-paxillus-involutus", "fn-lactarius-torminosus"],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "kuehneromyces-mutabilis",
+    "polishName": "Łuszczak zmienny",
+    "scientificName": "Kuehneromyces mutabilis",
+    "scientificSynonyms": [],
+    "synonyms": ["łuskwiak zmienny"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po pewnym rozpoznaniu i obróbce termicznej. Może być niemal identyczny ze śmiertelnie trującą hełmówką; nie polecamy zbierania do spożycia.",
+    "keyFeatures": [
+      "Kapelusz zmienia kolor przy wysychaniu.",
+      "Łuseczki poniżej pierścienia.",
+      "Zwykle wiązki na drewnie liściastym."
+    ],
+    "identificationTips": [
+      "Oceniaj każdy trzon; w jednej kępie mogą być różne gatunki.",
+      "Pewne odróżnienie od hełmówki może wymagać mikroskopu."
+    ],
+    "cap": "Brązowawy, wysychając jaśnieje od środka; wilgotny brzeg bywa ciemniejszy.",
+    "stem": "Jasny i gładki powyżej pierścienia; niżej ciemniejszy, włóknisty i łuseczkowaty.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, przyrośnięte, początkowo ochrowe, później cynamonowe."
+    },
+    "flesh": "Cienki, jasnobrązowy; w podstawie trzonu ciemniejszy.",
+    "damageReaction": "Zmiana koloru przy wysychaniu zależy od wilgotności, nie jest próbą jadalności.",
+    "habitat": "Pniaki, kłody i martwe drewno liściaste, szczególnie brzozowe.",
+    "occurrenceMonths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "galerina-marginata",
+        "polishName": "Hełmówka jadowita",
+        "scientificName": "Galerina marginata",
+        "difference": "Poniżej pierścienia zwykle ma podłużne włókienka zamiast łuseczek. Podłoże i kolor nie dają pewnego rozróżnienia."
+      }
+    ],
+    "photoIds": ["kuehneromyces-mutabilis-1", "kuehneromyces-mutabilis-2"],
+    "referenceIds": [
+      "fn-kuehneromyces-mutabilis",
+      "fn-galerina-marginata",
+      "psse-common-confusions"
+    ],
+    "datasetVersion": "0.7.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "galerina-marginata",
+    "polishName": "Hełmówka jadowita",
+    "scientificName": "Galerina marginata",
+    "scientificSynonyms": [],
+    "synonyms": ["hełmówka obrzeżona"],
+    "edibility": "poisonous",
+    "edibilityNote": "Śmiertelnie trująca. Nie zbieraj do spożycia i nie próbuj smaku.",
+    "keyFeatures": [
+      "Drobny, brązowawy kapelusz.",
+      "Delikatny, zanikający pierścień.",
+      "Podłużne włókienka poniżej pierścienia."
+    ],
+    "identificationTips": [
+      "Może rosnąć także na drewnie liściastym.",
+      "Podobieństwo do łuszczaka wymaga specjalistycznej oceny, czasem mikroskopu."
+    ],
+    "cap": "Brązowy do miodowego, jaśniejszy przy brzegu; barwa zmienia się z wilgotnością.",
+    "stem": "Smukły, jasny u góry i ciemniejszy u podstawy; włóknisty poniżej delikatnego pierścienia.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, przyrośnięte, ochrowomiodowe, później rdzawiejące."
+    },
+    "flesh": "Cienki, jasnobrązowy; zapach nie rozstrzyga bezpieczeństwa.",
+    "damageReaction": "Brak charakterystycznego sinienia nie potwierdza gatunku ani jadalności.",
+    "habitat": "Pniaki, kłody i gałęzie iglaste, ale także liściaste.",
+    "occurrenceMonths": [6, 7, 8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres w umiarkowanym klimacie Europy. Termin w Polsce zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "kuehneromyces-mutabilis",
+        "polishName": "Łuszczak zmienny",
+        "scientificName": "Kuehneromyces mutabilis",
+        "difference": "Ma zwykle łuseczki poniżej pierścienia. To nie wystarcza do bezpiecznego rozpoznania bez innych cech."
+      }
+    ],
+    "photoIds": ["galerina-marginata-1", "galerina-marginata-2", "galerina-marginata-3"],
+    "referenceIds": [
+      "fn-galerina-marginata",
+      "fn-kuehneromyces-mutabilis",
+      "psse-common-confusions"
+    ],
+    "datasetVersion": "0.7.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   }

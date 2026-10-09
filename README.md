@@ -13,9 +13,9 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Implementation status
 
-Phases 1–6 development is implemented: project foundation, five sourced species with 15 locally bundled photos, shared UI, local search/filters, complete species details, and two-species comparison. Comparison supports searchable selection, preselection from details, replacement, swapping, aligned feature rows, persistent column identities, and ordered curated differences. Phase 7 content expansion and Phase 8 release validation remain ahead.
+Phases 1–7 development is implemented: 30 sourced species, 66 locally bundled photographs with smaller thumbnails, local search/filters, complete species details, and two-species comparison. Twelve curated pairs include source references and relevant qualifications. Search accepts Polish synonyms and recorded scientific synonyms. Dataset version: `0.7.0`.
 
-Specialist content review and native validation remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [UI design](docs/ui-design.md), and [Phase 6 acceptance](docs/acceptance/phase-6.md).
+Specialist content review, native validation, and the installable release remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
 
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
@@ -73,9 +73,12 @@ Export platform bundles without an emulator:
 ```powershell
 npm run export:android
 npm run export:web
+npm run verify:android
 ```
 
 The output directories are `dist/android` and `dist/web`. These generated files are ignored by Git.
+
+`verify:android` checks the bundle and declared export assets, including every source photograph and thumbnail by SHA-256. It verifies export contents, not standalone device behavior. See [data maintenance](docs/data-maintenance.md) for the thumbnail and attribution workflow.
 
 ## Project structure
 

@@ -23,7 +23,7 @@ Project location: `C:\projects\mushroom-atlas`.
 | 4 — Atlas, search, and filters           | Development implemented; native validation pending           |
 | 5 — Species details                      | Development implemented; native/content review pending       |
 | 6 — Comparison                           | Development implemented; native/content review pending       |
-| 7 — Complete content and offline support | Planned                                                      |
+| 7 — Complete content and offline support | Development implemented; native/content review pending       |
 | 8 — Validation and installable release   | Planned                                                      |
 
 Emulator-dependent checks are deferred at the user's request. Do not install or launch an emulator until the user is ready. Subsequent data and code work can proceed independently if requested; native validation remains an acceptance requirement.
@@ -143,6 +143,8 @@ Development acceptance on 2026-10-09: all ten bundled pairs rendered complete al
 9. Include concise Polish guidance explaining the atlas's role and directing users to expert consultation when identification is uncertain.
 
 **Acceptance:** the complete dataset and required photographs are available from the first offline launch, with documented content verification and asset rights.
+
+Development acceptance on 2026-10-09: dataset `0.7.0` contains 30 source-checked species, 66 photographs with local thumbnails, and 12 curated pairs. All 132 photograph/thumbnail hashes were found among the declared Android export assets. Thirty detail pages and both orders of all curated pairs passed browser checks. See [the Phase 7 report](acceptance/phase-7.md), [photo credits](photo-credits.md), and [pending content review](content-review.md). Independent identification review has not been arranged or completed; standalone first-launch offline acceptance remains pending.
 
 ## Phase 8 — Validation, optimization, and installable release
 

@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.7.0",
   "updatedAt": "2026-10-09",
   "expertReviewStatus": "pending",
   "references": [
@@ -43,6 +43,195 @@
       "title": "Bezpieczne grzybobranie",
       "publisher": "Lasy Państwowe / Portal Gov.pl",
       "url": "https://www.gov.pl/attachment/6430ed46-5f7d-4982-b7da-3872c0c79455",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-imleria-badia",
+      "title": "Imleria badia — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/imleria-badia.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-suillus-luteus",
+      "title": "Suillus luteus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/suillus-luteus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-suillus-granulatus",
+      "title": "Suillus granulatus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/suillus-granulatus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-leccinum-scabrum",
+      "title": "Leccinum scabrum — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/leccinum-scabrum.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-hydnum-repandum",
+      "title": "Hydnum repandum — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/hydnum-repandum.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-craterellus-tubaeformis",
+      "title": "Craterellus tubaeformis — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/cantharellus-tubaeformis.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-hygrophoropsis-aurantiaca",
+      "title": "Hygrophoropsis aurantiaca — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/hygrophoropsis-aurantiaca.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-macrolepiota-procera",
+      "title": "Macrolepiota procera — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/macrolepiota-procera.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-chlorophyllum-rhacodes",
+      "title": "Chlorophyllum rhacodes — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/chlorophyllum-rhacodes.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-amanita-pantherina",
+      "title": "Amanita pantherina — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/amanita-pantherina.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-amanita-rubescens",
+      "title": "Amanita rubescens — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/amanita-rubescens.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-amanita-citrina",
+      "title": "Amanita citrina — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/amanita-citrina.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-amanita-virosa",
+      "title": "Amanita virosa — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/amanita-virosa.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-agaricus-campestris",
+      "title": "Agaricus campestris — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/agaricus-campestris.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-agaricus-xanthodermus",
+      "title": "Agaricus xanthodermus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/agaricus-xanthodermus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-russula-cyanoxantha",
+      "title": "Russula cyanoxantha — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/russula-cyanoxantha.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-russula-emetica",
+      "title": "Russula emetica — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/russula-emetica.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-lactarius-deliciosus",
+      "title": "Lactarius deliciosus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/lactarius-deliciosus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-lactarius-torminosus",
+      "title": "Lactarius torminosus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/lactarius-torminosus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-armillaria-mellea",
+      "title": "Armillaria mellea — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/armillaria-mellea.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-hypholoma-fasciculare",
+      "title": "Hypholoma fasciculare — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/hypholoma-fasciculare.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-pleurotus-ostreatus",
+      "title": "Pleurotus ostreatus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/pleurotus-ostreatus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-paxillus-involutus",
+      "title": "Paxillus involutus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/paxillus-involutus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-kuehneromyces-mutabilis",
+      "title": "Kuehneromyces mutabilis — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/kuehneromyces-mutabilis.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-galerina-marginata",
+      "title": "Galerina marginata — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/galerina-marginata.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "psse-common-confusions",
+      "title": "Grzybowe pomyłki",
+      "publisher": "PSSE w Golubiu-Dobrzyniu / Portal Gov.pl",
+      "url": "https://www.gov.pl/web/psse-golub-dobrzyn/pomylka-ktora-moze-byc-smiertelna-czyli-grzybowe-pomylki",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "lp-foraging-guidance",
+      "title": "Zbieraj grzyby, ale rób to z głową",
+      "publisher": "Lasy Państwowe",
+      "url": "https://www.lasy.gov.pl/pl/informacje/aktualnosci/zbieraj-grzyby-ale-rob-to-z-glowa",
       "accessedAt": "2026-10-09"
     }
   ]

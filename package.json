@@ -19,7 +19,10 @@
     "validate:data": "node scripts/validate-data.mjs",
     "test": "node --experimental-strip-types --test scripts/*.test.mjs",
     "preexport:android": "npm run validate:data",
-    "preexport:web": "npm run validate:data"
+    "preexport:web": "npm run validate:data",
+    "prepare:photos": "node scripts/prepare-photos.mjs",
+    "verify:android": "node scripts/verify-android-export.mjs",
+    "prepare:review": "node scripts/generate-review-pack.mjs"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
@@ -41,10 +44,11 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
-    "typescript": "~6.0.3",
     "eslint": "^9.39.5",
     "eslint-config-expo": "~57.0.2",
     "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.9.9"
+    "prettier": "^3.9.9",
+    "sharp": "0.35.5",
+    "typescript": "~6.0.3"
   }
 }

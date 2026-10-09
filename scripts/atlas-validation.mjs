@@ -85,6 +85,11 @@ export function validateAtlas({ metadata, mushrooms, photos, pairs }) {
       `${label}: invalid synonyms`,
     );
     check(
+      mushroom.scientificSynonyms === undefined ||
+        (Array.isArray(mushroom.scientificSynonyms) && mushroom.scientificSynonyms.every(nonempty)),
+      `${label}: invalid scientific synonyms`,
+    );
+    check(
       ['edible', 'inedible', 'poisonous'].includes(mushroom.edibility),
       `${label}: invalid edibility`,
     );
@@ -150,11 +155,23 @@ export function validateAtlas({ metadata, mushrooms, photos, pairs }) {
       `${photo.id}: orphan photo`,
     );
     const owner = mushrooms.find((mushroom) => mushroom.id === photo.mushroomId);
-    check(photo.sourceTaxon === owner?.scientificName, `${photo.id}: source taxon mismatch`);
+    check(
+      [owner?.scientificName, ...(owner?.scientificSynonyms ?? [])].includes(photo.sourceTaxon),
+      `${photo.id}: source taxon mismatch`,
+    );
     check(
       photo.assetPath === `assets/mushrooms/${photo.id}.jpg`,
       `${photo.id}: invalid asset path`,
     );
+    check(
+      photo.thumbnailPath === `assets/mushrooms/thumbnails/${photo.id}.jpg`,
+      `${photo.id}: invalid thumbnail path`,
+    );
+    check(
+      /^[a-f0-9]{64}$/.test(photo.thumbnailSha256 ?? ''),
+      `${photo.id}: invalid thumbnail SHA-256`,
+    );
+    check(nonempty(photo.thumbnailModifications), `${photo.id}: missing thumbnail modifications`);
     for (const key of ['caption', 'author', 'license', 'modifications'])
       check(nonempty(photo[key]), `${photo.id}: missing ${key}`);
     for (const key of ['sourceUrl', 'originalUrl', 'downloadUrl', 'licenseUrl'])
@@ -196,6 +213,7 @@ export function validateAtlas({ metadata, mushrooms, photos, pairs }) {
       `${label}: invalid differences`,
     );
     references(pair.referenceIds, label);
+    check(pair.note === undefined || nonempty(pair.note), `${label}: invalid pair note`);
     review(pair, label);
   }
   if (metadata.expertReviewStatus === 'complete')

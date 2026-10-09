@@ -21,9 +21,12 @@ export function queryMushrooms(
     .filter(
       (item) =>
         (filter === 'all' || item.edibility === filter) &&
-        [item.polishName, item.scientificName, ...item.synonyms].some((name) =>
-          normalizeSearch(name).includes(normalized),
-        ),
+        [
+          item.polishName,
+          item.scientificName,
+          ...item.synonyms,
+          ...(item.scientificSynonyms ?? []),
+        ].some((name) => normalizeSearch(name).includes(normalized)),
     )
     .sort(
       (first, second) =>

@@ -41,6 +41,7 @@ export const pl = {
     close: 'Zamknij',
     source: 'Źródło zdjęcia',
     resized: 'Rozmiar zmniejszony; bez innych zmian.',
+    thumbnail: 'Miniatura pomniejszona bez kadrowania.',
   },
   species: {
     keyFeatures: 'Najważniejsze cechy',

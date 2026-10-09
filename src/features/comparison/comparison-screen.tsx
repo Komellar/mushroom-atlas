@@ -13,7 +13,7 @@ import { PlaceholderPanel } from '@/components/placeholder-panel';
 import { SafetyNotice } from '@/components/safety-notice';
 import { SpeciesSelector } from '@/components/species-selector';
 import { atlasMetadata, getMushroom, getPair, getPhoto, mushrooms } from '@/data/atlas';
-import { photoAssets } from '@/data/photo-assets';
+import { thumbnailAssets } from '@/data/photo-assets';
 import { pl } from '@/locales/pl';
 import { theme } from '@/theme/theme';
 import type { Mushroom } from '@/types/atlas';
@@ -149,6 +149,7 @@ function ComparisonDetails({ selected }: { selected: [Mushroom, Mushroom] }) {
           <AppText variant="heading" accessibilityRole="header">
             {pl.comparison.differences}
           </AppText>
+          {pair.note && <AppText style={styles.review}>{pair.note}</AppText>}
           {pair.differences.map((difference) => (
             <ComparisonRow
               key={difference.feature}
@@ -185,7 +186,7 @@ function ComparisonPhoto({ mushroom }: { mushroom: Mushroom }) {
       {photo && (
         <>
           <Image
-            source={photoAssets[photo.id]}
+            source={thumbnailAssets[photo.id]}
             accessibilityLabel={photo.caption}
             contentFit="contain"
             style={styles.photo}
@@ -197,9 +198,7 @@ function ComparisonPhoto({ mushroom }: { mushroom: Mushroom }) {
             url={photo.licenseUrl}
             label={`${pl.photos.license}: ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}
           />
-          {photo.downloadUrl.includes('/thumb/') && (
-            <AppText style={styles.credit}>{pl.photos.resized}</AppText>
-          )}
+          <AppText style={styles.credit}>{pl.photos.thumbnail}</AppText>
         </>
       )}
       <ActionLink

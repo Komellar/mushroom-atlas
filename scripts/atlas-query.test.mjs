@@ -12,13 +12,24 @@ test('Normalizes all Polish diacritics, case and whitespace', () => {
 test('Finds Polish names, Latin names and synonyms without diacritics', () => {
   assert.equal(queryMushrooms(species, ' zolciowy ')[0].id, 'tylopilus-felleus');
   assert.equal(queryMushrooms(species, '  BOLETUS EDULIS ')[0].id, 'boletus-edulis');
-  assert.equal(queryMushrooms(species, 'kurka')[0].id, 'cantharellus-cibarius');
+  assert.deepEqual(
+    queryMushrooms(species, 'kurka').map((item) => item.id),
+    ['hygrophoropsis-aurantiaca', 'cantharellus-cibarius'],
+  );
 });
 test('Combines filters with search and handles zero results', () => {
-  assert.equal(queryMushrooms(species, 'muchomor', 'poisonous').length, 2);
-  assert.equal(queryMushrooms(species, 'muchomor', 'edible').length, 0);
+  assert.equal(queryMushrooms(species, 'muchomor', 'poisonous').length, 4);
+  assert.equal(queryMushrooms(species, 'muchomor', 'edible')[0].id, 'amanita-rubescens');
+  assert.equal(queryMushrooms(species, 'goryczak', 'edible').length, 0);
   assert.equal(queryMushrooms(species, 'not-a-species').length, 0);
   assert.ok(queryMushrooms(species, '', 'inedible').every((item) => item.edibility === 'inedible'));
+});
+test('Finds older scientific names in documented synonym lists', () => {
+  assert.equal(queryMushrooms(species, 'xerocomus badius')[0].id, 'imleria-badia');
+  assert.equal(
+    queryMushrooms(species, 'cantharellus tubaeformis')[0].id,
+    'craterellus-tubaeformis',
+  );
 });
 test('Sorts by Polish order without mutating input', () => {
   const originalIds = species.map((item) => item.id);

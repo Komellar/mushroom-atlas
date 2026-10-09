@@ -14,7 +14,35 @@ const dataset = {
 };
 test('The bundled dataset satisfies the schema', () =>
   assert.deepEqual(validateAtlas(dataset), []));
+test('Accepts a documented scientific synonym in photo source taxonomy', () => {
+  const data = structuredClone(dataset);
+  const owner = data.mushrooms.find((item) => item.id === 'imleria-badia');
+  const photo = data.photos.find((item) => item.mushroomId === owner.id);
+  photo.sourceTaxon = 'Boletus badius';
+  assert.deepEqual(validateAtlas(data), []);
+});
 const mutations = [
+  [
+    'invalid thumbnail metadata',
+    (data) => {
+      data.photos[0].thumbnailPath = 'remote.jpg';
+    },
+    'invalid thumbnail path',
+  ],
+  [
+    'invalid thumbnail hash',
+    (data) => {
+      data.photos[0].thumbnailSha256 = '';
+    },
+    'invalid thumbnail SHA-256',
+  ],
+  [
+    'invalid scientific synonyms',
+    (data) => {
+      data.mushrooms[0].scientificSynonyms = [''];
+    },
+    'invalid scientific synonyms',
+  ],
   [
     'duplicate species IDs',
     (data) => data.mushrooms.push(structuredClone(data.mushrooms[0])),

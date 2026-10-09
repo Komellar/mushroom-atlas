@@ -21,5 +21,215 @@
     "referenceIds": ["fn-boletus-edulis", "fn-tylopilus-felleus"],
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
+  },
+  {
+    "id": "boletus-edulis--imleria-badia",
+    "mushroomIds": ["boletus-edulis", "imleria-badia"],
+    "differences": [
+      {
+        "feature": "Trzon",
+        "values": ["Jasna, drobna siateczka.", "Brązowe podłużne włókienka; bez siateczki."]
+      },
+      {
+        "feature": "Ucisk porów",
+        "values": ["Nie sinieją.", "Zwykle sinieją lub zielenieją."]
+      }
+    ],
+    "referenceIds": ["fn-boletus-edulis", "fn-imleria-badia"],
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "suillus-granulatus--suillus-luteus",
+    "mushroomIds": ["suillus-luteus", "suillus-granulatus"],
+    "differences": [
+      {
+        "feature": "Pierścień",
+        "values": ["Wyraźny, po przerwaniu błony.", "Brak pierścienia."]
+      },
+      {
+        "feature": "Młode pory",
+        "values": ["Osłonięte błoną.", "Mogą wydzielać mleczne krople."]
+      }
+    ],
+    "referenceIds": ["fn-suillus-luteus", "fn-suillus-granulatus"],
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "cantharellus-cibarius--hygrophoropsis-aurantiaca",
+    "mushroomIds": ["cantharellus-cibarius", "hygrophoropsis-aurantiaca"],
+    "differences": [
+      {
+        "feature": "Spód kapelusza",
+        "values": ["Grube, tępe fałdy.", "Cienkie, gęste, rozwidlone blaszki."]
+      },
+      {
+        "feature": "Miąższ",
+        "values": ["Jasny i jędrny.", "Cieńszy i delikatniejszy."]
+      }
+    ],
+    "referenceIds": ["fn-cantharellus-cibarius", "fn-hygrophoropsis-aurantiaca"],
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "chlorophyllum-rhacodes--macrolepiota-procera",
+    "mushroomIds": ["macrolepiota-procera", "chlorophyllum-rhacodes"],
+    "differences": [
+      {
+        "feature": "Wzór trzonu",
+        "values": ["Brązowy wzór na jasnym tle.", "Brak charakterystycznego wzoru kani."]
+      },
+      {
+        "feature": "Przecięcie miąższu",
+        "values": ["Zwykle bez wyraźnej zmiany.", "Czerwienieje."]
+      }
+    ],
+    "referenceIds": ["fn-macrolepiota-procera", "fn-chlorophyllum-rhacodes"],
+    "note": "Oceny jadalności czubajki czerwieniejącej są rozbieżne; może powodować zatrucia. Nie zbieraj jej do spożycia.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-pantherina--amanita-rubescens",
+    "mushroomIds": ["amanita-rubescens", "amanita-pantherina"],
+    "differences": [
+      {
+        "feature": "Uszkodzenie miąższu",
+        "values": ["Różowieje lub czerwienieje.", "Nie czerwienieje."]
+      },
+      {
+        "feature": "Łatki na kapeluszu",
+        "values": ["Zwykle szarawe lub brudnobiałe.", "Zwykle czysto białe."]
+      }
+    ],
+    "referenceIds": ["fn-amanita-rubescens", "fn-amanita-pantherina"],
+    "note": "Deszcz może zmyć łatki. Jedna cecha nie daje pewnego rozpoznania; muchomor plamisty jest trujący.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-citrina--amanita-phalloides",
+    "mushroomIds": ["amanita-citrina", "amanita-phalloides"],
+    "differences": [
+      {
+        "feature": "Podstawa trzonu",
+        "values": [
+          "Odcięta bulwa z przylegającym brzegiem pochwy.",
+          "Bulwa otoczona workowatą pochwą."
+        ]
+      },
+      {
+        "feature": "Kapelusz",
+        "values": [
+          "Zwykle cytrynowy z resztkami osłony; bywają białe formy.",
+          "Zwykle gładki; barwa zmienna, także biała."
+        ]
+      }
+    ],
+    "referenceIds": ["fn-amanita-citrina", "fn-amanita-phalloides"],
+    "note": "Muchomor zielonawy jest śmiertelnie trujący. Kolor i zapach nie są testem bezpieczeństwa.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "agaricus-campestris--agaricus-xanthodermus",
+    "mushroomIds": ["agaricus-campestris", "agaricus-xanthodermus"],
+    "differences": [
+      {
+        "feature": "Uszkodzenie",
+        "values": [
+          "Bez intensywnego żółknięcia.",
+          "Szybkie, intensywne żółknięcie, zwłaszcza w podstawie."
+        ]
+      },
+      {
+        "feature": "Zapach",
+        "values": [
+          "Bez charakterystycznego fenolowego zapachu.",
+          "Może pachnieć fenolem lub atramentem."
+        ]
+      }
+    ],
+    "referenceIds": ["fn-agaricus-campestris", "fn-agaricus-xanthodermus"],
+    "note": "Zapach bywa zmienny; brak wyraźnego zapachu nie wyklucza pieczarki karbolowej.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "agaricus-campestris--amanita-virosa",
+    "mushroomIds": ["agaricus-campestris", "amanita-virosa"],
+    "differences": [
+      {
+        "feature": "Blaszki",
+        "values": ["Różowe, potem ciemnobrązowe.", "Pozostają białe."]
+      },
+      {
+        "feature": "Podstawa",
+        "values": ["Bez workowatej pochwy.", "Workowata pochwa, często ukryta w ziemi."]
+      }
+    ],
+    "referenceIds": ["fn-agaricus-campestris", "fn-amanita-virosa"],
+    "note": "Muchomor jadowity jest śmiertelnie trujący. Nie rozpoznawaj zamkniętych młodych owocników do spożycia.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "lactarius-deliciosus--lactarius-torminosus",
+    "mushroomIds": ["lactarius-deliciosus", "lactarius-torminosus"],
+    "differences": [
+      {
+        "feature": "Mleczko",
+        "values": ["Pomarańczowoczerwone.", "Białe lub kremowe."]
+      },
+      {
+        "feature": "Brzeg i drzewa",
+        "values": ["Niewełnisty brzeg; zwykle sosna.", "Wełnisty brzeg; brzoza."]
+      }
+    ],
+    "referenceIds": ["fn-lactarius-deliciosus", "fn-lactarius-torminosus"],
+    "note": "Nie stosuj próby smaku. Mleczaj wełnianka jest trujący.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "armillaria-mellea--hypholoma-fasciculare",
+    "mushroomIds": ["armillaria-mellea", "hypholoma-fasciculare"],
+    "differences": [
+      {
+        "feature": "Pierścień",
+        "values": ["Jasny, zwykle trwały.", "Brak trwałego błoniastego pierścienia."]
+      },
+      {
+        "feature": "Blaszki",
+        "values": [
+          "Jasne, później żółtawe z rdzawymi plamkami.",
+          "Z wiekiem oliwkowozielone, następnie ciemne."
+        ]
+      }
+    ],
+    "referenceIds": ["fn-armillaria-mellea", "fn-hypholoma-fasciculare"],
+    "note": "Wiązkowy wzrost nie potwierdza gatunku. Opieńki również mogą wywoływać dolegliwości i zatrucia.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "galerina-marginata--kuehneromyces-mutabilis",
+    "mushroomIds": ["kuehneromyces-mutabilis", "galerina-marginata"],
+    "differences": [
+      {
+        "feature": "Trzon poniżej pierścienia",
+        "values": ["Zwykle łuseczkowaty.", "Zwykle z podłużnymi włókienkami."]
+      },
+      {
+        "feature": "Martwe drewno",
+        "values": ["Zwykle liściaste.", "Iglaste, ale także liściaste."]
+      }
+    ],
+    "referenceIds": ["fn-kuehneromyces-mutabilis", "fn-galerina-marginata"],
+    "note": "Hełmówka jest śmiertelnie trująca. Te cechy nie wystarczą do pewnego rozpoznania; może być potrzebny mikroskop.",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
   }
 ]
