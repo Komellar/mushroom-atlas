@@ -1,56 +1,132 @@
-# Welcome to your Expo app 👋
+# Mushroom Atlas
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile reference atlas of common mushroom species found in Poland.
 
-## Get started
+Project location: `C:\projects\mushroom-atlas`.
 
-1. Install dependencies
+## Language policy
 
-   ```bash
-   npm install
-   ```
+- All technical project material is English: documentation, implementation plans, reports, file names, identifiers, types, JSON keys, code comments, commit messages, and developer-facing messages.
+- The application UI and atlas content displayed inside the app are Polish. Scientific names remain Latin.
+- Shared UI strings live in `src/locales/pl.ts`. Future species descriptions will use English field names and Polish content values in local data files.
+- The Polish display name in `app.json` is part of the application UI.
 
-2. Start the app
+## Implementation status
 
-   ```bash
-   npx expo start
-   ```
+Phase 1 development is implemented: Expo, React Native, TypeScript, a local Git repository, the project structure, Polish UI strings, and navigation between the atlas, comparison screen, and species details.
 
-In the output, you'll find options to open the app in a
+The screens display explicit work-in-progress states. `/mushrooms/preview` is a navigation placeholder, not a verified species entry. Phase 2 has not started. It will introduce the data model, an initial species dataset, and bundled photographs; search and comparison behavior belong to later phases.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.
 
-## Get a fresh project
+## Requirements
 
-When you're ready, run:
+- Node.js compatible with Expo SDK 57 and npm. The project was prepared using Node.js `22.16.0` and npm `11.4.2`.
+- An Android emulator is not needed for type checking, linting, formatting checks, or JavaScript bundle exports.
 
-```bash
-npm run reset-project
+## Getting started
+
+```powershell
+Set-Location C:\projects\mushroom-atlas
+npm ci
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Optional browser preview:
 
-### Other setup steps
+```powershell
+npm run web
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Once the Android emulator is ready:
 
-## Learn more
+```powershell
+npm run android
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Code quality
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```powershell
+npm run check
+```
 
-## Join the community
+This command runs TypeScript, ESLint, and Prettier checks. Individual commands:
 
-Join our community of developers creating universal apps.
+```powershell
+npm run typecheck
+npm run lint
+npm run format:check
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Format project files:
+
+```powershell
+npm run format
+```
+
+Export platform bundles without an emulator:
+
+```powershell
+npm run export:android
+npm run export:web
+```
+
+The output directories are `dist/android` and `dist/web`. These generated files are ignored by Git.
+
+## Project structure
+
+```text
+src/
+  app/                  # Expo Router routes
+    (tabs)/             # Atlas and comparison tabs
+    mushrooms/[id].tsx  # Species details route
+  components/           # Shared UI
+  features/
+    atlas/
+    comparison/
+    mushroom-details/
+  data/                 # Local atlas data (phase 2)
+  locales/              # Polish UI strings
+  theme/                # Shared design tokens
+  types/                # Domain types (phase 2)
+  utils/                # Shared utilities
+assets/mushrooms/       # Bundled photos (phase 2)
+scripts/                # Data validation scripts (phase 2)
+docs/                   # English project documentation
+```
+
+## Navigation
+
+- `/` — atlas.
+- `/compare` — comparison screen.
+- `/mushrooms/preview` — species details placeholder.
+- `/mushrooms/<id>` — species details route; unknown identifiers show a Polish message.
+- Unknown routes show a Polish recovery screen with a link to the atlas.
+
+The current app icon assets come from the Expo starter template. Final branding will be prepared in a later phase.
+
+## Previous validation results
+
+Phase 1 passed all 21 Expo Doctor checks. Dependency compatibility was checked using `npx expo install --check`. TypeScript, ESLint, Prettier, and Android/web bundle exports passed. Navigation and recovery screens were checked in a browser viewport of 390 × 844.
+
+These results describe phase 1 implementation checks, not a successful launch on Android.
+
+The acceptance rerun on 2026-10-09 passed code checks, Android bundle export, and Polish UI/navigation checks in a 390 × 844 browser viewport. See [the Phase 1 acceptance report](docs/acceptance/phase-1.md) for results and remaining native checks.
+
+## Dependency audit
+
+The phase 1 npm audit, after running `npm audit fix`, still reported 29 vulnerabilities in the Expo and React Native dependency tree: 18 high and 11 moderate. The underlying reports include `braces`, `node-forge`, `uuid`, and `decode-uri-component`, plus packages depending on them. The count represents flagged packages, not 29 independent defects.
+
+`npm audit fix --force` was not applied because suggested changes include incompatible framework versions, including a downgrade to Expo SDK 44. Recheck compatible fixes before a production release. Passing code checks and Expo Doctor does not imply a clean security audit.
+
+## Device validation pending emulator setup
+
+1. Launch the app on Android.
+2. Switch between the atlas and comparison tabs.
+3. Open the details placeholder and return using the system back button.
+4. Navigate from details to comparison and back to the atlas.
+5. Check safe areas, small screens, and larger system font sizes.
+
+First-launch offline validation requires a later standalone application build with the species dataset and photographs included. Development mode relies on Metro.

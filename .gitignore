@@ -3,6 +3,9 @@
 # dependencies
 node_modules/
 
+# local IDE state
+.idea/
+
 # Expo
 .expo/
 dist/

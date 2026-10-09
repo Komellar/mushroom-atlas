@@ -1,18 +1,38 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { DefaultTheme, Stack, ThemeProvider } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+import { pl } from '@/locales/pl';
+import { theme } from '@/theme/theme';
 
-SplashScreen.preventAutoHideAsync();
+const navigationTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: theme.colors.primary,
+    background: theme.colors.background,
+    card: theme.colors.surface,
+    text: theme.colors.text,
+    border: theme.colors.border,
+  },
+};
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+export default function RootLayout() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
+    <ThemeProvider value={navigationTheme}>
+      <StatusBar style="dark" />
+      <Stack
+        screenOptions={{
+          headerTintColor: theme.colors.primary,
+          headerStyle: { backgroundColor: theme.colors.surface },
+          headerTitleStyle: { fontWeight: '600' },
+          headerBackTitle: pl.navigation.back,
+          contentStyle: { backgroundColor: theme.colors.background },
+        }}
+      >
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="mushrooms/[id]" options={{ title: pl.navigation.details }} />
+        <Stack.Screen name="+not-found" options={{ title: pl.navigation.notFound }} />
+      </Stack>
     </ThemeProvider>
   );
 }
