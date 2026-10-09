@@ -6,6 +6,8 @@ import { PlaceholderPanel } from '@/components/placeholder-panel';
 import { pl } from '@/locales/pl';
 import { theme } from '@/theme/theme';
 
+import { InitialSpecies } from './initial-species';
+
 export default function AtlasScreen() {
   return (
     <Page eyebrow={pl.atlas.eyebrow} title={pl.atlas.title} description={pl.atlas.description}>
@@ -18,6 +20,7 @@ export default function AtlasScreen() {
         <ActionLink href="/mushrooms/preview" label={pl.atlas.previewAction} />
         <ActionLink href="/compare" label={pl.atlas.comparisonAction} secondary />
       </View>
+      <InitialSpecies />
     </Page>
   );
 }

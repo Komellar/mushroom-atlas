@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "updatedAt": "2026-10-09",
+  "expertReviewStatus": "pending",
+  "references": [
+    {
+      "id": "fn-boletus-edulis",
+      "title": "Boletus edulis — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/boletus-edulis.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-tylopilus-felleus",
+      "title": "Tylopilus felleus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/tylopilus-felleus.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-cantharellus-cibarius",
+      "title": "Cantharellus cibarius — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/cantharellus-cibarius.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-amanita-muscaria",
+      "title": "Amanita muscaria — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/amanita-muscaria.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-amanita-phalloides",
+      "title": "Amanita phalloides — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/amanita-phalloides.php",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "lp-safe-foraging",
+      "title": "Bezpieczne grzybobranie",
+      "publisher": "Lasy Państwowe / Portal Gov.pl",
+      "url": "https://www.gov.pl/attachment/6430ed46-5f7d-4982-b7da-3872c0c79455",
+      "accessedAt": "2026-10-09"
+    }
+  ]
+}

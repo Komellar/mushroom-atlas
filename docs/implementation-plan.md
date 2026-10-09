@@ -15,16 +15,16 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Current status and sequencing
 
-| Phase                                    | Status                                             |
-| ---------------------------------------- | -------------------------------------------------- |
-| 1 — Project foundation                   | Development implemented; native validation pending |
-| 2 — Data model and initial species       | Planned                                            |
-| 3 — UI design and shared components      | Planned; basic foundation components exist         |
-| 4 — Atlas, search, and filters           | Planned                                            |
-| 5 — Species details                      | Planned; navigation placeholder exists             |
-| 6 — Comparison                           | Planned; navigation placeholder exists             |
-| 7 — Complete content and offline support | Planned                                            |
-| 8 — Validation and installable release   | Planned                                            |
+| Phase                                    | Status                                                 |
+| ---------------------------------------- | ------------------------------------------------------ |
+| 1 — Project foundation                   | Development implemented; native validation pending     |
+| 2 — Data model and initial species       | Development implemented; native/content review pending |
+| 3 — UI design and shared components      | Planned; basic foundation components exist             |
+| 4 — Atlas, search, and filters           | Planned                                                |
+| 5 — Species details                      | Planned; navigation placeholder exists                 |
+| 6 — Comparison                           | Planned; navigation placeholder exists                 |
+| 7 — Complete content and offline support | Planned                                                |
+| 8 — Validation and installable release   | Planned                                                |
 
 Emulator-dependent checks are deferred at the user's request. Do not install or launch an emulator until the user is ready. Subsequent data and code work can proceed independently if requested; native validation remains an acceptance requirement.
 
@@ -70,6 +70,8 @@ Acceptance rerun on 2026-10-09: code checks, Android bundle export, and browser 
 7. Verify that the initial data and photographs are included in a standalone build; perform the offline device check once the environment is available.
 
 **Acceptance:** a consistent, validated dataset can supply the atlas, details, and comparison screens. Required assets are bundled locally.
+
+Development acceptance on 2026-10-09: five sourced entries, 15 local photographs, one curated pair, and data validation passed. All photo hashes were found in the Android export. See [the Phase 2 acceptance report](acceptance/phase-2.md). Standalone offline and specialist review remain pending.
 
 ## Phase 3 — UI design and shared components
 

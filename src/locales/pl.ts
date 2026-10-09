@@ -13,10 +13,19 @@ export const pl = {
     description: 'Poznaj cechy gatunków i sprawdź, co odróżnia je od podobnych grzybów.',
     emptyTitle: 'Atlas w przygotowaniu',
     emptyDescription:
-      'Wkrótce znajdziesz tutaj zdjęcia i opisy popularnych grzybów występujących w Polsce.',
+      'Poznaj pierwsze gatunki poniżej. Wyszukiwanie i szczegółowe karty są w przygotowaniu.',
     previewAction: 'Zobacz przykładową kartę',
     comparisonAction: 'Otwórz porównywarkę',
+    initialSpecies: 'Pierwsze gatunki atlasu',
   },
+  safety: {
+    title: 'Poznawaj, nie zgaduj',
+    guidance:
+      'Atlas pomaga poznawać grzyby. Nie potwierdza, że znaleziony okaz można zjeść. W razie wątpliwości skonsultuj go z grzyboznawcą lub klasyfikatorem grzybów.',
+    reviewPending: 'Opisy i zdjęcia oczekują na przegląd grzyboznawcy.',
+  },
+  edibility: { edible: 'Jadalny', inedible: 'Niejadalny', poisonous: 'Trujący' },
+  photos: { author: 'Zdjęcie', license: 'Licencja', publicDomain: 'Domena publiczna' },
   comparison: {
     eyebrow: 'DWA GATUNKI, JEDEN WIDOK',
     title: 'Zauważ różnice',

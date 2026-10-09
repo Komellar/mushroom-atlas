@@ -13,9 +13,13 @@
     "lint:fix": "eslint . --fix --max-warnings=0",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "check": "npm run typecheck && npm run lint && npm run format:check",
+    "check": "npm run validate:data && npm test && npm run typecheck && npm run lint && npm run format:check",
     "export:android": "expo export --platform android --output-dir dist/android",
-    "export:web": "expo export --platform web --output-dir dist/web"
+    "export:web": "expo export --platform web --output-dir dist/web",
+    "validate:data": "node scripts/validate-data.mjs",
+    "test": "node --test scripts/*.test.mjs",
+    "preexport:android": "npm run validate:data",
+    "preexport:web": "npm run validate:data"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",

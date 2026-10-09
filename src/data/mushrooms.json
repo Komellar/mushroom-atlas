@@ -1,0 +1,203 @@
+[
+  {
+    "id": "boletus-edulis",
+    "polishName": "Borowik szlachetny",
+    "scientificName": "Boletus edulis",
+    "synonyms": ["prawdziwek"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Białe pory młodych owocników, później żółte do oliwkowych.",
+      "Jasna, drobna siateczka w górnej części trzonu.",
+      "Biały miąższ bez sinienia."
+    ],
+    "identificationTips": [
+      "Sprawdź pory i siateczkę trzonu; sam brązowy kapelusz nie wystarcza.",
+      "Porównaj z goryczakiem żółciowym. Nie próbuj nieznanych grzybów."
+    ],
+    "cap": "Brązowy, wypukły, z czasem szerszy; brzeg często jaśniejszy. Powierzchnia bywa lekko lepka przy wilgoci.",
+    "stem": "Masywny, początkowo baryłkowaty, później maczugowaty; jasny, z delikatną białawą siateczką u góry.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Drobne pory: białawe w młodości, później żółte i oliwkowe."
+    },
+    "flesh": "Biały, zwarty, szczególnie u młodych owocników.",
+    "damageReaction": "Miąższ i pory nie sinieją po uszkodzeniu.",
+    "habitat": "Lasy iglaste, liściaste i mieszane; związany m.in. ze świerkiem, sosną, bukiem i brzozą.",
+    "occurrenceMonths": [6, 7, 8, 9, 10, 11],
+    "occurrenceNote": "Termin orientacyjny dla Polski; zależy od opadów, temperatury i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "tylopilus-felleus",
+        "polishName": "Goryczak żółciowy",
+        "scientificName": "Tylopilus felleus",
+        "difference": "Z wiekiem różowiejące pory i wyraźniejsza, ciemna siateczka trzonu."
+      }
+    ],
+    "photoIds": ["boletus-edulis-1", "boletus-edulis-2", "boletus-edulis-3"],
+    "referenceIds": ["fn-boletus-edulis", "lp-safe-foraging"],
+    "datasetVersion": "0.2.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "tylopilus-felleus",
+    "polishName": "Goryczak żółciowy",
+    "scientificName": "Tylopilus felleus",
+    "synonyms": ["borowik żółciowy", "podgrzybek gorzki"],
+    "edibility": "inedible",
+    "edibilityNote": "Niejadalny. Nie używaj próby smaku do rozpoznawania nieznanych grzybów.",
+    "keyFeatures": [
+      "Pory białawe, z wiekiem różowe.",
+      "Wyraźna brązowa siateczka na trzonie.",
+      "Biały miąższ bez sinienia."
+    ],
+    "identificationTips": [
+      "U młodych owocników pory mogą jeszcze nie być różowe.",
+      "Oceniaj łącznie spód kapelusza i trzon; nie opieraj rozpoznania na kolorze kapelusza."
+    ],
+    "cap": "Jasno- do ciemnobrązowego, wypukły, później spłaszczony; młody może być aksamitny.",
+    "stem": "Jasny do brązowawego, często zgrubiały u podstawy; pokryty wypukłą, ciemniejszą siateczką.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Drobne pory, początkowo kremowe, później różowawe; przy ucisku mogą brązowieć."
+    },
+    "flesh": "Biały, zwarty.",
+    "damageReaction": "Miąższ zwykle nie zmienia barwy po przekrojeniu; pory mogą brązowieć po dotknięciu.",
+    "habitat": "Lasy iglaste i mieszane, ale także liściaste; rośnie na ziemi w sąsiedztwie drzew.",
+    "occurrenceMonths": [6, 7, 8, 9, 10],
+    "occurrenceNote": "Termin orientacyjny dla Polski; zależy od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "mushroomId": "boletus-edulis",
+        "polishName": "Borowik szlachetny",
+        "scientificName": "Boletus edulis",
+        "difference": "Pory białe, później żółtooliwkowe; siateczka w górze trzonu jasna i delikatna."
+      }
+    ],
+    "photoIds": ["tylopilus-felleus-1", "tylopilus-felleus-2", "tylopilus-felleus-3"],
+    "referenceIds": ["fn-tylopilus-felleus", "lp-safe-foraging"],
+    "datasetVersion": "0.2.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "cantharellus-cibarius",
+    "polishName": "Pieprznik jadalny",
+    "scientificName": "Cantharellus cibarius",
+    "synonyms": ["kurka", "liszka"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Żółty owocnik z nieregularnym, falistym brzegiem.",
+      "Grube, rozwidlone fałdy zbiegające na trzon, zamiast cienkich blaszek.",
+      "Trzon płynnie przechodzi w kapelusz."
+    ],
+    "identificationTips": [
+      "Obejrzyj spód kapelusza: listewki to fałdy, a nie cienkie blaszki.",
+      "Kolor żółty lub pomarańczowy sam nie rozstrzyga gatunku."
+    ],
+    "cap": "Żółty, z czasem lejkowaty, o falistym i nierównym brzegu.",
+    "stem": "Pełny, żółty, zbliżony barwą do kapelusza lub jaśniejszy; zwęża się ku podstawie.",
+    "hymenophore": {
+      "type": "ridges",
+      "description": "Grube, tępe, rozgałęziające się listewki mocno zbiegające na trzon."
+    },
+    "flesh": "Jasny, jędrny; zapach bywa delikatnie owocowy.",
+    "damageReaction": "Bez charakterystycznego sinienia miąższu.",
+    "habitat": "Lasy liściaste, iglaste i mieszane; związany z korzeniami drzew, często na kwaśnych glebach.",
+    "occurrenceMonths": [6, 7, 8, 9, 10],
+    "occurrenceNote": "Orientacyjny okres letnio-jesienny; pogoda i region mogą przesuwać owocnikowanie.",
+    "similarSpecies": [
+      {
+        "polishName": "Lisówka pomarańczowa",
+        "scientificName": "Hygrophoropsis aurantiaca",
+        "difference": "Ma cienkie, gęste blaszki, a nie grube, tępe fałdy pieprznika."
+      }
+    ],
+    "photoIds": ["cantharellus-cibarius-2", "cantharellus-cibarius-1", "cantharellus-cibarius-3"],
+    "referenceIds": ["fn-cantharellus-cibarius", "lp-safe-foraging"],
+    "datasetVersion": "0.2.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-muscaria",
+    "polishName": "Muchomor czerwony",
+    "scientificName": "Amanita muscaria",
+    "synonyms": [],
+    "edibility": "poisonous",
+    "edibilityNote": "Trujący. Nie zbieraj do spożycia.",
+    "keyFeatures": [
+      "Czerwony lub pomarańczowoczerwony kapelusz, zwykle z białymi łatkami.",
+      "Jasne blaszki i biały trzon z pierścieniem.",
+      "Bulwiasta podstawa z resztkami osłony."
+    ],
+    "identificationTips": [
+      "Deszcz może zmyć białe łatki z kapelusza.",
+      "Sprawdź trzon i podstawę; kolor kapelusza jest zmienny."
+    ],
+    "cap": "Początkowo wypukły, później rozpostarty; czerwony, czasem pomarańczowy, z białymi resztkami osłony.",
+    "stem": "Biały, z wiszącym pierścieniem; u podstawy bulwa z koncentrycznymi resztkami osłony.",
+    "hymenophore": { "type": "gills", "description": "Gęste, jasne blaszki, wolne od trzonu." },
+    "flesh": "Przeważnie biały; pod skórką kapelusza może mieć żółtawy odcień.",
+    "damageReaction": "Bez czerwienienia charakterystycznego dla muchomora czerwieniejącego.",
+    "habitat": "Lasy iglaste i liściaste, szczególnie przy brzozach, sosnach i świerkach.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "occurrenceNote": "Orientacyjny okres późnego lata i jesieni w klimacie umiarkowanym.",
+    "similarSpecies": [
+      {
+        "polishName": "Muchomor czerwieniejący",
+        "scientificName": "Amanita rubescens",
+        "difference": "Miąższ i uszkodzone miejsca czerwienieją; jego kapelusz nie ma typowej czerwieni muchomora czerwonego."
+      }
+    ],
+    "photoIds": ["amanita-muscaria-1", "amanita-muscaria-2", "amanita-muscaria-3"],
+    "referenceIds": ["fn-amanita-muscaria"],
+    "datasetVersion": "0.2.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "amanita-phalloides",
+    "polishName": "Muchomor zielonawy",
+    "scientificName": "Amanita phalloides",
+    "synonyms": ["muchomor sromotnikowy"],
+    "edibility": "poisonous",
+    "edibilityNote": "Śmiertelnie trujący. Gotowanie ani mrożenie nie usuwa zagrożenia.",
+    "keyFeatures": [
+      "Kapelusz często oliwkowozielony, ale może być bardzo jasny lub biały.",
+      "Jasne blaszki i zwisający pierścień.",
+      "Bulwiasta podstawa otoczona workowatą pochwą."
+    ],
+    "identificationTips": [
+      "Pochwa może być ukryta w ziemi; brak widocznej pochwy nie wyklucza muchomora.",
+      "Nie rozpoznawaj na podstawie smaku ani samej barwy kapelusza."
+    ],
+    "cap": "Wypukły, potem płaski; oliwkowy, żółtozielony lub biały, zwykle gładki.",
+    "stem": "Jasny, z delikatnym wzorem i zwisającym pierścieniem; bulwiasta nasada w białej, workowatej pochwie.",
+    "hymenophore": { "type": "gills", "description": "Gęste, wolne blaszki, białe do kremowych." },
+    "flesh": "Biały. Kolor i zapach nie pozwalają ocenić bezpieczeństwa.",
+    "damageReaction": "Bez wyraźnego sinienia lub czerwienienia miąższu.",
+    "habitat": "Lasy liściaste i mieszane, szczególnie w sąsiedztwie dębów.",
+    "occurrenceMonths": [7, 8, 9, 10],
+    "occurrenceNote": "Termin orientacyjny dla Polski; zależny od pogody i stanowiska.",
+    "similarSpecies": [
+      {
+        "polishName": "Pieczarka łąkowa",
+        "scientificName": "Agaricus campestris",
+        "difference": "Bez workowatej pochwy; blaszki dojrzewając zmieniają barwę na różową i brązową."
+      },
+      {
+        "polishName": "Gołąbek zielonawy",
+        "scientificName": "Russula virescens",
+        "difference": "Nie ma pierścienia ani pochwy; kapelusz często kostkowato spękany."
+      }
+    ],
+    "photoIds": ["amanita-phalloides-1", "amanita-phalloides-2", "amanita-phalloides-3"],
+    "referenceIds": ["fn-amanita-phalloides", "lp-safe-foraging"],
+    "datasetVersion": "0.2.0",
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  }
+]

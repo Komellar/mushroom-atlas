@@ -15,7 +15,7 @@ Project location: `C:\projects\mushroom-atlas`.
 
 Phase 1 development is implemented: Expo, React Native, TypeScript, a local Git repository, the project structure, Polish UI strings, and navigation between the atlas, comparison screen, and species details.
 
-The screens display explicit work-in-progress states. `/mushrooms/preview` is a navigation placeholder, not a verified species entry. Phase 2 has not started. It will introduce the data model, an initial species dataset, and bundled photographs; search and comparison behavior belong to later phases.
+Phase 2 development now supplies five sourced species, 15 locally bundled photographs, a curated bolete pair, shared types, and data validation. The atlas shows an initial species preview. Detailed cards, search, and comparison behavior belong to later phases; `/mushrooms/preview` remains an explicit navigation placeholder. Specialist review is pending and shown in the app.
 
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
@@ -52,12 +52,14 @@ npm run android
 npm run check
 ```
 
-This command runs TypeScript, ESLint, and Prettier checks. Individual commands:
+This command validates dataset fields, references, photo files and hashes, runs validator tests, and runs TypeScript, ESLint, and Prettier. Individual commands:
 
 ```powershell
 npm run typecheck
 npm run lint
 npm run format:check
+npm run validate:data
+npm test
 ```
 
 Format project files:
@@ -87,13 +89,13 @@ src/
     atlas/
     comparison/
     mushroom-details/
-  data/                 # Local atlas data (phase 2)
+  data/                 # Local atlas JSON, lookups, and static asset imports
   locales/              # Polish UI strings
   theme/                # Shared design tokens
-  types/                # Domain types (phase 2)
+  types/                # Shared atlas models
   utils/                # Shared utilities
-assets/mushrooms/       # Bundled photos (phase 2)
-scripts/                # Data validation scripts (phase 2)
+assets/mushrooms/       # Bundled species photographs
+scripts/                # Data validation and tests
 docs/                   # English project documentation
 ```
 
@@ -114,6 +116,8 @@ Phase 1 passed all 21 Expo Doctor checks. Dependency compatibility was checked u
 These results describe phase 1 implementation checks, not a successful launch on Android.
 
 The acceptance rerun on 2026-10-09 passed code checks, Android bundle export, and Polish UI/navigation checks in a 390 × 844 browser viewport. See [the Phase 1 acceptance report](docs/acceptance/phase-1.md) for results and remaining native checks.
+
+Phase 2 passed dataset checks, 13 validator tests, code checks, and an Android export containing all 15 photograph hashes. See [its acceptance report](docs/acceptance/phase-2.md), [data maintenance](docs/data-maintenance.md), and [photo credits](docs/photo-credits.md).
 
 ## Dependency audit
 

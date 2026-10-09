@@ -1,0 +1,25 @@
+[
+  {
+    "id": "boletus-edulis--tylopilus-felleus",
+    "mushroomIds": ["boletus-edulis", "tylopilus-felleus"],
+    "differences": [
+      {
+        "feature": "Pory z wiekiem",
+        "values": [
+          "Żółte do oliwkowych, bez różowienia.",
+          "Różowawe; u młodych mogą być jeszcze jasne."
+        ]
+      },
+      {
+        "feature": "Siateczka na trzonie",
+        "values": [
+          "Drobna i jasna, najlepiej widoczna u góry.",
+          "Wyraźniejsza, brązowa, ciemniejsza od tła trzonu."
+        ]
+      }
+    ],
+    "referenceIds": ["fn-boletus-edulis", "fn-tylopilus-felleus"],
+    "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  }
+]
