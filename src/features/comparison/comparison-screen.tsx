@@ -1,58 +1,255 @@
 import { useLocalSearchParams } from 'expo-router';
+import { Image } from 'expo-image';
 import { useState } from 'react';
-import { getMushroom } from '@/data/atlas';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { ActionLink } from '@/components/action-link';
-import { Page } from '@/components/page';
+import { AppText } from '@/components/app-text';
+import { Button } from '@/components/button';
+import { ComparisonRow } from '@/components/comparison-row';
+import { EdibilityBadge } from '@/components/edibility-badge';
+import { ExternalReference } from '@/components/external-reference';
 import { PlaceholderPanel } from '@/components/placeholder-panel';
+import { SafetyNotice } from '@/components/safety-notice';
 import { SpeciesSelector } from '@/components/species-selector';
+import { atlasMetadata, getMushroom, getPair, getPhoto, mushrooms } from '@/data/atlas';
+import { photoAssets } from '@/data/photo-assets';
 import { pl } from '@/locales/pl';
+import { theme } from '@/theme/theme';
+import type { Mushroom } from '@/types/atlas';
+import {
+  type ComparisonSelection,
+  resolveComparisonSelection,
+  selectComparisonSpecies,
+  swapComparisonSpecies,
+} from '@/utils/comparison';
 
 export default function ComparisonScreen() {
   const params = useLocalSearchParams<{ first?: string; second?: string }>();
-  const first = getMushroom(params.first)?.id;
-  const second = getMushroom(params.second)?.id;
   return (
     <ComparisonContent
       key={`${params.first ?? ''}|${params.second ?? ''}`}
-      initialFirst={first}
-      initialSecond={first !== second ? second : undefined}
+      initialSelection={resolveComparisonSelection(mushrooms, {
+        firstId: params.first,
+        secondId: params.second,
+      })}
     />
   );
 }
 
-function ComparisonContent({
-  initialFirst,
-  initialSecond,
-}: {
-  initialFirst?: string;
-  initialSecond?: string;
-}) {
-  const [first, setFirst] = useState(initialFirst);
-  const [second, setSecond] = useState(initialSecond);
+function ComparisonContent({ initialSelection }: { initialSelection: ComparisonSelection }) {
+  const [selection, setSelection] = useState(initialSelection);
+  const first = getMushroom(selection.firstId);
+  const second = getMushroom(selection.secondId);
+  const selected: [Mushroom, Mushroom] | undefined = first && second ? [first, second] : undefined;
   return (
-    <Page
-      eyebrow={pl.comparison.eyebrow}
-      title={pl.comparison.title}
-      description={pl.comparison.description}
-    >
-      <SpeciesSelector
-        label={pl.selection.first}
-        selectedId={first}
-        excludedId={second}
-        onSelect={setFirst}
-      />
-      <SpeciesSelector
-        label={pl.selection.second}
-        selectedId={second}
-        excludedId={first}
-        onSelect={setSecond}
-      />
-      <PlaceholderPanel
-        icon="git-compare-outline"
-        title={pl.comparison.emptyTitle}
-        description={pl.comparison.emptyDescription}
-      />
-      <ActionLink href="/" label={pl.comparison.atlasAction} secondary replace />
-    </Page>
+    <SafeAreaView edges={['left', 'right', 'bottom']} style={styles.safeArea}>
+      <ScrollView
+        key={`${first?.id ?? ''}|${second?.id ?? ''}`}
+        stickyHeaderIndices={selected ? [1] : undefined}
+        contentContainerStyle={styles.scrollContent}
+      >
+        <View style={styles.introduction}>
+          <AppText variant="eyebrow">{pl.comparison.eyebrow}</AppText>
+          <AppText variant="title" accessibilityRole="header">
+            {pl.comparison.title}
+          </AppText>
+          <AppText>{pl.comparison.description}</AppText>
+          <SpeciesSelector
+            label={pl.selection.first}
+            selectedId={first?.id}
+            excludedId={second?.id}
+            onSelect={(id) =>
+              setSelection((current) => selectComparisonSpecies(mushrooms, current, 'firstId', id))
+            }
+          />
+          <SpeciesSelector
+            label={pl.selection.second}
+            selectedId={second?.id}
+            excludedId={first?.id}
+            onSelect={(id) =>
+              setSelection((current) => selectComparisonSpecies(mushrooms, current, 'secondId', id))
+            }
+          />
+          <Button
+            label={pl.comparison.swap}
+            secondary
+            disabled={!selected}
+            onPress={() => setSelection(swapComparisonSpecies)}
+          />
+        </View>
+        {selected && (
+          <View style={styles.sticky} testID="comparison-identities">
+            <View style={styles.columns}>
+              {selected.map((mushroom, index) => (
+                <View key={mushroom.id} style={[styles.cell, index === 1 && styles.second]}>
+                  <AppText variant="eyebrow">
+                    {index === 0 ? pl.comparison.firstColumn : pl.comparison.secondColumn}
+                  </AppText>
+                  <AppText style={styles.name}>{mushroom.polishName}</AppText>
+                  <AppText style={styles.scientific}>{mushroom.scientificName}</AppText>
+                  <EdibilityBadge edibility={mushroom.edibility} />
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
+        <View style={styles.details}>
+          {selected ? (
+            <ComparisonDetails selected={selected} />
+          ) : (
+            <PlaceholderPanel
+              icon="git-compare-outline"
+              title={pl.comparison.emptyTitle}
+              description={pl.comparison.emptyDescription}
+            />
+          )}
+          <SafetyNotice />
+          <ActionLink href="/" label={pl.comparison.atlasAction} secondary replace />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
+
+function ComparisonDetails({ selected }: { selected: [Mushroom, Mushroom] }) {
+  const pair = getPair(selected[0].id, selected[1].id);
+  const rows: { label: string; describe: (mushroom: Mushroom) => string }[] = [
+    { label: pl.species.keyFeatures, describe: (item) => item.keyFeatures.join('\n\n') },
+    {
+      label: pl.comparison.edibility,
+      describe: (item) => `${pl.edibility[item.edibility]}\n\n${item.edibilityNote}`,
+    },
+    { label: pl.species.cap, describe: (item) => item.cap },
+    { label: pl.species.stem, describe: (item) => item.stem },
+    { label: pl.species.hymenophore, describe: (item) => item.hymenophore.description },
+    { label: pl.species.flesh, describe: (item) => item.flesh },
+    { label: pl.species.damageReaction, describe: (item) => item.damageReaction },
+    { label: pl.species.habitat, describe: (item) => item.habitat },
+    {
+      label: pl.species.occurrence,
+      describe: (item) =>
+        `${item.occurrenceMonths.map((month) => pl.months.full[month - 1]).join(', ')}\n\n${item.occurrenceNote}`,
+    },
+  ];
+  return (
+    <>
+      <View style={styles.columns} testID="comparison-photos">
+        {selected.map((mushroom, index) => (
+          <View key={mushroom.id} style={[styles.cell, index === 1 && styles.second]}>
+            <ComparisonPhoto mushroom={mushroom} />
+          </View>
+        ))}
+      </View>
+      {atlasMetadata.expertReviewStatus === 'pending' && (
+        <AppText style={styles.review}>{pl.safety.reviewPending}</AppText>
+      )}
+      {pair ? (
+        <View style={styles.curated}>
+          <AppText variant="heading" accessibilityRole="header">
+            {pl.comparison.differences}
+          </AppText>
+          {pair.differences.map((difference) => (
+            <ComparisonRow
+              key={difference.feature}
+              label={difference.feature}
+              values={difference.values}
+            />
+          ))}
+          <AppText>{`${pl.details.sourceCheck}: ${pair.reviewedAt}`}</AppText>
+          {pair.referenceIds.map((id) => {
+            const reference = atlasMetadata.references.find((item) => item.id === id);
+            return reference ? (
+              <ExternalReference key={id} url={reference.url} label={reference.title} />
+            ) : null;
+          })}
+        </View>
+      ) : (
+        <AppText>{pl.comparison.noPair}</AppText>
+      )}
+      {rows.map(({ label, describe }) => (
+        <ComparisonRow
+          key={label}
+          label={label}
+          values={[describe(selected[0]), describe(selected[1])]}
+        />
+      ))}
+    </>
+  );
+}
+
+function ComparisonPhoto({ mushroom }: { mushroom: Mushroom }) {
+  const photo = getPhoto(mushroom.photoIds[0] ?? '');
+  return (
+    <>
+      {photo && (
+        <>
+          <Image
+            source={photoAssets[photo.id]}
+            accessibilityLabel={photo.caption}
+            contentFit="contain"
+            style={styles.photo}
+          />
+          <AppText style={styles.credit}>{photo.caption}</AppText>
+          <AppText style={styles.credit}>{`${pl.photos.author}: ${photo.author}`}</AppText>
+          <ExternalReference url={photo.sourceUrl} label={pl.photos.source} />
+          <ExternalReference
+            url={photo.licenseUrl}
+            label={`${pl.photos.license}: ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}
+          />
+          {photo.downloadUrl.includes('/thumb/') && (
+            <AppText style={styles.credit}>{pl.photos.resized}</AppText>
+          )}
+        </>
+      )}
+      <ActionLink
+        href={{ pathname: '/mushrooms/[id]', params: { id: mushroom.id } }}
+        label={pl.comparison.openDetails}
+        secondary
+      />
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: theme.colors.background },
+  scrollContent: { flexGrow: 1, paddingBottom: theme.spacing.large },
+  introduction: {
+    padding: theme.spacing.large,
+    gap: theme.spacing.medium,
+    width: '100%',
+    maxWidth: 640,
+    alignSelf: 'center',
+  },
+  sticky: {
+    backgroundColor: theme.colors.background,
+    paddingHorizontal: theme.spacing.large,
+    paddingVertical: theme.spacing.small,
+    borderBottomWidth: 1,
+    borderBottomColor: theme.colors.border,
+    width: '100%',
+    maxWidth: 640,
+    alignSelf: 'center',
+  },
+  details: {
+    padding: theme.spacing.large,
+    gap: theme.spacing.medium,
+    width: '100%',
+    maxWidth: 640,
+    alignSelf: 'center',
+  },
+  columns: { flexDirection: 'row', alignItems: 'stretch' },
+  cell: { flex: 1, minWidth: 0, paddingRight: theme.spacing.small, gap: theme.spacing.small },
+  second: {
+    paddingRight: 0,
+    paddingLeft: theme.spacing.small,
+    borderLeftWidth: 1,
+    borderLeftColor: theme.colors.border,
+  },
+  name: { fontWeight: '700' },
+  scientific: { fontStyle: 'italic', fontSize: 13, lineHeight: 18 },
+  photo: { width: '100%', aspectRatio: 1.2, backgroundColor: theme.colors.surface },
+  credit: { fontSize: 12, lineHeight: 18 },
+  review: { color: theme.colors.warning, fontWeight: '600' },
+  curated: { gap: theme.spacing.small },
+});

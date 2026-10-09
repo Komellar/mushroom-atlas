@@ -13,9 +13,9 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Implementation status
 
-Phases 1–5 development is implemented: project foundation, five sourced species with 15 locally bundled photos, shared UI, local search/filters, and complete species details. Details show key facts, galleries, morphology, habitat, months, lookalikes, sources, and credits; comparison links preselect the relevant species. Phase 6 feature comparison, Phase 7 content expansion, and Phase 8 release validation remain ahead.
+Phases 1–6 development is implemented: project foundation, five sourced species with 15 locally bundled photos, shared UI, local search/filters, complete species details, and two-species comparison. Comparison supports searchable selection, preselection from details, replacement, swapping, aligned feature rows, persistent column identities, and ordered curated differences. Phase 7 content expansion and Phase 8 release validation remain ahead.
 
-Specialist content review and native validation remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [UI design](docs/ui-design.md), and [Phase 5 acceptance](docs/acceptance/phase-5.md).
+Specialist content review and native validation remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [UI design](docs/ui-design.md), and [Phase 6 acceptance](docs/acceptance/phase-6.md).
 
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
@@ -129,7 +129,7 @@ The phase 1 npm audit, after running `npm audit fix`, still reported 29 vulnerab
 
 1. Launch the app on Android.
 2. Switch between the atlas and comparison tabs.
-3. Open the details placeholder and return using the system back button.
+3. Open species details and return using the system back button.
 4. Navigate from details to comparison and back to the atlas.
 5. Check safe areas, small screens, and larger system font sizes.
 

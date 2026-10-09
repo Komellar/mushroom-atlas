@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     borderBottomColor: theme.colors.border,
   },
   columns: { flexDirection: 'row', alignItems: 'stretch' },
-  cell: { flex: 1, paddingRight: theme.spacing.small },
+  cell: { flex: 1, minWidth: 0, paddingRight: theme.spacing.small },
   second: {
     borderLeftWidth: 1,
     borderLeftColor: theme.colors.border,

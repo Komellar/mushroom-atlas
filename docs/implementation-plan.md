@@ -22,7 +22,7 @@ Project location: `C:\projects\mushroom-atlas`.
 | 3 — UI design and shared components      | Development implemented; native accessibility checks pending |
 | 4 — Atlas, search, and filters           | Development implemented; native validation pending           |
 | 5 — Species details                      | Development implemented; native/content review pending       |
-| 6 — Comparison                           | Planned; navigation placeholder exists                       |
+| 6 — Comparison                           | Development implemented; native/content review pending       |
 | 7 — Complete content and offline support | Planned                                                      |
 | 8 — Validation and installable release   | Planned                                                      |
 
@@ -127,6 +127,8 @@ Development acceptance on 2026-10-09: all five bundled species render complete d
 8. Allow swapping columns and replacing either selected species.
 
 **Acceptance:** any two different species can be compared offline, and documented similar pairs have prominent, verified differences.
+
+Development acceptance on 2026-10-09: all ten bundled pairs rendered complete aligned comparisons, and selection, replacement, swapping, duplicate prevention, and ordered curated lookup passed browser/automated checks. See [the Phase 6 acceptance report](acceptance/phase-6.md). Native offline and specialist verification remain pending.
 
 ## Phase 7 — Complete content and offline support
 
