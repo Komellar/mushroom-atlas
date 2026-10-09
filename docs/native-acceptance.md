@@ -14,6 +14,8 @@ The full atlas → Łuszczak details → Galerina details → comparison → atl
 
 Record tester, date, device model, Android version, display size, system font scale, APK hash, signing certificate fingerprint, source revision, app version, and dataset version before testing. Do not record personal device identifiers.
 
+All 12 curated pairs passed both native column orders, plus one undocumented pair with full generic rows. All nine generic headings, correctly ordered scientific names, both photo labels, aligned curated values, and applicable qualifications were observed offline. The 320 × 568 dp check at font scale 1.0 passed. At font scale 2.0, the pinned comparison identity block obscured most feature rows and tab labels were clipped. [Before-fix screenshot](acceptance/phase-8-large-font-before.png). The implementation now pins only Polish names on short displays with enlarged fonts; scientific names, column labels, and edibility remain above the photographs. Tab height now accommodates enlarged labels and the bottom inset. A rebuilt APK and affected native reruns are pending on 2026-10-10.
+
 ## First launch without a populated cache
 
 1. Use a fresh installation on the test device, or clear this app's test data with the device owner's agreement. Stop Metro.
@@ -40,7 +42,7 @@ Measure cold startup over at least three fresh process starts and record the ind
 | Every detail page and all 66 photographs          | Passed  | All 30 identities, notes, 12 headings, and gallery controls/images  |
 | Search, combined filters, reset, restoration      | Passed  | Synonyms, empty feedback, reset, and full-flow atlas state retained |
 | Selection, duplicate rejection, swap, replacement | Passed  | Native searchable selectors, disabled duplicate, swap, replacement  |
-| Curated and generic comparisons offline           | Partial | First curated pair passed both orders; remaining checks running     |
+| Curated and generic comparisons offline           | Passed  | All 12 curated pairs in both orders; generic pair and all nine rows |
 | Full navigation flow and system back              | Passed  | Full flow, detail/selector/gallery back, and Polish route recovery  |
 | Safe areas, small screen, large fonts, TalkBack   | Pending | —                                                                   |
 | Offline force-close and restart                   | Pending | —                                                                   |

@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from 'expo-router';
 import { Image } from 'expo-image';
 import { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ActionLink } from '@/components/action-link';
 import { AppText } from '@/components/app-text';
@@ -38,6 +38,8 @@ export default function ComparisonScreen() {
 }
 
 function ComparisonContent({ initialSelection }: { initialSelection: ComparisonSelection }) {
+  const { height, fontScale } = useWindowDimensions();
+  const compactIdentities = fontScale > 1.3 && height < 700;
   const [selection, setSelection] = useState(initialSelection);
   const first = getMushroom(selection.firstId);
   const second = getMushroom(selection.secondId);
@@ -83,12 +85,18 @@ function ComparisonContent({ initialSelection }: { initialSelection: ComparisonS
             <View style={styles.columns}>
               {selected.map((mushroom, index) => (
                 <View key={mushroom.id} style={[styles.cell, index === 1 && styles.second]}>
-                  <AppText variant="eyebrow">
-                    {index === 0 ? pl.comparison.firstColumn : pl.comparison.secondColumn}
-                  </AppText>
+                  {!compactIdentities && (
+                    <AppText variant="eyebrow">
+                      {index === 0 ? pl.comparison.firstColumn : pl.comparison.secondColumn}
+                    </AppText>
+                  )}
                   <AppText style={styles.name}>{mushroom.polishName}</AppText>
-                  <AppText style={styles.scientific}>{mushroom.scientificName}</AppText>
-                  <EdibilityBadge edibility={mushroom.edibility} />
+                  {!compactIdentities && (
+                    <>
+                      <AppText style={styles.scientific}>{mushroom.scientificName}</AppText>
+                      <EdibilityBadge edibility={mushroom.edibility} />
+                    </>
+                  )}
                 </View>
               ))}
             </View>
@@ -96,7 +104,7 @@ function ComparisonContent({ initialSelection }: { initialSelection: ComparisonS
         )}
         <View style={styles.details}>
           {selected ? (
-            <ComparisonDetails selected={selected} />
+            <ComparisonDetails selected={selected} compactIdentities={compactIdentities} />
           ) : (
             <PlaceholderPanel
               icon="git-compare-outline"
@@ -112,7 +120,13 @@ function ComparisonContent({ initialSelection }: { initialSelection: ComparisonS
   );
 }
 
-function ComparisonDetails({ selected }: { selected: [Mushroom, Mushroom] }) {
+function ComparisonDetails({
+  selected,
+  compactIdentities,
+}: {
+  selected: [Mushroom, Mushroom];
+  compactIdentities: boolean;
+}) {
   const pair = getPair(selected[0].id, selected[1].id);
   const rows: { label: string; describe: (mushroom: Mushroom) => string }[] = [
     { label: pl.species.keyFeatures, describe: (item) => item.keyFeatures.join('\n\n') },
@@ -137,6 +151,15 @@ function ComparisonDetails({ selected }: { selected: [Mushroom, Mushroom] }) {
       <View style={styles.columns} testID="comparison-photos">
         {selected.map((mushroom, index) => (
           <View key={mushroom.id} style={[styles.cell, index === 1 && styles.second]}>
+            {compactIdentities && (
+              <>
+                <AppText variant="eyebrow">
+                  {index === 0 ? pl.comparison.firstColumn : pl.comparison.secondColumn}
+                </AppText>
+                <AppText style={styles.scientific}>{mushroom.scientificName}</AppText>
+                <EdibilityBadge edibility={mushroom.edibility} />
+              </>
+            )}
             <ComparisonPhoto mushroom={mushroom} />
           </View>
         ))}
