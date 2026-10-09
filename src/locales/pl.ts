@@ -105,6 +105,11 @@ export const pl = {
     atlasAction: 'Wróć do atlasu',
     missingTitle: 'Nie znaleziono gatunku',
     missingDescription: 'Ten gatunek nie jest jeszcze dostępny w atlasie. Wróć do listy grzybów.',
+    openSimilar: 'Otwórz kartę podobnego gatunku',
+    compareSimilar: 'Porównaj te gatunki',
+    notInAtlas: 'Pełna karta tego gatunku nie jest jeszcze dostępna.',
+    sourceCheck: 'Sprawdzenie źródeł',
+    dataVersion: 'Wersja danych',
   },
   notFound: {
     title: 'Nie znaleziono strony',

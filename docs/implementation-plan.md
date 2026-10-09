@@ -21,7 +21,7 @@ Project location: `C:\projects\mushroom-atlas`.
 | 2 — Data model and initial species       | Development implemented; native/content review pending       |
 | 3 — UI design and shared components      | Development implemented; native accessibility checks pending |
 | 4 — Atlas, search, and filters           | Development implemented; native validation pending           |
-| 5 — Species details                      | Planned; navigation placeholder exists                       |
+| 5 — Species details                      | Development implemented; native/content review pending       |
 | 6 — Comparison                           | Planned; navigation placeholder exists                       |
 | 7 — Complete content and offline support | Planned                                                      |
 | 8 — Validation and installable release   | Planned                                                      |
@@ -112,6 +112,8 @@ Development acceptance on 2026-10-09: local search, combined category filters, P
 8. Make content references and photo credits available within the app.
 
 **Acceptance:** every species page contains the requested information, prioritizes the key facts, and links directly to comparison.
+
+Development acceptance on 2026-10-09: all five bundled species render complete detail sections, galleries/credits, sources, and comparison links with preselection. See [the Phase 5 acceptance report](acceptance/phase-5.md). Native and specialist review remain pending.
 
 ## Phase 6 — Two-species comparison
 

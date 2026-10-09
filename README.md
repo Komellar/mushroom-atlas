@@ -13,13 +13,9 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Implementation status
 
-Phase 1 development is implemented: Expo, React Native, TypeScript, a local Git repository, the project structure, Polish UI strings, and navigation between the atlas, comparison screen, and species details.
+Phases 1–5 development is implemented: project foundation, five sourced species with 15 locally bundled photos, shared UI, local search/filters, and complete species details. Details show key facts, galleries, morphology, habitat, months, lookalikes, sources, and credits; comparison links preselect the relevant species. Phase 6 feature comparison, Phase 7 content expansion, and Phase 8 release validation remain ahead.
 
-Phase 2 development now supplies five sourced species, 15 locally bundled photographs, a curated bolete pair, shared types, and data validation. The atlas shows an initial species preview. Detailed cards, search, and comparison behavior belong to later phases; `/mushrooms/preview` remains an explicit navigation placeholder. Specialist review is pending and shown in the app.
-
-Phase 3 adds shared UI, navigable species cards, an initial details layout with key facts and a credited image gallery, month displays, and selection controls. Complete detail sections, search/filter behavior, and feature comparison remain later-phase work. See [UI design](docs/ui-design.md) and [Phase 3 acceptance](docs/acceptance/phase-3.md).
-
-Phase 4 adds name/synonym search with Polish normalization, combined edibility filters, Polish sorting, empty-result reset, and query/filter/scroll restoration. The same local search powers selection. See [Phase 4 acceptance](docs/acceptance/phase-4.md). Native performance and keyboard validation remain pending.
+Specialist content review and native validation remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [UI design](docs/ui-design.md), and [Phase 5 acceptance](docs/acceptance/phase-5.md).
 
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
@@ -107,8 +103,8 @@ docs/                   # English project documentation
 
 - `/` — atlas.
 - `/compare` — comparison screen.
-- `/mushrooms/preview` — species details placeholder.
-- `/mushrooms/<id>` — species details route; unknown identifiers show a Polish message.
+- `/mushrooms/<id>` — full details for a bundled species.
+- Unknown species identifiers (including the old `preview` placeholder) show a Polish recovery message.
 - Unknown routes show a Polish recovery screen with a link to the atlas.
 
 The current app icon assets come from the Expo starter template. Final branding will be prepared in a later phase.
