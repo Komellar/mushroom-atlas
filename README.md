@@ -19,7 +19,7 @@ Specialist content review, native validation, and the tested release remain pend
 
 Phase 8 produced a standalone internal test APK from revision `8e20e93`. Its signature and archive contents passed verification, including all 66 photographs, 66 thumbnails, JavaScript, and fonts. The local artifact is `dist/releases/mushroom-atlas-0.1.0-8e20e93.apk`; APKs are ignored by Git. See [the build record](docs/android-release.md), [native acceptance steps](docs/native-acceptance.md), and [dependency assessment](docs/dependency-assessment.md). The APK uses the generated debug certificate; production signing and native testing remain pending.
 
-Fresh native first launch passed on the existing Pixel 10 Pro emulator with airplane mode on, Wi-Fi off, and Metro stopped. The Polish atlas, 30 entries, and local imagery rendered. ADB testing was explicitly authorized; no emulator was installed or launched. Other input interrupted the remaining native sequence, so settings were restored and full acceptance remains pending. See [the native record](docs/native-acceptance.md); physical-device acceptance remains pending.
+Phase 1 native acceptance passed on the existing Pixel 10 Pro emulator: fresh offline launch with Polish UI and working navigation. Search/filter checks, all 30 detail pages and 66 photographs, full navigation/state restoration, selection, swapping, duplicate rejection, replacement, and Polish recovery screens passed. ADB testing was explicitly authorized; no emulator was installed or launched. Broader release acceptance remains in progress. See [the native record](docs/native-acceptance.md); physical-device acceptance remains pending.
 
 See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.
 
@@ -132,12 +132,11 @@ The phase 1 npm audit, after running `npm audit fix`, still reported 29 vulnerab
 
 Phase 8 rechecked these findings on 2026-10-09. A compatible fix dry run proposed zero changes; the installed SDK 57 dependency set passed compatibility checks and all 21 Expo Doctor checks. The runtime URI-decoding finding and toolchain findings remain open, with exposure and remediation paths in [dependency assessment](docs/dependency-assessment.md).
 
-## Native validation pending
+## Remaining native validation
 
-1. Launch the app on Android.
-2. Switch between the atlas and comparison tabs.
-3. Open species details and return using the system back button.
-4. Navigate from details to comparison and back to the atlas.
-5. Check safe areas, small screens, and larger system font sizes.
+1. Finish all curated comparisons in both column orders and a generic comparison.
+2. Check safe areas, small screens, larger system font sizes, and accessibility.
+3. Record offline restart, startup, scrolling, and installation measurements.
+4. Perform physical-device validation when available.
 
 Use the standalone test APK for first-launch offline validation. Development mode relies on Metro; its browser preview server was stopped before native acceptance preparation.

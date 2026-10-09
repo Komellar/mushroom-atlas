@@ -1,12 +1,16 @@
 # Standalone Android acceptance record
 
-Status: partial native acceptance. A standalone internal test APK was built, verified, and freshly installed; see [the build record](android-release.md). First launch with airplane mode on and Wi-Fi off passed with Metro stopped. Full navigation, exhaustive content, layout/accessibility, and measurements remain pending.
+Status: partial native acceptance; Phase 1 launch/navigation accepted. A standalone internal test APK was built, verified, and freshly installed; see [the build record](android-release.md). Offline first launch, full navigation, search/filter restoration, selection controls, all 30 detail pages, and all 66 photographs passed with Metro stopped. Remaining comparisons, layout/accessibility, restart, and measurements are in progress.
 
 Target: an already-running Pixel 10 Pro emulator (`sdk_gphone16k_x86_64`) reporting Android 17/API 37, 1280 × 2856 pixels, density 480, and font scale 1.0. The app was absent before installation. The user explicitly authorized ADB installation/testing and temporary settings changes. No emulator was installed or launched. Physical-device acceptance remains pending.
 
 On 2026-10-09, ADB installation returned `Success`; airplane mode read `1` and Wi-Fi read `0` before the first `MainActivity` start. Android reported a cold activity launch with `TotalTime: 2187` ms and `WaitTime: 2191` ms. These are one platform activity-start sample, not time-to-usable-atlas measurements or a three-start median. The first screenshot and hierarchy showed the Polish atlas, safety guidance, 30 entries, bottom navigation, and a bundled photograph. [First-launch screenshot](acceptance/phase-8-first-launch.png).
 
-The Borowik details page rendered offline with identification text and a local photograph. Android back returned to the atlas with its list position preserved. Native `luszczak` search produced one Łuszczak result. Subsequent other input changed screens and replaced the query during automated checks, invalidating the remaining sequence. Testing stopped without treating that sequence as a pass or an app defect. Original settings were restored and verified: airplane mode `0`, Wi-Fi `1`, font scale `1.0`, physical display 1280 × 2856/density 480 with no overrides. Uninterrupted emulator access is needed before resuming.
+The Borowik details page rendered offline with identification text and a local photograph. Android back returned to the atlas with its list position preserved. The initial search sequence was invalidated by an automation error: Android's hierarchy exposed app controls obscured by the on-screen keyboard, so some test taps/swipes entered text instead. The earlier attribution to other input was incorrect. The corrected helper dismisses the keyboard before app-control taps and scrolling.
+
+The resumed offline sequence passed `luszczak` normalization, scientific synonym `Xerocomus badius`, `kurka` with the inedible filter, empty combined-filter results, unknown-query feedback, and reset to all 30 species. All 30 species displayed their identity, edibility note, 12 required detail headings, and every gallery photograph. All 66 enlarged images had nonblank pixels and changed between gallery selections; previous/next counters, boundary states, and Android back passed. These checks establish rendering and navigation, not expert identification.
+
+The full atlas → Łuszczak details → Galerina details → comparison → atlas flow passed. Details preselection, searchable second selection, swapping, disabled duplicate rejection, replacement, and selection-modal Android back worked. The query, edible filter, one result, and card position were retained. The recorded details/system-back repeat restored card bounds within 16 pixels. Both Polish missing-species and missing-route screens recovered to the atlas. Original settings were restored after the first run; the resumed run will restore them again when testing finishes.
 
 Record tester, date, device model, Android version, display size, system font scale, APK hash, signing certificate fingerprint, source revision, app version, and dataset version before testing. Do not record personal device identifiers.
 
@@ -29,18 +33,18 @@ Measure cold startup over at least three fresh process starts and record the ind
 
 ## Results
 
-| Check                                             | Result  | Evidence / device / issue                                          |
-| ------------------------------------------------- | ------- | ------------------------------------------------------------------ |
-| Fresh first launch in airplane mode               | Passed  | Fresh standalone install; network settings verified; Metro stopped |
-| Polish UI and 30 entries                          | Passed  | Native screenshot and hierarchy                                    |
-| Every detail page and all 66 photographs          | Pending | —                                                                  |
-| Search, combined filters, reset, restoration      | Partial | `luszczak` → one Łuszczak result; interrupted sequence needs rerun |
-| Selection, duplicate rejection, swap, replacement | Pending | —                                                                  |
-| Curated and generic comparisons offline           | Pending | —                                                                  |
-| Full navigation flow and system back              | Partial | Borowik details → system back → atlas restored list position       |
-| Safe areas, small screen, large fonts, TalkBack   | Pending | —                                                                  |
-| Offline force-close and restart                   | Pending | —                                                                  |
-| Cold startup and list responsiveness              | Pending | —                                                                  |
-| APK and installation size                         | Partial | APK 130,473,159 bytes; installation measurement pending            |
+| Check                                             | Result  | Evidence / device / issue                                           |
+| ------------------------------------------------- | ------- | ------------------------------------------------------------------- |
+| Fresh first launch in airplane mode               | Passed  | Fresh standalone install; network settings verified; Metro stopped  |
+| Polish UI and 30 entries                          | Passed  | Native screenshot and hierarchy                                     |
+| Every detail page and all 66 photographs          | Passed  | All 30 identities, notes, 12 headings, and gallery controls/images  |
+| Search, combined filters, reset, restoration      | Passed  | Synonyms, empty feedback, reset, and full-flow atlas state retained |
+| Selection, duplicate rejection, swap, replacement | Passed  | Native searchable selectors, disabled duplicate, swap, replacement  |
+| Curated and generic comparisons offline           | Partial | First curated pair passed both orders; remaining checks running     |
+| Full navigation flow and system back              | Passed  | Full flow, detail/selector/gallery back, and Polish route recovery  |
+| Safe areas, small screen, large fonts, TalkBack   | Pending | —                                                                   |
+| Offline force-close and restart                   | Pending | —                                                                   |
+| Cold startup and list responsiveness              | Pending | —                                                                   |
+| APK and installation size                         | Partial | APK 130,473,159 bytes; installation measurement pending             |
 
 Native sign-off remains pending until evidence is recorded. Content approval is a separate requirement in [independent content review](content-review.md).

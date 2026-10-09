@@ -17,7 +17,7 @@ Project location: `C:\projects\mushroom-atlas`.
 
 | Phase                                    | Status                                                                              |
 | ---------------------------------------- | ----------------------------------------------------------------------------------- |
-| 1 — Project foundation                   | Development implemented; native validation pending                                  |
+| 1 — Project foundation                   | Accepted on the existing Android emulator                                           |
 | 2 — Data model and initial species       | Development implemented; native/content review pending                              |
 | 3 — UI design and shared components      | Development implemented; native accessibility checks pending                        |
 | 4 — Atlas, search, and filters           | Development implemented; native validation pending                                  |
@@ -26,7 +26,7 @@ Project location: `C:\projects\mushroom-atlas`.
 | 7 — Complete content and offline support | Development implemented; native/content review pending                              |
 | 8 — Validation and installable release   | Internal APK built; first offline launch passed; full native/content review pending |
 
-The user authorized ADB testing on an existing emulator; first standalone offline launch passed. Other input interrupted further tests, and temporary settings were restored. No emulator was installed or launched during this work. Do not install or launch an emulator without a new user request. Full native validation remains an acceptance requirement.
+The user authorized ADB testing on an existing emulator. Fresh standalone offline launch, Polish UI, and full navigation passed after correcting a keyboard-related test-helper error. No emulator was installed or launched during this work. Do not install or launch an emulator without a new user request. Broader release validation and independent content review remain pending.
 
 ## Phase 1 — Project foundation
 
@@ -47,9 +47,9 @@ The user authorized ADB testing on an existing emulator; first standalone offlin
 6. Verify code checks, Expo configuration, bundle exports, and browser navigation.
 7. When the emulator is ready, verify Android startup, navigation, system back behavior, and safe areas. Perform a physical-device check when a device is available.
 
-**Acceptance:** the app launches with Polish UI and working navigation. Development is implemented; native first launch passed, while full native navigation validation remains pending.
+**Acceptance:** the app launches with Polish UI and working navigation. Accepted on the existing Android emulator using the standalone APK.
 
-Acceptance rerun on 2026-10-09: code checks, Android bundle export, and browser launch/navigation checks passed. The later standalone APK passed fresh native offline launch with Polish UI; full native navigation remains pending. See [the Phase 1 acceptance report](acceptance/phase-1.md).
+Acceptance rerun on 2026-10-09: code checks, Android bundle export, browser checks, and native offline launch/navigation passed. Android back, selection modals, full details → comparison → atlas navigation, state restoration, and Polish recovery screens passed. See [the Phase 1 acceptance report](acceptance/phase-1.md).
 
 ## Phase 2 — Data model and initial species dataset
 
