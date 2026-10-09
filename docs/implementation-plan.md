@@ -15,16 +15,16 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Current status and sequencing
 
-| Phase                                    | Status                                                 |
-| ---------------------------------------- | ------------------------------------------------------ |
-| 1 — Project foundation                   | Development implemented; native validation pending     |
-| 2 — Data model and initial species       | Development implemented; native/content review pending |
-| 3 — UI design and shared components      | Planned; basic foundation components exist             |
-| 4 — Atlas, search, and filters           | Planned                                                |
-| 5 — Species details                      | Planned; navigation placeholder exists                 |
-| 6 — Comparison                           | Planned; navigation placeholder exists                 |
-| 7 — Complete content and offline support | Planned                                                |
-| 8 — Validation and installable release   | Planned                                                |
+| Phase                                    | Status                                                       |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| 1 — Project foundation                   | Development implemented; native validation pending           |
+| 2 — Data model and initial species       | Development implemented; native/content review pending       |
+| 3 — UI design and shared components      | Development implemented; native accessibility checks pending |
+| 4 — Atlas, search, and filters           | Planned                                                      |
+| 5 — Species details                      | Planned; navigation placeholder exists                       |
+| 6 — Comparison                           | Planned; navigation placeholder exists                       |
+| 7 — Complete content and offline support | Planned                                                      |
+| 8 — Validation and installable release   | Planned                                                      |
 
 Emulator-dependent checks are deferred at the user's request. Do not install or launch an emulator until the user is ready. Subsequent data and code work can proceed independently if requested; native validation remains an acceptance requirement.
 
@@ -83,6 +83,8 @@ Development acceptance on 2026-10-09: five sourced entries, 15 local photographs
 6. Check small-screen layouts and larger system font sizes, using browser previews where useful and native checks when available.
 
 **Acceptance:** the main information is easy to scan and controls remain readable and usable on small screens.
+
+Development acceptance on 2026-10-09: shared UI, screen layout specifications, details foundation, and selector controls passed browser checks at 320 × 568. See [the Phase 3 acceptance report](acceptance/phase-3.md). Native large-font and safe-area checks remain pending.
 
 ## Phase 4 — Atlas, search, and filters
 

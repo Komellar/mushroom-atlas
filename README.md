@@ -17,6 +17,8 @@ Phase 1 development is implemented: Expo, React Native, TypeScript, a local Git 
 
 Phase 2 development now supplies five sourced species, 15 locally bundled photographs, a curated bolete pair, shared types, and data validation. The atlas shows an initial species preview. Detailed cards, search, and comparison behavior belong to later phases; `/mushrooms/preview` remains an explicit navigation placeholder. Specialist review is pending and shown in the app.
 
+Phase 3 adds shared UI, navigable species cards, an initial details layout with key facts and a credited image gallery, month displays, and selection controls. Complete detail sections, search/filter behavior, and feature comparison remain later-phase work. See [UI design](docs/ui-design.md) and [Phase 3 acceptance](docs/acceptance/phase-3.md).
+
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
 See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.

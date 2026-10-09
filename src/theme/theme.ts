@@ -7,6 +7,10 @@ export const theme = {
     text: '#1F3025',
     muted: '#5C6A60',
     border: '#D9DFD5',
+    danger: '#8F252B',
+    dangerSoft: '#FBEAED',
+    warning: '#785319',
+    warningSoft: '#FFF2D8',
   },
   spacing: {
     small: 8,
@@ -18,4 +22,5 @@ export const theme = {
     medium: 16,
     large: 24,
   },
+  touchTarget: 48,
 } as const;
