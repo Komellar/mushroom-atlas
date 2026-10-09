@@ -13,6 +13,7 @@
     },
     "android": {
       "package": "pl.mushroomatlas.app",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#F5F4EE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",

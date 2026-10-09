@@ -1,0 +1,21 @@
+{
+  "cli": {
+    "version": "24.12.1",
+    "appVersionSource": "local"
+  },
+  "build": {
+    "preview": {
+      "distribution": "internal",
+      "developmentClient": false,
+      "environment": "preview",
+      "node": "22.16.0",
+      "env": {
+        "EXPO_NO_TELEMETRY": "1"
+      },
+      "android": {
+        "buildType": "apk",
+        "image": "ubuntu-26.04-jdk-17-ndk-r27b-sdk-57"
+      }
+    }
+  }
+}

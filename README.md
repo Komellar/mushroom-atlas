@@ -17,6 +17,8 @@ Phases 1–7 development is implemented: 30 sourced species, 66 locally bundled 
 
 Specialist content review, native validation, and the installable release remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
 
+Phase 8 release preparation includes a standalone APK build profile, documented local/cloud build paths, and [native acceptance steps](docs/native-acceptance.md). See [Android release preparation](docs/android-release.md) and [dependency assessment](docs/dependency-assessment.md). APK compilation and native testing are recorded separately from passing exports.
+
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
 See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.
@@ -127,6 +129,8 @@ Phase 2 passed dataset checks, 13 validator tests, code checks, and an Android e
 The phase 1 npm audit, after running `npm audit fix`, still reported 29 vulnerabilities in the Expo and React Native dependency tree: 18 high and 11 moderate. The underlying reports include `braces`, `node-forge`, `uuid`, and `decode-uri-component`, plus packages depending on them. The count represents flagged packages, not 29 independent defects.
 
 `npm audit fix --force` was not applied because suggested changes include incompatible framework versions, including a downgrade to Expo SDK 44. Recheck compatible fixes before a production release. Passing code checks and Expo Doctor does not imply a clean security audit.
+
+Phase 8 rechecked these findings on 2026-10-09. A compatible fix dry run proposed zero changes; the installed SDK 57 dependency set passed compatibility checks and all 21 Expo Doctor checks. The runtime URI-decoding finding and toolchain findings remain open, with exposure and remediation paths in [dependency assessment](docs/dependency-assessment.md).
 
 ## Device validation pending emulator setup
 

@@ -22,7 +22,8 @@
     "preexport:web": "npm run validate:data",
     "prepare:photos": "node scripts/prepare-photos.mjs",
     "verify:android": "node scripts/verify-android-export.mjs",
-    "prepare:review": "node scripts/generate-review-pack.mjs"
+    "prepare:review": "node scripts/generate-review-pack.mjs",
+    "eas-build-post-install": "npm run check"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",

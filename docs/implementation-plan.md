@@ -24,7 +24,7 @@ Project location: `C:\projects\mushroom-atlas`.
 | 5 — Species details                      | Development implemented; native/content review pending       |
 | 6 — Comparison                           | Development implemented; native/content review pending       |
 | 7 — Complete content and offline support | Development implemented; native/content review pending       |
-| 8 — Validation and installable release   | Planned                                                      |
+| 8 — Validation and installable release   | Validation/build preparation in progress; native pending     |
 
 Emulator-dependent checks are deferred at the user's request. Do not install or launch an emulator until the user is ready. Subsequent data and code work can proceed independently if requested; native validation remains an acceptance requirement.
 
