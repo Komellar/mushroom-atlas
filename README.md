@@ -19,6 +19,8 @@ Phase 2 development now supplies five sourced species, 15 locally bundled photog
 
 Phase 3 adds shared UI, navigable species cards, an initial details layout with key facts and a credited image gallery, month displays, and selection controls. Complete detail sections, search/filter behavior, and feature comparison remain later-phase work. See [UI design](docs/ui-design.md) and [Phase 3 acceptance](docs/acceptance/phase-3.md).
 
+Phase 4 adds name/synonym search with Polish normalization, combined edibility filters, Polish sorting, empty-result reset, and query/filter/scroll restoration. The same local search powers selection. See [Phase 4 acceptance](docs/acceptance/phase-4.md). Native performance and keyboard validation remain pending.
+
 Android emulator and physical-device validation are deferred at the user's request. An Android JavaScript bundle export is not an APK build and does not replace a device test.
 
 See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.

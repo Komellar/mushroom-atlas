@@ -7,6 +7,7 @@ import { Button } from '@/components/button';
 import { mushrooms, getMushroom } from '@/data/atlas';
 import { pl } from '@/locales/pl';
 import { theme } from '@/theme/theme';
+import { queryMushrooms } from '@/utils/atlas-query';
 
 type SpeciesSelectorProps = {
   label: string;
@@ -19,11 +20,7 @@ export function SpeciesSelector({ label, selectedId, excludedId, onSelect }: Spe
   const [visible, setVisible] = useState(false);
   const [query, setQuery] = useState('');
   const selected = getMushroom(selectedId);
-  const matches = mushrooms.filter((mushroom) =>
-    [mushroom.polishName, mushroom.scientificName, ...mushroom.synonyms].some((name) =>
-      name.toLocaleLowerCase('pl').includes(query.trim().toLocaleLowerCase('pl')),
-    ),
-  );
+  const matches = queryMushrooms(mushrooms, query);
   const close = () => setVisible(false);
   return (
     <View style={styles.section}>

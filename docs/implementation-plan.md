@@ -20,7 +20,7 @@ Project location: `C:\projects\mushroom-atlas`.
 | 1 — Project foundation                   | Development implemented; native validation pending           |
 | 2 — Data model and initial species       | Development implemented; native/content review pending       |
 | 3 — UI design and shared components      | Development implemented; native accessibility checks pending |
-| 4 — Atlas, search, and filters           | Planned                                                      |
+| 4 — Atlas, search, and filters           | Development implemented; native validation pending           |
 | 5 — Species details                      | Planned; navigation placeholder exists                       |
 | 6 — Comparison                           | Planned; navigation placeholder exists                       |
 | 7 — Complete content and offline support | Planned                                                      |
@@ -97,6 +97,8 @@ Development acceptance on 2026-10-09: shared UI, screen layout specifications, d
 7. Preserve the query, selected filter, and list position when returning from species details.
 
 **Acceptance:** users can find and filter species quickly, with all processing performed locally.
+
+Development acceptance on 2026-10-09: local search, combined category filters, Polish sorting, empty/reset behavior, and query/filter/scroll restoration passed automated and browser checks. See [the Phase 4 acceptance report](acceptance/phase-4.md).
 
 ## Phase 5 — Species details
 

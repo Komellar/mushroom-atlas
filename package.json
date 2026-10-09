@@ -17,7 +17,7 @@
     "export:android": "expo export --platform android --output-dir dist/android",
     "export:web": "expo export --platform web --output-dir dist/web",
     "validate:data": "node scripts/validate-data.mjs",
-    "test": "node --test scripts/*.test.mjs",
+    "test": "node --experimental-strip-types --test scripts/*.test.mjs",
     "preexport:android": "npm run validate:data",
     "preexport:web": "npm run validate:data"
   },

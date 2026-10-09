@@ -17,6 +17,12 @@ export const pl = {
     previewAction: 'Zobacz przykładową kartę',
     comparisonAction: 'Otwórz porównywarkę',
     initialSpecies: 'Pierwsze gatunki atlasu',
+    search: 'Szukaj nazwy polskiej lub łacińskiej',
+    all: 'Wszystkie',
+    results: 'Liczba gatunków',
+    clear: 'Wyczyść wyszukiwanie i filtry',
+    noResults: 'Brak pasujących grzybów',
+    noResultsDescription: 'Zmień nazwę lub wyczyść filtry, aby zobaczyć wszystkie gatunki.',
   },
   safety: {
     title: 'Poznawaj, nie zgaduj',
