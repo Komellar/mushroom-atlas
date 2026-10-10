@@ -36,7 +36,7 @@
     ],
     "photoIds": ["boletus-edulis-1", "boletus-edulis-2", "boletus-edulis-3"],
     "referenceIds": ["fn-boletus-edulis", "lp-safe-foraging", "fn-tylopilus-felleus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -77,7 +77,7 @@
     ],
     "photoIds": ["tylopilus-felleus-1", "tylopilus-felleus-2", "tylopilus-felleus-3"],
     "referenceIds": ["fn-tylopilus-felleus", "lp-safe-foraging", "fn-boletus-edulis"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -122,7 +122,7 @@
       "lp-safe-foraging",
       "fn-hygrophoropsis-aurantiaca"
     ],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -163,7 +163,7 @@
     ],
     "photoIds": ["amanita-muscaria-1", "amanita-muscaria-2", "amanita-muscaria-3"],
     "referenceIds": ["fn-amanita-muscaria", "fn-amanita-rubescens"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -204,12 +204,13 @@
       {
         "polishName": "Gołąbek zielonawy",
         "scientificName": "Russula virescens",
-        "difference": "Nie ma pierścienia ani pochwy; kapelusz często kostkowato spękany."
+        "difference": "Nie ma pierścienia ani pochwy; kapelusz często kostkowato spękany.",
+        "mushroomId": "russula-virescens"
       }
     ],
     "photoIds": ["amanita-phalloides-1", "amanita-phalloides-2", "amanita-phalloides-3"],
     "referenceIds": ["fn-amanita-phalloides", "lp-safe-foraging", "fn-agaricus-campestris"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -251,7 +252,7 @@
     ],
     "photoIds": ["imleria-badia-1", "imleria-badia-2"],
     "referenceIds": ["fn-imleria-badia", "fn-boletus-edulis"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -289,7 +290,7 @@
     ],
     "photoIds": ["suillus-luteus-1", "suillus-luteus-2"],
     "referenceIds": ["fn-suillus-luteus", "fn-suillus-granulatus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -331,7 +332,7 @@
     ],
     "photoIds": ["suillus-granulatus-1", "suillus-granulatus-2"],
     "referenceIds": ["fn-suillus-granulatus", "fn-suillus-luteus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -373,7 +374,7 @@
     ],
     "photoIds": ["leccinum-scabrum-1", "leccinum-scabrum-2"],
     "referenceIds": ["fn-leccinum-scabrum", "fn-boletus-edulis"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -414,7 +415,7 @@
     ],
     "photoIds": ["hydnum-repandum-2", "hydnum-repandum-1"],
     "referenceIds": ["fn-hydnum-repandum"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -456,7 +457,7 @@
     ],
     "photoIds": ["craterellus-tubaeformis-1", "craterellus-tubaeformis-2"],
     "referenceIds": ["fn-craterellus-tubaeformis", "fn-cantharellus-cibarius"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -502,7 +503,7 @@
       "fn-cantharellus-cibarius",
       "psse-common-confusions"
     ],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -544,7 +545,7 @@
     ],
     "photoIds": ["macrolepiota-procera-1", "macrolepiota-procera-2"],
     "referenceIds": ["fn-macrolepiota-procera", "fn-chlorophyllum-rhacodes"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -590,7 +591,7 @@
       "fn-macrolepiota-procera",
       "psse-common-confusions"
     ],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -632,7 +633,7 @@
     ],
     "photoIds": ["amanita-pantherina-1", "amanita-pantherina-2"],
     "referenceIds": ["fn-amanita-pantherina", "fn-amanita-rubescens"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -674,7 +675,7 @@
     ],
     "photoIds": ["amanita-rubescens-1", "amanita-rubescens-2"],
     "referenceIds": ["fn-amanita-rubescens", "fn-amanita-pantherina"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -716,7 +717,7 @@
     ],
     "photoIds": ["amanita-citrina-1", "amanita-citrina-2"],
     "referenceIds": ["fn-amanita-citrina", "fn-amanita-phalloides"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -758,7 +759,7 @@
     ],
     "photoIds": ["amanita-virosa-1", "amanita-virosa-2"],
     "referenceIds": ["fn-amanita-virosa", "fn-agaricus-campestris"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -806,7 +807,7 @@
     ],
     "photoIds": ["agaricus-campestris-1", "agaricus-campestris-2"],
     "referenceIds": ["fn-agaricus-campestris", "fn-agaricus-xanthodermus", "fn-amanita-virosa"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -848,7 +849,7 @@
     ],
     "photoIds": ["agaricus-xanthodermus-1", "agaricus-xanthodermus-2"],
     "referenceIds": ["fn-agaricus-xanthodermus", "fn-agaricus-campestris"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -890,7 +891,7 @@
     ],
     "photoIds": ["russula-cyanoxantha-1", "russula-cyanoxantha-2"],
     "referenceIds": ["fn-russula-cyanoxantha", "fn-amanita-phalloides"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -931,7 +932,7 @@
     ],
     "photoIds": ["russula-emetica-1", "russula-emetica-2"],
     "referenceIds": ["fn-russula-emetica"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -973,7 +974,7 @@
     ],
     "photoIds": ["lactarius-deliciosus-1", "lactarius-deliciosus-2"],
     "referenceIds": ["fn-lactarius-deliciosus", "fn-lactarius-torminosus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1015,7 +1016,7 @@
     ],
     "photoIds": ["lactarius-torminosus-1", "lactarius-torminosus-2"],
     "referenceIds": ["fn-lactarius-torminosus", "fn-lactarius-deliciosus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1057,7 +1058,7 @@
     ],
     "photoIds": ["armillaria-mellea-1", "armillaria-mellea-2"],
     "referenceIds": ["fn-armillaria-mellea", "fn-hypholoma-fasciculare", "psse-common-confusions"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1099,7 +1100,7 @@
     ],
     "photoIds": ["hypholoma-fasciculare-1", "hypholoma-fasciculare-2"],
     "referenceIds": ["fn-hypholoma-fasciculare", "fn-armillaria-mellea"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1140,7 +1141,7 @@
     ],
     "photoIds": ["pleurotus-ostreatus-1", "pleurotus-ostreatus-2"],
     "referenceIds": ["fn-pleurotus-ostreatus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1182,7 +1183,7 @@
     ],
     "photoIds": ["paxillus-involutus-1", "paxillus-involutus-2"],
     "referenceIds": ["fn-paxillus-involutus", "fn-lactarius-torminosus"],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1228,7 +1229,7 @@
       "fn-galerina-marginata",
       "psse-common-confusions"
     ],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
     "reviewStatus": "source-checked"
   },
@@ -1274,8 +1275,176 @@
       "fn-kuehneromyces-mutabilis",
       "psse-common-confusions"
     ],
-    "datasetVersion": "0.7.0",
+    "datasetVersion": "0.8.0",
     "reviewedAt": "2026-10-09",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "coprinus-comatus",
+    "polishName": "Czernidłak kołpakowaty",
+    "scientificName": "Coprinus comatus",
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny wyłącznie młody, świeży i jeszcze biały, po prawidłowym rozpoznaniu i obróbce termicznej. Czerniejące i rozpływające się owocniki są niezdatne do spożycia.",
+    "keyFeatures": [
+      "Wydłużony biały kapelusz z odstającymi łuskami.",
+      "Blaszki kolejno białe, różowe i czarne.",
+      "Długi, pusty trzon z ruchomym, nietrwałym pierścieniem."
+    ],
+    "identificationTips": [
+      "Oceń stadium rozwoju: brzegi kapelusza z wiekiem rozpływają się.",
+      "Nie utożsamiaj wszystkich czernidłaków z jednym gatunkiem."
+    ],
+    "cap": "Początkowo jajowaty, później wysoki, dzwonkowaty; biały z brunatnawym szczytem i dużymi łuskami.",
+    "stem": "Biały, wysmukły, kruchy i pusty; pierścień może zsuwać się ku podstawie.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste blaszki bielejące w młodości, potem różowe i czarne; rozpływają się od brzegu."
+    },
+    "flesh": "Biały, delikatny i nietrwały.",
+    "damageReaction": "Starzejący się kapelusz i blaszki rozpływają się w czarną ciecz; to proces dojrzewania, nie sinienie po dotknięciu.",
+    "habitat": "Trawniki, pobocza, obrzeża ścieżek i otwarte fragmenty lasu; często rośnie w grupach.",
+    "occurrenceMonths": [4, 5, 6, 7, 8, 9, 10, 11],
+    "similarSpecies": [
+      {
+        "polishName": "Czernidłak pstry",
+        "scientificName": "Coprinopsis picacea",
+        "difference": "Dojrzewający kapelusz ma ciemne tło z wyraźnymi białymi łatami. Młode owocniki mogą być podobne."
+      }
+    ],
+    "photoIds": ["coprinus-comatus-2", "coprinus-comatus-1"],
+    "referenceIds": ["fn-coprinus-comatus"],
+    "occurrenceNote": "Orientacyjny zakres z europejskiego opisu gatunku; w Polsce termin zależy od pogody i stanowiska.",
+    "datasetVersion": "0.8.0",
+    "reviewedAt": "2026-10-10",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "craterellus-cornucopioides",
+    "polishName": "Lejkowiec dęty",
+    "scientificName": "Craterellus cornucopioides",
+    "synonyms": ["czarna trąbka", "róg obfitości"],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej.",
+    "keyFeatures": [
+      "Ciemny, trąbkowaty owocnik.",
+      "Wnętrze puste aż do podstawy.",
+      "Zewnętrzna powierzchnia szara, bez prawdziwych blaszek."
+    ],
+    "identificationTips": [
+      "Przyjrzyj się całemu lejkowi i jego zewnętrznej powierzchni.",
+      "Szukaj w ściółce lasów liściastych; ciemne owocniki łatwo przeoczyć."
+    ],
+    "cap": "Głęboki lejek o falistym, podwiniętym brzegu; wnętrze szarobrązowe do niemal czarnego.",
+    "stem": "Pusty, zwężający się ku podstawie, płynnie połączony z lejkiem.",
+    "hymenophore": {
+      "type": "ridges",
+      "description": "Zewnętrzna powierzchnia szara, oprószona, gładkawa lub drobno pomarszczona; bez blaszek i porów."
+    },
+    "flesh": "Cienki, ciemny i elastyczny.",
+    "damageReaction": "Bez charakterystycznego sinienia; barwa może zmieniać się ze stanem nawodnienia i wiekiem.",
+    "habitat": "Lasy liściaste, zwłaszcza pod bukami i dębami; często w skupieniach.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "similarSpecies": [
+      {
+        "mushroomId": "craterellus-tubaeformis",
+        "polishName": "Pieprznik trąbkowy",
+        "scientificName": "Craterellus tubaeformis",
+        "difference": "Ma żółtawy trzon i wyraźniejsze fałdy pod brązowym kapeluszem."
+      }
+    ],
+    "photoIds": ["craterellus-cornucopioides-1", "craterellus-cornucopioides-2"],
+    "referenceIds": [
+      "fn-craterellus-cornucopioides",
+      "fn-craterellus-tubaeformis",
+      "lp-craterellus-cornucopioides"
+    ],
+    "occurrenceNote": "Termin orientacyjny dla Polski według opisu Lasów Państwowych; zależy od pogody i stanowiska.",
+    "datasetVersion": "0.8.0",
+    "reviewedAt": "2026-10-10",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "russula-virescens",
+    "polishName": "Gołąbek zielonawy",
+    "scientificName": "Russula virescens",
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej. Zielony kapelusz nie wyklucza pomyłki ze śmiertelnie trującym muchomorem.",
+    "keyFeatures": [
+      "Zielona powierzchnia kapelusza często kostkowato spękana.",
+      "Jasne, kruche blaszki.",
+      "Biały trzon bez pierścienia i pochwy."
+    ],
+    "identificationTips": [
+      "Obejrzyj podstawę całego trzonu; sama barwa kapelusza nie wystarcza.",
+      "U młodych owocników charakterystyczne spękania mogą być słabo widoczne."
+    ],
+    "cap": "Zielonawy, z jaśniejszym brzegiem; skórka rozpada się na drobne pola. Początkowo wypukły, później spłaszczony lub lekko wklęsły.",
+    "stem": "Biały lub kremowy, cylindryczny, z wiekiem brązowiejący; bez pierścienia i pochwy.",
+    "hymenophore": {
+      "type": "gills",
+      "description": "Gęste, kremowobiałe blaszki, z wiekiem nieco ciemniejsze."
+    },
+    "flesh": "Jasny, zwarty, łamiący się krucho.",
+    "damageReaction": "Bez wyraźnego sinienia; starszy trzon może brązowieć.",
+    "habitat": "Lasy liściaste, m.in. pod bukami i dębami; grzyb mikoryzowy.",
+    "occurrenceMonths": [8, 9, 10],
+    "similarSpecies": [
+      {
+        "mushroomId": "amanita-phalloides",
+        "polishName": "Muchomor zielonawy",
+        "scientificName": "Amanita phalloides",
+        "difference": "Ma pierścień i workowatą pochwę u podstawy. Ich brak na niepełnym lub uszkodzonym okazie nie potwierdza rozpoznania."
+      }
+    ],
+    "photoIds": ["russula-virescens-1", "russula-virescens-2"],
+    "referenceIds": ["fn-russula-virescens", "fn-amanita-phalloides", "lp-safe-foraging"],
+    "occurrenceNote": "Orientacyjny zakres z europejskiego opisu gatunku; w Polsce termin zależy od pogody i stanowiska.",
+    "datasetVersion": "0.8.0",
+    "reviewedAt": "2026-10-10",
+    "reviewStatus": "source-checked"
+  },
+  {
+    "id": "xerocomellus-chrysenteron",
+    "polishName": "Podgrzybek złotawy",
+    "scientificName": "Xerocomellus chrysenteron",
+    "scientificSynonyms": ["Xerocomus chrysenteron", "Boletus chrysenteron"],
+    "synonyms": [],
+    "edibility": "edible",
+    "edibilityNote": "Jadalny po prawidłowym rozpoznaniu i obróbce termicznej. Należy do grupy bardzo podobnych podgrzybków; oznaczenie może wymagać mikroskopii.",
+    "keyFeatures": [
+      "Brązowawy kapelusz, czasem spękany z czerwienią pod skórką.",
+      "Duże, kanciaste, żółte pory.",
+      "Żółty trzon z czerwonawymi włókienkami, bez pierścienia."
+    ],
+    "identificationTips": [
+      "Nie każdy owocnik ma spękany kapelusz.",
+      "Oceniaj łącznie pory, barwy przekroju i trzon; same czerwone spękania nie rozstrzygają gatunku."
+    ],
+    "cap": "Wypukły, szarobrązowy lub żółtobrązowy; spękania mogą odsłaniać czerwonawą warstwę pod skórką.",
+    "stem": "Smukły, żółty z czerwonawymi włókienkami, zwykle równogruby; bez pierścienia.",
+    "hymenophore": {
+      "type": "pores",
+      "description": "Duże, kanciaste pory: żółte, potem oliwkowożółte; po ucisku powoli zielononiebieskie."
+    },
+    "flesh": "W kapeluszu cienki, żółtawy; w trzonie kremowy, pod powierzchnią czerwonawy.",
+    "damageReaction": "Miąższ kapelusza może słabo sinieć; silne sinienie podstawy trzonu sugeruje podobny gatunek.",
+    "habitat": "Lasy iglaste, także przy bukach; grzyb mikoryzowy.",
+    "occurrenceMonths": [8, 9, 10, 11],
+    "similarSpecies": [
+      {
+        "mushroomId": "imleria-badia",
+        "polishName": "Podgrzyb brunatny",
+        "scientificName": "Imleria badia",
+        "difference": "Młode ciemne kapelusze mogą być podobne; podgrzybek brunatny nie ma typowych czerwonych włókienek na trzonie."
+      }
+    ],
+    "photoIds": ["xerocomellus-chrysenteron-1", "xerocomellus-chrysenteron-2"],
+    "referenceIds": ["fn-xerocomellus-chrysenteron", "fn-imleria-badia"],
+    "occurrenceNote": "Orientacyjny zakres z europejskiego opisu gatunku; w Polsce termin zależy od pogody i stanowiska.",
+    "datasetVersion": "0.8.0",
+    "reviewedAt": "2026-10-10",
     "reviewStatus": "source-checked"
   }
 ]

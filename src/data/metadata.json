@@ -1,6 +1,6 @@
 {
-  "version": "0.7.0",
-  "updatedAt": "2026-10-09",
+  "version": "0.8.0",
+  "updatedAt": "2026-10-10",
   "expertReviewStatus": "pending",
   "references": [
     {
@@ -233,6 +233,41 @@
       "publisher": "Lasy Państwowe",
       "url": "https://www.lasy.gov.pl/pl/informacje/aktualnosci/zbieraj-grzyby-ale-rob-to-z-glowa",
       "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "fn-coprinus-comatus",
+      "title": "Coprinus comatus — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/coprinus-comatus.php",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "fn-craterellus-cornucopioides",
+      "title": "Craterellus cornucopioides — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/craterellus-cornucopioides.php",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "fn-russula-virescens",
+      "title": "Russula virescens — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/russula-virescens.php",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "fn-xerocomellus-chrysenteron",
+      "title": "Xerocomellus chrysenteron — opis gatunku",
+      "publisher": "First Nature / Pat O'Reilly",
+      "url": "https://www.first-nature.com/fungi/xerocomellus-chrysenteron.php",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "lp-craterellus-cornucopioides",
+      "title": "Leśne smakołyki — lejkowiec dęty",
+      "publisher": "Lasy Państwowe / Nadleśnictwo Dębica",
+      "url": "https://debica.krakow.lasy.gov.pl/aktualnosci/-/asset_publisher/1M8a/content/lesne-smakolyki/pop_up",
+      "accessedAt": "2026-10-10"
     }
   ]
 }

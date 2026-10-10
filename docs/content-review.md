@@ -1,43 +1,49 @@
 # Independent content review
 
-Dataset 0.7.0, prepared 2026-10-09. Status: pending. No reviewer or independent sign-off is recorded. No reviewer has been contacted by this implementation task.
+Dataset 0.8.0, updated 2026-10-10. Status: pending. No reviewer or independent sign-off is recorded. No reviewer has been contacted by this implementation task.
 
 ## Review inventory
 
-| ID                        | Scientific name           | Proposed category | Photos | Review status                  |
-| ------------------------- | ------------------------- | ----------------- | ------ | ------------------------------ |
-| boletus-edulis            | Boletus edulis            | edible            | 3      | Source checked; expert pending |
-| tylopilus-felleus         | Tylopilus felleus         | inedible          | 3      | Source checked; expert pending |
-| cantharellus-cibarius     | Cantharellus cibarius     | edible            | 3      | Source checked; expert pending |
-| amanita-muscaria          | Amanita muscaria          | poisonous         | 3      | Source checked; expert pending |
-| amanita-phalloides        | Amanita phalloides        | poisonous         | 3      | Source checked; expert pending |
-| imleria-badia             | Imleria badia             | edible            | 2      | Source checked; expert pending |
-| suillus-luteus            | Suillus luteus            | edible            | 2      | Source checked; expert pending |
-| suillus-granulatus        | Suillus granulatus        | edible            | 2      | Source checked; expert pending |
-| leccinum-scabrum          | Leccinum scabrum          | edible            | 2      | Source checked; expert pending |
-| hydnum-repandum           | Hydnum repandum           | edible            | 2      | Source checked; expert pending |
-| craterellus-tubaeformis   | Craterellus tubaeformis   | edible            | 2      | Source checked; expert pending |
-| hygrophoropsis-aurantiaca | Hygrophoropsis aurantiaca | inedible          | 2      | Source checked; expert pending |
-| macrolepiota-procera      | Macrolepiota procera      | edible            | 2      | Source checked; expert pending |
-| chlorophyllum-rhacodes    | Chlorophyllum rhacodes    | poisonous         | 2      | Source checked; expert pending |
-| amanita-pantherina        | Amanita pantherina        | poisonous         | 2      | Source checked; expert pending |
-| amanita-rubescens         | Amanita rubescens         | edible            | 2      | Source checked; expert pending |
-| amanita-citrina           | Amanita citrina           | inedible          | 2      | Source checked; expert pending |
-| amanita-virosa            | Amanita virosa            | poisonous         | 2      | Source checked; expert pending |
-| agaricus-campestris       | Agaricus campestris       | edible            | 2      | Source checked; expert pending |
-| agaricus-xanthodermus     | Agaricus xanthodermus     | poisonous         | 2      | Source checked; expert pending |
-| russula-cyanoxantha       | Russula cyanoxantha       | edible            | 2      | Source checked; expert pending |
-| russula-emetica           | Russula emetica           | poisonous         | 2      | Source checked; expert pending |
-| lactarius-deliciosus      | Lactarius deliciosus      | edible            | 2      | Source checked; expert pending |
-| lactarius-torminosus      | Lactarius torminosus      | poisonous         | 2      | Source checked; expert pending |
-| armillaria-mellea         | Armillaria mellea         | edible            | 2      | Source checked; expert pending |
-| hypholoma-fasciculare     | Hypholoma fasciculare     | poisonous         | 2      | Source checked; expert pending |
-| pleurotus-ostreatus       | Pleurotus ostreatus       | edible            | 2      | Source checked; expert pending |
-| paxillus-involutus        | Paxillus involutus        | poisonous         | 2      | Source checked; expert pending |
-| kuehneromyces-mutabilis   | Kuehneromyces mutabilis   | edible            | 2      | Source checked; expert pending |
-| galerina-marginata        | Galerina marginata        | poisonous         | 3      | Source checked; expert pending |
+| ID                         | Scientific name            | Proposed category | Photos | Review status                  |
+| -------------------------- | -------------------------- | ----------------- | ------ | ------------------------------ |
+| boletus-edulis             | Boletus edulis             | edible            | 3      | Source checked; expert pending |
+| tylopilus-felleus          | Tylopilus felleus          | inedible          | 3      | Source checked; expert pending |
+| cantharellus-cibarius      | Cantharellus cibarius      | edible            | 3      | Source checked; expert pending |
+| amanita-muscaria           | Amanita muscaria           | poisonous         | 3      | Source checked; expert pending |
+| amanita-phalloides         | Amanita phalloides         | poisonous         | 3      | Source checked; expert pending |
+| imleria-badia              | Imleria badia              | edible            | 2      | Source checked; expert pending |
+| suillus-luteus             | Suillus luteus             | edible            | 2      | Source checked; expert pending |
+| suillus-granulatus         | Suillus granulatus         | edible            | 2      | Source checked; expert pending |
+| leccinum-scabrum           | Leccinum scabrum           | edible            | 2      | Source checked; expert pending |
+| hydnum-repandum            | Hydnum repandum            | edible            | 2      | Source checked; expert pending |
+| craterellus-tubaeformis    | Craterellus tubaeformis    | edible            | 2      | Source checked; expert pending |
+| hygrophoropsis-aurantiaca  | Hygrophoropsis aurantiaca  | inedible          | 2      | Source checked; expert pending |
+| macrolepiota-procera       | Macrolepiota procera       | edible            | 2      | Source checked; expert pending |
+| chlorophyllum-rhacodes     | Chlorophyllum rhacodes     | poisonous         | 2      | Source checked; expert pending |
+| amanita-pantherina         | Amanita pantherina         | poisonous         | 2      | Source checked; expert pending |
+| amanita-rubescens          | Amanita rubescens          | edible            | 2      | Source checked; expert pending |
+| amanita-citrina            | Amanita citrina            | inedible          | 2      | Source checked; expert pending |
+| amanita-virosa             | Amanita virosa             | poisonous         | 2      | Source checked; expert pending |
+| agaricus-campestris        | Agaricus campestris        | edible            | 2      | Source checked; expert pending |
+| agaricus-xanthodermus      | Agaricus xanthodermus      | poisonous         | 2      | Source checked; expert pending |
+| russula-cyanoxantha        | Russula cyanoxantha        | edible            | 2      | Source checked; expert pending |
+| russula-emetica            | Russula emetica            | poisonous         | 2      | Source checked; expert pending |
+| lactarius-deliciosus       | Lactarius deliciosus       | edible            | 2      | Source checked; expert pending |
+| lactarius-torminosus       | Lactarius torminosus       | poisonous         | 2      | Source checked; expert pending |
+| armillaria-mellea          | Armillaria mellea          | edible            | 2      | Source checked; expert pending |
+| hypholoma-fasciculare      | Hypholoma fasciculare      | poisonous         | 2      | Source checked; expert pending |
+| pleurotus-ostreatus        | Pleurotus ostreatus        | edible            | 2      | Source checked; expert pending |
+| paxillus-involutus         | Paxillus involutus         | poisonous         | 2      | Source checked; expert pending |
+| kuehneromyces-mutabilis    | Kuehneromyces mutabilis    | edible            | 2      | Source checked; expert pending |
+| galerina-marginata         | Galerina marginata         | poisonous         | 3      | Source checked; expert pending |
+| coprinus-comatus           | Coprinus comatus           | edible            | 2      | Source checked; expert pending |
+| craterellus-cornucopioides | Craterellus cornucopioides | edible            | 2      | Source checked; expert pending |
+| russula-virescens          | Russula virescens          | edible            | 2      | Source checked; expert pending |
+| xerocomellus-chrysenteron  | Xerocomellus chrysenteron  | edible            | 2      | Source checked; expert pending |
 
 ## Required review
+
+The 0.8.0 additions need specific checks of Coprinus comatus age-dependent edibility and inkcap lookalikes, the risk of confusing green Russula with Amanita phalloides, and the taxonomic identity of both Xerocomellus photographs (source labels use Boletus chrysenteron). The first Russula photograph shows the cap only. Month ranges are approximate European ranges except the Polish autumn reference for Craterellus cornucopioides. No microscopic or independent expert verification has been completed.
 
 Review every Polish description, proposed category and qualification, months, lookalike reference, and pair difference against current Polish mycological sources. Review each source photograph at full resolution, including its original source page and taxonomic identity. Use the JSON IDs to record corrections.
 

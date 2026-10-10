@@ -1,6 +1,6 @@
 # Photograph attribution inventory
 
-All images and thumbnails are bundled locally. Source metadata and license links were checked on 2026-10-09. Source identification and visual screening do not replace independent mycological review.
+All images and thumbnails are bundled locally. Source metadata and license check dates are recorded per image in src/data/photos.json. Source identification and visual screening do not replace independent mycological review.
 
 Licenses apply individually to each photograph and its derived thumbnail. Keep source, attribution, license, and modification information when redistributing images.
 
@@ -663,3 +663,83 @@ Author: Jason Hollinger.
 Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `b933f43e32a6ab722c8a5d19153cacba9012ffd6f331394cffa1bcee2f1f770f`.
 
 Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `0b608b2430c6028cc7ba2f97b08b2153308f3afc1ed735bc87848b9536b9abb4`.
+
+## coprinus-comatus-1
+
+Author: Hans Hillewaert.
+
+[Source file](<https://commons.wikimedia.org/wiki/File:Coprinus_comatus_(old).jpg>) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `b27a24d7498d21798ae759f8e3dc6dac740cedd55dfa85a37fa0ba556849b3fd`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `87614306ebba96b88595025e81151cdb8cf348c379bbc01993c8e9b7d81eb2c8`.
+
+## coprinus-comatus-2
+
+Author: The High Fin Sperm Whale.
+
+[Source file](<https://commons.wikimedia.org/wiki/File:Shaggy_inkcaps_(Coprinus_comatus).JPG>) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `153b0cdde371d186479fe379a8a729cb0ac5fbc933e01d9fcdde48114e6e69bd`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `693bfb1b4209e894fc7077d3a6bbe2f42631c73c759fa70244adae21373c047d`.
+
+## craterellus-cornucopioides-1
+
+Author: Holger Krisp.
+
+[Source file](https://commons.wikimedia.org/wiki/File:Herbsttrompete_Craterellus_cornucopioides.jpg) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `c83ab6ae03de1c5b379ab4774f5641dc09320ebe8ec7ecf56097d1e2fe634aad`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `fa849db3f0d68d4a083c32677d1773d19a400b6311a52bff218fea232bbd9ffa`.
+
+## craterellus-cornucopioides-2
+
+Author: Holger Krisp.
+
+[Source file](https://commons.wikimedia.org/wiki/File:Black_trumpet_Craterellus_cornucopioides.jpg) · [CC BY 3.0](https://creativecommons.org/licenses/by/3.0).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `310c1e75ce4cded0f288785a2742aaa58dfcf6a616aa1d6bbb580b757e5f2fb2`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `b171f7aea4c4778c3d031905d511b79a67ac65fbcddbc0d936716e56167d2ea1`.
+
+## russula-virescens-1
+
+Author: Paffka.
+
+[Source file](https://commons.wikimedia.org/wiki/File:Russula_virescens3.JPG) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `0fd2f27313006a9b15c1679b5986a7c54455d46f4607b495fe7936760ad5cb7f`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `2a1bbe83357c7033be54991573d871925d8fb5456dcab612ad3a0d9891b355a7`.
+
+## russula-virescens-2
+
+Author: xulescu_g.
+
+[Source file](https://commons.wikimedia.org/wiki/File:Russula_virescens_duo.jpg) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0).
+
+Original file; no changes. Source SHA-256: `117bf8ebb3a9063a689967ecaddaa418a70286b32c02ddc0f453bbb3c82eb8cb`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `bddf30cf5b5a9c5393c668a097dab4bfef3c3fe81ad9a537249f51aacba8ef43`.
+
+## xerocomellus-chrysenteron-1
+
+Author: Jörg Hempel.
+
+[Source file](https://commons.wikimedia.org/wiki/File:Xerocomellus_chrysenteron_LC0072.jpg) · [CC BY-SA 2.0 de](https://creativecommons.org/licenses/by-sa/2.0/de/deed.en).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `37dd6f1cad68a4367b03882a76a9c6bf2582e09e0b743b8d8d7d253704789882`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `1a73d86d8b7b281c66c8d04991ccc6ee34ce149f1d5bb41a1b8346f57d3a9a49`.
+
+## xerocomellus-chrysenteron-2
+
+Author: The High Fin Sperm Whale.
+
+[Source file](<https://commons.wikimedia.org/wiki/File:Boletus_chrysenteron_(Red_Cracking_Bolete).JPG>) · [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0).
+
+Wikimedia thumbnail resized to a maximum width of 1280 pixels; no other changes. Source SHA-256: `a8908ab23516c759bdc56356387146ffb83537c89b9baf9724c8f142467a8ed8`.
+
+Thumbnail: Resized to fit within 480 × 480 pixels without cropping, EXIF orientation applied, metadata removed, JPEG quality 80. Thumbnail SHA-256: `cd15df06b06ccb0c34526f3ab3258207b6994349dd3c54d2c1d906eb4e7c9406`.

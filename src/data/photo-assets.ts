@@ -66,6 +66,14 @@ export const photoAssets: Record<string, number> = {
   'galerina-marginata-1': require('../../assets/mushrooms/galerina-marginata-1.jpg'),
   'galerina-marginata-2': require('../../assets/mushrooms/galerina-marginata-2.jpg'),
   'galerina-marginata-3': require('../../assets/mushrooms/galerina-marginata-3.jpg'),
+  'coprinus-comatus-1': require('../../assets/mushrooms/coprinus-comatus-1.jpg'),
+  'coprinus-comatus-2': require('../../assets/mushrooms/coprinus-comatus-2.jpg'),
+  'craterellus-cornucopioides-1': require('../../assets/mushrooms/craterellus-cornucopioides-1.jpg'),
+  'craterellus-cornucopioides-2': require('../../assets/mushrooms/craterellus-cornucopioides-2.jpg'),
+  'russula-virescens-1': require('../../assets/mushrooms/russula-virescens-1.jpg'),
+  'russula-virescens-2': require('../../assets/mushrooms/russula-virescens-2.jpg'),
+  'xerocomellus-chrysenteron-1': require('../../assets/mushrooms/xerocomellus-chrysenteron-1.jpg'),
+  'xerocomellus-chrysenteron-2': require('../../assets/mushrooms/xerocomellus-chrysenteron-2.jpg'),
 };
 
 export const thumbnailAssets: Record<string, number> = {
@@ -135,4 +143,12 @@ export const thumbnailAssets: Record<string, number> = {
   'galerina-marginata-1': require('../../assets/mushrooms/thumbnails/galerina-marginata-1.jpg'),
   'galerina-marginata-2': require('../../assets/mushrooms/thumbnails/galerina-marginata-2.jpg'),
   'galerina-marginata-3': require('../../assets/mushrooms/thumbnails/galerina-marginata-3.jpg'),
+  'coprinus-comatus-1': require('../../assets/mushrooms/thumbnails/coprinus-comatus-1.jpg'),
+  'coprinus-comatus-2': require('../../assets/mushrooms/thumbnails/coprinus-comatus-2.jpg'),
+  'craterellus-cornucopioides-1': require('../../assets/mushrooms/thumbnails/craterellus-cornucopioides-1.jpg'),
+  'craterellus-cornucopioides-2': require('../../assets/mushrooms/thumbnails/craterellus-cornucopioides-2.jpg'),
+  'russula-virescens-1': require('../../assets/mushrooms/thumbnails/russula-virescens-1.jpg'),
+  'russula-virescens-2': require('../../assets/mushrooms/thumbnails/russula-virescens-2.jpg'),
+  'xerocomellus-chrysenteron-1': require('../../assets/mushrooms/thumbnails/xerocomellus-chrysenteron-1.jpg'),
+  'xerocomellus-chrysenteron-2': require('../../assets/mushrooms/thumbnails/xerocomellus-chrysenteron-2.jpg'),
 };

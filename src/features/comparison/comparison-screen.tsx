@@ -139,11 +139,11 @@ function ComparisonDetails({
   compactIdentities: boolean;
 }) {
   const pair = getPair(selected[0].id, selected[1].id);
-  const rows: { label: string; describe: (mushroom: Mushroom) => string }[] = [
-    { label: pl.species.keyFeatures, describe: (item) => item.keyFeatures.join('\n\n') },
+  const rows: { label: string; describe: (mushroom: Mushroom) => string | string[] }[] = [
+    { label: pl.species.keyFeatures, describe: (item) => item.keyFeatures },
     {
       label: pl.comparison.edibility,
-      describe: (item) => `${pl.edibility[item.edibility]}\n\n${item.edibilityNote}`,
+      describe: (item) => [pl.edibility[item.edibility], item.edibilityNote],
     },
     { label: pl.species.cap, describe: (item) => item.cap },
     { label: pl.species.stem, describe: (item) => item.stem },
@@ -153,8 +153,10 @@ function ComparisonDetails({
     { label: pl.species.habitat, describe: (item) => item.habitat },
     {
       label: pl.species.occurrence,
-      describe: (item) =>
-        `${item.occurrenceMonths.map((month) => pl.months.full[month - 1]).join(', ')}\n\n${item.occurrenceNote}`,
+      describe: (item) => [
+        item.occurrenceMonths.map((month) => pl.months.full[month - 1]).join(', '),
+        item.occurrenceNote,
+      ],
     },
   ];
   return (

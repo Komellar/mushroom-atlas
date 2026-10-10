@@ -13,7 +13,7 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Implementation status
 
-Phases 1–7 development is implemented: 30 sourced species, 66 locally bundled photographs with smaller thumbnails, local search/filters, complete species details, and two-species comparison. Twelve curated pairs include source references and relevant qualifications. Search accepts Polish synonyms and recorded scientific synonyms. Dataset version: `0.7.0`.
+Phases 1–7 development is implemented. The current atlas contains 34 sourced species, 74 locally bundled photographs with smaller thumbnails, local search/filters, complete species details, and two-species comparison. Twelve curated pairs include source references and relevant qualifications. Search accepts Polish synonyms and recorded scientific synonyms. Dataset version: `0.8.0`. The four species added in this version have source checks and pending specialist review; the earlier APK and native acceptance records below cover dataset 0.7.0.
 
 Specialist content review and final release sign-off remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
 

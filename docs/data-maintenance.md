@@ -1,6 +1,6 @@
 # Atlas data maintenance
 
-Dataset `0.7.0` contains 30 species, 66 source photographs, 66 thumbnails, and 12 curated pairs. Each species has two or three source photographs. All content is local; both image registries use static `require()` calls in `src/data/photo-assets.ts`.
+Dataset `0.8.0` contains 34 species, 74 source photographs, 74 thumbnails, and 12 curated pairs. Each species has two or three source photographs. All content is local; both image registries use static `require()` calls in `src/data/photo-assets.ts`.
 
 ## Files and rules
 
@@ -30,6 +30,10 @@ Similar-species records can mention a taxon not yet bundled, without a `mushroom
 7. Run `npm run prepare:review` to regenerate photograph credits. Existing specialist review documents are preserved; update their inventory manually when the dataset changes. Keep authors, licenses, modifications, and source/thumbnail hashes with every redistributed image.
 8. Format the generated files with `npx prettier src/data/photos.json src/data/photo-assets.ts docs/photo-credits.md --write`. Run `npm run check`, `npm run export:android`, and `npm run verify:android`. Inspect the pictures and relevant screens. Keep unresolved content and native review items visible in acceptance reports.
 
-The current source photographs total 23,778,549 bytes; thumbnails total 3,043,828 bytes, approximately 87% smaller. Atlas cards and comparison use thumbnails; galleries use the larger source files. This reduces list image decoding and transfer size in previews; native responsiveness has not yet been measured.
+The current source photographs total 27,046,858 bytes; thumbnails total 3,403,120 bytes, approximately 87% smaller. Atlas cards and comparison use thumbnails; galleries use the larger source files. This reduces list image decoding and transfer size in previews; native responsiveness has not yet been measured.
+
+Dataset 0.8.0 adds Coprinus comatus, Craterellus cornucopioides, Russula virescens, and Xerocomellus chrysenteron, each with two licensed Commons photographs. The first gallery image for Coprinus comatus shows young fruitbodies; the second shows deliquescence. The existing Russula virescens lookalike reference now links to its bundled card. First Nature provides the morphological source checks, with Lasy Państwowe providing the Polish autumn range for Craterellus cornucopioides. Other new month ranges are explicitly approximate European ranges. Source identities and visual screening remain preliminary, particularly for the Xerocomellus species complex; independent specialist review is pending.
 
 Exports validate data first. Native first-launch offline acceptance requires an installable standalone build, not Metro or an exported JavaScript bundle. It remains pending until native validation is available.
+
+After adding photo files and regenerating the static registry, restart a running development server with `npx expo start --clear` if Metro reports a missing asset that exists on disk. The dataset 0.8.0 live session required this reset even though clean Android and web exports succeeded. For an already-running Android emulator with LAN connection problems, use `adb reverse tcp:8081 tcp:8081` and open the project at `exp://127.0.0.1:8081` in Expo Go. This development connection does not validate offline operation.
