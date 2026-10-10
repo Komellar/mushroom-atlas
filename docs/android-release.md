@@ -1,6 +1,19 @@
 # Android build and acceptance procedure
 
-Status on 2026-10-09: a standalone internal test APK was built and its archive and signature verified. Fresh installation and first launch in airplane mode passed on the existing Pixel 10 Pro emulator. Full native acceptance and independent content review remain pending. Android is the first release target; iOS build and device acceptance are outside this validation run.
+Status on 2026-10-10: the standalone internal test APK was rebuilt after native large-font testing exposed obscured comparison rows and clipped tab labels. Archive and signature verification and fresh app-data launch in airplane mode passed. Affected native navigation, comparison, small-screen and large-font reruns passed, and offline restart and performance measurements were recorded. Independent content review, interactive TalkBack, rotation, installed-storage measurement, and physical-device performance follow-up remain pending. Android is the first release target; iOS build and device acceptance are outside this validation run.
+
+## Current internal test APK
+
+The subsequent gallery-loading source commit `365992d` is not included in this artifact and still needs a rebuilt APK and native validation.
+
+- Source revision: `cb093b1d4c08df231b32ed5dda307e4ac493d292`.
+- Artifact: `dist/releases/mushroom-atlas-0.1.0-cb093b1.apk`, 130,473,671 bytes.
+- SHA-256: `d81c41468965ee0f5b6b85d11c0830ae2fea06a4122bb990ae990fe0a91e49a2`.
+- Cached Gradle rebuild: 58 seconds; 60 executed and 471 up-to-date tasks. The initial full build below took 9 minutes 34 seconds.
+- All 66 photograph and 66 thumbnail hashes matched; standalone JavaScript and fonts were present. `apksigner` verified v2 signing with the same generated Android Debug certificate recorded below. `aapt` confirmed the Polish label, version, package, launcher, SDK levels, and all four ABIs.
+- ADB updated the Codex-installed test app, then reset only its test data. With airplane mode on, Wi-Fi off, and Metro stopped, the fresh atlas displayed Polish UI and 30 entries. Activity `TotalTime` was 2700 ms and `WaitTime` 2713 ms; these are one activity-start sample, not a startup median.
+
+See [native acceptance](native-acceptance.md) for the original exhaustive checks and affected reruns on this APK. APK files are local ignored artifacts. The generated debug certificate is for internal testing; production distribution needs separate signing.
 
 ## Build prerequisites
 
@@ -55,7 +68,7 @@ This checks that the standalone JavaScript bundle, fonts, and all source/thumbna
 
 Do not install or launch an emulator without a new user request. EAS `--local` officially supports macOS and Linux; Windows/WSL support is not assured. See [local EAS limitations](https://docs.expo.dev/build-reference/local-builds/). Installing a local Android toolchain or accepting its licenses is a separate environment setup step.
 
-## Release record
+## Initial build record
 
 | Field                              | Current record                                                                  |
 | ---------------------------------- | ------------------------------------------------------------------------------- |

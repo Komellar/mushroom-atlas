@@ -15,11 +15,11 @@ Project location: `C:\projects\mushroom-atlas`.
 
 Phases 1–7 development is implemented: 30 sourced species, 66 locally bundled photographs with smaller thumbnails, local search/filters, complete species details, and two-species comparison. Twelve curated pairs include source references and relevant qualifications. Search accepts Polish synonyms and recorded scientific synonyms. Dataset version: `0.7.0`.
 
-Specialist content review, native validation, and the tested release remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
+Specialist content review and final release sign-off remain pending and are recorded in the app and acceptance reports. See [the implementation plan](docs/implementation-plan.md), [Phase 7 acceptance](docs/acceptance/phase-7.md), and [the specialist review inventory](docs/content-review.md). Preparing an inventory does not establish that a reviewer has been arranged.
 
-Phase 8 produced a standalone internal test APK from revision `8e20e93`. Its signature and archive contents passed verification, including all 66 photographs, 66 thumbnails, JavaScript, and fonts. The local artifact is `dist/releases/mushroom-atlas-0.1.0-8e20e93.apk`; APKs are ignored by Git. See [the build record](docs/android-release.md), [native acceptance steps](docs/native-acceptance.md), and [dependency assessment](docs/dependency-assessment.md). The APK uses the generated debug certificate; production signing and native testing remain pending.
+Phase 8 produced a standalone internal test APK, rebuilt from revision `cb093b1` after the large-font fix. Its signature and archive contents passed verification, including all 66 photographs, 66 thumbnails, JavaScript, and fonts. The local artifact is `dist/releases/mushroom-atlas-0.1.0-cb093b1.apk`; APKs are ignored by Git. See [the build record](docs/android-release.md), [native acceptance steps](docs/native-acceptance.md), and [dependency assessment](docs/dependency-assessment.md). The APK uses the generated debug certificate; production signing and the remaining acceptance checks are documented separately.
 
-Phase 1 native acceptance passed on the existing Pixel 10 Pro emulator: fresh offline launch with Polish UI and working navigation. Search/filter checks, all 30 detail pages and 66 photographs, full navigation/state restoration, selection, swapping, duplicate rejection, replacement, and Polish recovery screens passed. ADB testing was explicitly authorized; no emulator was installed or launched. Broader release acceptance remains in progress. See [the native record](docs/native-acceptance.md); physical-device acceptance remains pending.
+Phase 1 native acceptance passed on the existing Pixel 10 Pro emulator: fresh offline launch with Polish UI and working navigation. Search/filter checks, all 30 detail pages and 66 photographs, full navigation/state restoration, selection, swapping, duplicate rejection, replacement, and Polish recovery screens passed. ADB testing was explicitly authorized; no emulator was installed or launched. All curated comparisons passed in both orders; affected reruns verified the rebuilt APK, including small-screen layouts at 200% fonts and offline restart. Startup and scrolling measurements are recorded; emulator jank requires follow-up. See [the native record](docs/native-acceptance.md); physical-device acceptance remains pending.
 
 See [the implementation plan](docs/implementation-plan.md) for phases, steps, acceptance criteria, and pending device checks.
 
@@ -134,9 +134,11 @@ Phase 8 rechecked these findings on 2026-10-09. A compatible fix dry run propose
 
 ## Remaining native validation
 
-1. Finish all curated comparisons in both column orders and a generic comparison.
-2. Check safe areas, small screens, larger system font sizes, and accessibility.
-3. Record offline restart, startup, scrolling, and installation measurements.
-4. Perform physical-device validation when available.
+The later gallery-loading commit `365992d` is not included in the tested `cb093b1` APK; rebuild and validate its native behavior before treating it as accepted.
+
+1. Complete interactive TalkBack and rotation checks.
+2. Measure total installed storage.
+3. Profile scrolling and confirm acceptance on a physical device when available.
+4. Obtain independent specialist content review before full release sign-off.
 
 Use the standalone test APK for first-launch offline validation. Development mode relies on Metro; its browser preview server was stopped before native acceptance preparation.

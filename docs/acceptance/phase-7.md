@@ -2,7 +2,7 @@
 
 Validation date: 2026-10-09. Dataset version: `0.7.0`.
 
-Development result: the expanded atlas and image assets are bundled locally. Independent content verification and standalone first-launch offline behavior remain pending.
+Development result: the expanded atlas and image assets are bundled locally. Standalone first-launch offline behavior subsequently passed on the existing Android emulator; independent content verification remains pending.
 
 - The dataset contains 30 species and 12 curated comparisons, including poisonous lookalikes. Every entry has the required morphological sections, habitat, approximate occurrence months, lookalikes, notes, sources, and two or three photographs.
 - Sources, Commons metadata, attribution, licenses, and visible photograph features were checked. This is preliminary source checking and visual screening, not expert identification. All records retain source-checked status; the app shows the pending specialist review notice.
@@ -15,4 +15,4 @@ Development result: the expanded atlas and image assets are bundled locally. Ind
 
 ![Source-checked dangerous lookalike comparison](phase-7-comparison.jpg)
 
-Required before full acceptance: independent review of every description and photograph, an installable Android build, first launch in airplane mode without Metro or a populated cache, and native navigation/accessibility checks. See [the content review inventory](../content-review.md).
+Native follow-up on 2026-10-09–10 passed fresh standalone offline launch, all 30 detail pages and 66 photographs, all 12 curated comparisons in both orders, navigation, and offline restart. The rebuilt APK retained all asset hashes and passed affected regression checks. See [native acceptance](../native-acceptance.md). Required before full acceptance: independent review of every description and photograph and the remaining accessibility/device checks. See [the content review inventory](../content-review.md).

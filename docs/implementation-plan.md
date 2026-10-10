@@ -15,18 +15,18 @@ Project location: `C:\projects\mushroom-atlas`.
 
 ## Current status and sequencing
 
-| Phase                                    | Status                                                                              |
-| ---------------------------------------- | ----------------------------------------------------------------------------------- |
-| 1 — Project foundation                   | Accepted on the existing Android emulator                                           |
-| 2 — Data model and initial species       | Development implemented; native/content review pending                              |
-| 3 — UI design and shared components      | Development implemented; native accessibility checks pending                        |
-| 4 — Atlas, search, and filters           | Development implemented; native validation pending                                  |
-| 5 — Species details                      | Development implemented; native/content review pending                              |
-| 6 — Comparison                           | Development implemented; native/content review pending                              |
-| 7 — Complete content and offline support | Development implemented; native/content review pending                              |
-| 8 — Validation and installable release   | Internal APK built; first offline launch passed; full native/content review pending |
+| Phase                                    | Status                                                                       |
+| ---------------------------------------- | ---------------------------------------------------------------------------- |
+| 1 — Project foundation                   | Accepted on the existing Android emulator                                    |
+| 2 — Data model and initial species       | Native functional checks passed; independent content review pending          |
+| 3 — UI design and shared components      | Small-screen and large-font checks passed; interactive accessibility pending |
+| 4 — Atlas, search, and filters           | Native atlas, search, filters, and restoration passed                        |
+| 5 — Species details                      | Native functional checks passed; independent content review pending          |
+| 6 — Comparison                           | Native functional checks passed; independent content review pending          |
+| 7 — Complete content and offline support | Native functional checks passed; independent content review pending          |
+| 8 — Validation and installable release   | Internal APK tested; remaining acceptance and content review documented      |
 
-The user authorized ADB testing on an existing emulator. Fresh standalone offline launch, Polish UI, and full navigation passed after correcting a keyboard-related test-helper error. No emulator was installed or launched during this work. Do not install or launch an emulator without a new user request. Broader release validation and independent content review remain pending.
+The user authorized ADB testing on an existing emulator. Fresh standalone offline launch, Polish UI, and full navigation passed after correcting a keyboard-related test-helper error. No emulator was installed or launched during this work. Do not install or launch an emulator without a new user request. The rebuilt APK passed affected native reruns, including 200% fonts and offline restart. Measurements and remaining interactive accessibility, rotation, installed-storage, physical-device performance, and independent content review are recorded in the native acceptance report.
 
 ## Phase 1 — Project foundation
 
@@ -71,7 +71,7 @@ Acceptance rerun on 2026-10-09: code checks, Android bundle export, browser chec
 
 **Acceptance:** a consistent, validated dataset can supply the atlas, details, and comparison screens. Required assets are bundled locally.
 
-Development acceptance on 2026-10-09: five sourced entries, 15 local photographs, one curated pair, and data validation passed. All photo hashes were found in the Android export. See [the Phase 2 acceptance report](acceptance/phase-2.md). Standalone offline and specialist review remain pending.
+Development acceptance on 2026-10-09: five sourced entries, 15 local photographs, one curated pair, and data validation passed. All photo hashes were found in the Android export. See [the Phase 2 acceptance report](acceptance/phase-2.md). Standalone offline rendering subsequently passed; specialist review remains pending.
 
 ## Phase 3 — UI design and shared components
 
@@ -84,7 +84,7 @@ Development acceptance on 2026-10-09: five sourced entries, 15 local photographs
 
 **Acceptance:** the main information is easy to scan and controls remain readable and usable on small screens.
 
-Development acceptance on 2026-10-09: shared UI, screen layout specifications, details foundation, and selector controls passed browser checks at 320 × 568. See [the Phase 3 acceptance report](acceptance/phase-3.md). Native large-font and safe-area checks remain pending.
+Development acceptance on 2026-10-09: shared UI, screen layout specifications, details foundation, and selector controls passed browser checks at 320 × 568. See [the Phase 3 acceptance report](acceptance/phase-3.md). Subsequent native small-screen and large-font checks passed after the comparison/tab fix; interactive TalkBack and rotation remain pending.
 
 ## Phase 4 — Atlas, search, and filters
 
@@ -113,7 +113,7 @@ Development acceptance on 2026-10-09: local search, combined category filters, P
 
 **Acceptance:** every species page contains the requested information, prioritizes the key facts, and links directly to comparison.
 
-Development acceptance on 2026-10-09: all five bundled species render complete detail sections, galleries/credits, sources, and comparison links with preselection. See [the Phase 5 acceptance report](acceptance/phase-5.md). Native and specialist review remain pending.
+Development acceptance on 2026-10-09: all five bundled species render complete detail sections, galleries/credits, sources, and comparison links with preselection. See [the Phase 5 acceptance report](acceptance/phase-5.md). Native detail/gallery checks subsequently passed; specialist review remains pending.
 
 ## Phase 6 — Two-species comparison
 
@@ -128,7 +128,7 @@ Development acceptance on 2026-10-09: all five bundled species render complete d
 
 **Acceptance:** any two different species can be compared offline, and documented similar pairs have prominent, verified differences.
 
-Development acceptance on 2026-10-09: all ten bundled pairs rendered complete aligned comparisons, and selection, replacement, swapping, duplicate prevention, and ordered curated lookup passed browser/automated checks. See [the Phase 6 acceptance report](acceptance/phase-6.md). Native offline and specialist verification remain pending.
+Development acceptance on 2026-10-09: all ten bundled pairs rendered complete aligned comparisons, and selection, replacement, swapping, duplicate prevention, and ordered curated lookup passed browser/automated checks. See [the Phase 6 acceptance report](acceptance/phase-6.md). Native offline comparisons subsequently passed; specialist verification remains pending.
 
 ## Phase 7 — Complete content and offline support
 
@@ -144,9 +144,11 @@ Development acceptance on 2026-10-09: all ten bundled pairs rendered complete al
 
 **Acceptance:** the complete dataset and required photographs are available from the first offline launch, with documented content verification and asset rights.
 
-Development acceptance on 2026-10-09: dataset `0.7.0` contains 30 source-checked species, 66 photographs with local thumbnails, and 12 curated pairs. All 132 photograph/thumbnail hashes were found among the declared Android export assets and in the standalone APK. Thirty detail pages and both orders of all curated pairs passed browser checks. Fresh native first offline launch passed; exhaustive native content checks remain pending. See [the Phase 7 report](acceptance/phase-7.md), [photo credits](photo-credits.md), and [pending content review](content-review.md). Independent identification review has not been arranged or completed.
+Development acceptance on 2026-10-09: dataset `0.7.0` contains 30 source-checked species, 66 photographs with local thumbnails, and 12 curated pairs. All 132 photograph/thumbnail hashes were found among the declared Android export assets and in the standalone APK. Thirty detail pages and both orders of all curated pairs passed browser checks. Fresh native first offline launch, all 30 detail pages, all 66 photographs, and both orders of all curated comparisons passed. These rendering checks do not establish expert content approval. See [the Phase 7 report](acceptance/phase-7.md), [photo credits](photo-credits.md), and [pending content review](content-review.md). Independent identification review has not been arranged or completed.
 
 ## Phase 8 — Validation, optimization, and installable release
+
+The native record covers APK revision `cb093b1`. The subsequent gallery-loading source commit `365992d` still needs a rebuilt APK and native validation.
 
 1. Run automated checks for data completeness, image references, and similar-species/pair integrity.
 2. Test search normalization, combined filters, two-species selection, pair lookup regardless of column order, and rejection of identical selections.

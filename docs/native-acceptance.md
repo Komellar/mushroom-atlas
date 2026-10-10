@@ -1,52 +1,63 @@
 # Standalone Android acceptance record
 
-Status: partial native acceptance; Phase 1 launch/navigation accepted. A standalone internal test APK was built, verified, and freshly installed; see [the build record](android-release.md). Offline first launch, full navigation, search/filter restoration, selection controls, all 30 detail pages, and all 66 photographs passed with Metro stopped. Remaining comparisons, layout/accessibility, restart, and measurements are in progress.
+Validation dates: 2026-10-09–10. Phase 1 Polish launch and navigation acceptance passed. Native functional checks and affected large-font regression checks passed; final release sign-off remains incomplete because the checks listed below and independent content review remain pending.
 
-Target: an already-running Pixel 10 Pro emulator (`sdk_gphone16k_x86_64`) reporting Android 17/API 37, 1280 × 2856 pixels, density 480, and font scale 1.0. The app was absent before installation. The user explicitly authorized ADB installation/testing and temporary settings changes. No emulator was installed or launched. Physical-device acceptance remains pending.
+Target: the already-running Pixel 10 Pro emulator (`sdk_gphone16k_x86_64`), Android 17/API 37, physical display 1280 × 2856 pixels, density 480, font scale 1.0. The user explicitly authorized ADB installation/testing and temporary settings changes. No emulator was installed or launched. The app was absent before the initial installation. Dataset: `0.7.0`; app: `0.1.0`. No personal device identifiers are recorded.
 
-On 2026-10-09, ADB installation returned `Success`; airplane mode read `1` and Wi-Fi read `0` before the first `MainActivity` start. Android reported a cold activity launch with `TotalTime: 2187` ms and `WaitTime: 2191` ms. These are one platform activity-start sample, not time-to-usable-atlas measurements or a three-start median. The first screenshot and hierarchy showed the Polish atlas, safety guidance, 30 entries, bottom navigation, and a bundled photograph. [First-launch screenshot](acceptance/phase-8-first-launch.png).
+## Artifact and scope
 
-The Borowik details page rendered offline with identification text and a local photograph. Android back returned to the atlas with its list position preserved. The initial search sequence was invalidated by an automation error: Android's hierarchy exposed app controls obscured by the on-screen keyboard, so some test taps/swipes entered text instead. The earlier attribution to other input was incorrect. The corrected helper dismisses the keyboard before app-control taps and scrolling.
+The subsequent gallery-loading commit `365992d` is already on `main`. It is not included in the APK tested here, so its native validation remains pending. The results below apply to the stated APK revisions.
 
-The resumed offline sequence passed `luszczak` normalization, scientific synonym `Xerocomus badius`, `kurka` with the inedible filter, empty combined-filter results, unknown-query feedback, and reset to all 30 species. All 30 species displayed their identity, edibility note, 12 required detail headings, and every gallery photograph. All 66 enlarged images had nonblank pixels and changed between gallery selections; previous/next counters, boundary states, and Android back passed. These checks establish rendering and navigation, not expert identification.
+The original APK from `8e20e93` received exhaustive checks of all 30 detail pages, all 66 gallery photographs, and all 12 curated pairs in both column orders, plus a generic pair. The current APK from `cb093b1d4c08df231b32ed5dda307e4ac493d292` contains the comparison/tab large-font fix and received affected reruns. The exhaustive gallery and pair matrix was not repeated in full on the rebuild. Archive verification confirmed all unchanged photograph and thumbnail hashes, JavaScript, and fonts in the rebuilt APK.
 
-The full atlas → Łuszczak details → Galerina details → comparison → atlas flow passed. Details preselection, searchable second selection, swapping, disabled duplicate rejection, replacement, and selection-modal Android back worked. The query, edible filter, one result, and card position were retained. The recorded details/system-back repeat restored card bounds within 16 pixels. Both Polish missing-species and missing-route screens recovered to the atlas. Original settings were restored after the first run; the resumed run will restore them again when testing finishes.
+Current local artifact: `dist/releases/mushroom-atlas-0.1.0-cb093b1.apk`, 130,473,671 bytes. SHA-256: `d81c41468965ee0f5b6b85d11c0830ae2fea06a4122bb990ae990fe0a91e49a2`. Its verified v2 signature uses the generated Android Debug certificate, SHA-256 `fac61745dc0903786fb9ede62a962b399f7348f0bb6f899b8332667591033b9c`. This is an internal test package. See [build provenance and procedure](android-release.md).
 
-Record tester, date, device model, Android version, display size, system font scale, APK hash, signing certificate fingerprint, source revision, app version, and dataset version before testing. Do not record personal device identifiers.
+## Functional results
 
-All 12 curated pairs passed both native column orders, plus one undocumented pair with full generic rows. All nine generic headings, correctly ordered scientific names, both photo labels, aligned curated values, and applicable qualifications were observed offline. The 320 × 568 dp check at font scale 1.0 passed. At font scale 2.0, the pinned comparison identity block obscured most feature rows and tab labels were clipped. [Before-fix screenshot](acceptance/phase-8-large-font-before.png). The implementation now pins only Polish names on short displays with enlarged fonts; scientific names, column labels, and edibility remain above the photographs. Tab height now accommodates enlarged labels and the bottom inset. A rebuilt APK and affected native reruns are pending on 2026-10-10.
+Fresh installation of the original APK launched with airplane mode on, Wi-Fi off, and Metro stopped. Polish guidance, 30 entries, navigation, and a bundled photograph rendered. Android activity TotalTime was 2187 ms and WaitTime 2191 ms. [First-launch screenshot](acceptance/phase-8-first-launch.png).
 
-## First launch without a populated cache
+The updated APK was installed over this test app and only its test data was cleared. Fresh offline launch again rendered the Polish atlas and 30 entries; TotalTime was 2700 ms and WaitTime 2713 ms. These single activity-start samples do not establish a time-to-usable median.
 
-1. Use a fresh installation on the test device, or clear this app's test data with the device owner's agreement. Stop Metro.
-2. Enable airplane mode and verify Wi-Fi is also off before opening the app for the first time.
-3. Launch from the device's home screen. Record time to a usable atlas and any crash or blocking message. Confirm the Polish title, safety guidance, 30 entries, and category labels.
-4. Open every species. Check all 66 gallery photographs, captions, enlargement/close, sources/credits text, morphology, habitat, months, and lookalikes. External source links need a network; the atlas and attribution text must still render offline.
-5. Search Polish, Latin, and older scientific names, with and without Polish diacritics. Combine category filters, clear them, and verify empty results. Include `luszczak`, `Xerocomus badius`, and `kurka`.
-6. Compare different species, replace either slot, reject identical selections, and swap columns. Check the 12 curated pairs in both orders and an undocumented pair with full generic rows. Scroll through all feature rows while checking aligned columns and persistent identities.
-7. Complete atlas → details → similar species → comparison → atlas. Check query/filter/list-position restoration and Android system back behavior from details, selection, and enlarged photographs.
-8. Force-close and restart offline; repeat opening the atlas, a photograph, and comparison. Record whether restart works without Metro or any previously downloaded asset.
+Search passed `luszczak` normalization, scientific synonym `Xerocomus badius`, `kurka` with the inedible filter, empty combined-filter feedback, unknown queries, and reset to all 30 species. All 30 species displayed identity, edibility notes, and 12 required detail headings. All 66 enlarged photographs had nonblank pixels and changed between gallery selections; counters, boundary controls, close, and Android back passed. These checks establish rendering and navigation, not expert mushroom identification.
 
-## Layout and responsiveness
+All 12 curated pairs passed both column orders, plus one undocumented pair with all nine generic headings. Ordered identities, photo labels, aligned curated values, and qualification notes were observed offline. The rebuilt APK passed three focused comparison cases, including both orders of Kuehneromyces/Galerina and a generic pair.
 
-Check navigation and gesture safe areas, status bar, a small phone, portrait rotation behavior, scrolling, and the largest practical system font scale. Check touch targets, visible focus/selection, TalkBack labels, gallery controls, and disabled duplicate choices. Record any clipped text, obscured controls, inaccessible modal behavior, image delay, or scroll interruption.
+The rebuilt APK passed seven navigation cases: full atlas → details → similar species → comparison → atlas flow, details preselection, searchable second selection, swapping, disabled duplicate rejection, cancellation/replacement, and both Polish missing-route recovery paths. Query, edible filter, one result, and list position were retained; the recorded atlas card bounds matched exactly before and after the repeat. Offline force-close/restart reopened the atlas, a photograph, and comparison without Metro or network access. No runtime errors were captured in the final active-process log check; this does not imply there were no errors across every interrupted run.
 
-Measure cold startup over at least three fresh process starts and record the individual times, observation method, and median. Measure installation/APK size and atlas scrolling under the test conditions. Browser transfer times and export size are not native performance measurements. Optimize only against observed problems and rerun affected checks after a change.
+## Layout and interrupted runs
 
-## Results
+At 320 × 568 dp and font scale 2.0, the original pinned comparison identity block obscured feature rows and tab labels were clipped. The fix pins only Polish names on short displays with enlarged fonts; scientific names, column labels, and edibility remain above the photographs. Tab height accommodates enlarged labels and the bottom inset.
 
-| Check                                             | Result  | Evidence / device / issue                                           |
-| ------------------------------------------------- | ------- | ------------------------------------------------------------------- |
-| Fresh first launch in airplane mode               | Passed  | Fresh standalone install; network settings verified; Metro stopped  |
-| Polish UI and 30 entries                          | Passed  | Native screenshot and hierarchy                                     |
-| Every detail page and all 66 photographs          | Passed  | All 30 identities, notes, 12 headings, and gallery controls/images  |
-| Search, combined filters, reset, restoration      | Passed  | Synonyms, empty feedback, reset, and full-flow atlas state retained |
-| Selection, duplicate rejection, swap, replacement | Passed  | Native searchable selectors, disabled duplicate, swap, replacement  |
-| Curated and generic comparisons offline           | Passed  | All 12 curated pairs in both orders; generic pair and all nine rows |
-| Full navigation flow and system back              | Passed  | Full flow, detail/selector/gallery back, and Polish route recovery  |
-| Safe areas, small screen, large fonts, TalkBack   | Pending | —                                                                   |
-| Offline force-close and restart                   | Pending | —                                                                   |
-| Cold startup and list responsiveness              | Pending | —                                                                   |
-| APK and installation size                         | Partial | APK 130,473,159 bytes; installation measurement pending             |
+[Before the fix](acceptance/phase-8-large-font-before.png) · [After the fix](acceptance/phase-8-large-font-after.png).
 
-Native sign-off remains pending until evidence is recorded. Content approval is a separate requirement in [independent content review](content-review.md).
+The rebuilt APK passed 320 × 568 dp checks at font scales 1.0 and 2.0: search, keyboard dismissal, detail scrolling, and two-photo gallery next/close controls. Three representative long-name comparisons at scale 2.0 passed: Kuehneromyces/Galerina, Amanita rubescens/pantherina, and Macrolepiota/Chlorophyllum. Sampled headings and the final feature row were observed, with scrolling and representative cells inspected. The shortened pinned block left 200 dp of uncovered content in the recorded cases. This does not establish visual inspection of every comparison paragraph at every font scale. Accessibility labels and selected/disabled states were inspected; interactive TalkBack gestures were not tested. Rotation was not tested.
+
+The first search sequence was invalidated by helper taps targeting controls obscured by the keyboard. The earlier attribution to other input was incorrect; the corrected helper dismisses the keyboard before app-control actions. A large-font run later timed out and the emulator recorded an app ANR. Windows entered sleep at 22:10:19 UTC; on resume, its clock jumped from 22:10:25 UTC to 05:45:20 UTC. The Android ANR timing overlapped this suspension. That run's timing was invalidated; unfinished cases and subsequent navigation/comparison checks passed after resume. This correlation does not establish a general absence of app ANRs.
+
+At completion, original settings were verified restored: airplane mode 0, Wi-Fi 1, font scale 1.0, physical size 1280 × 2856 with no override, and density 480. Rotation and accessibility settings were not changed.
+
+## Measurements
+
+Three fresh process starts used Android force-stop followed by activity start with timing, with existing app data and OS caches retained, airplane mode on, and Wi-Fi off. Activity TotalTime values were 870, 768, and 747 ms; median 768 ms. Host times until hierarchy confirmation of the atlas were 3604, 3498, and 3478 ms; median 3498 ms. Hierarchy collection adds several seconds of automation overhead, so those values are not intrinsic time-to-usable measurements.
+
+Eight controlled 500 ms atlas swipes at the original display/font settings recorded 290 frames. Android gfxinfo reported 90 modern janky frames (31.03%) and five legacy janky frames (1.72%). Frame-time percentiles at 50/90/95/99 were 17/18/19/20 ms. The high modern jank count remains a profiling follow-up; smooth-scrolling acceptance is not established. These emulator observations require physical-device confirmation. APK size is recorded above; total installed storage was not measured.
+
+## Results and remaining acceptance
+
+| Check                                     | Result   | Scope                                                                                       |
+| ----------------------------------------- | -------- | ------------------------------------------------------------------------------------------- |
+| Fresh offline Polish launch               | Passed   | Original fresh install and rebuilt APK with cleared test data                               |
+| All details and 66 photographs            | Passed   | Exhaustive original APK; unchanged asset verification and focused gallery reruns on rebuild |
+| Search, filters, reset, restoration       | Passed   | Native synonyms, empty feedback, and retained atlas state                                   |
+| Selection, swaps, duplicates, replacement | Passed   | Rebuilt APK navigation regression                                                           |
+| Curated and generic comparisons           | Passed   | Exhaustive original matrix; three affected cases on rebuild                                 |
+| Navigation and Android back               | Passed   | Seven rebuilt APK cases and gallery checks                                                  |
+| Small screen and large fonts              | Passed   | Recorded 320 × 568 dp layouts and three representative long-name pairs                      |
+| Offline restart                           | Passed   | Atlas, enlarged photograph, comparison                                                      |
+| Startup and scrolling                     | Measured | Timing limits above; high emulator jank requires follow-up                                  |
+| APK and installed size                    | Partial  | APK 130,473,671 bytes; installed storage pending                                            |
+| Interactive TalkBack and rotation         | Pending  | Not performed                                                                               |
+| Physical-device/performance acceptance    | Pending  | Emulator evidence only                                                                      |
+| Independent content approval              | Pending  | Reviewer has not been arranged or completed                                                 |
+
+The remaining work is interactive TalkBack and rotation testing, total installed-storage measurement, physical-device performance validation, and [independent content review](content-review.md). For a future fresh-install rerun, stop Metro, verify airplane mode/Wi-Fi before first launch, record artifact/device settings and timing methods, repeat details/gallery/search/comparison/navigation checks, and restore temporary settings afterward. Content approval remains separate from successful rendering.

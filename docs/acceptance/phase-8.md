@@ -1,8 +1,8 @@
 # Phase 8 development validation and release preparation
 
-Validation date: 2026-10-09. Dataset: `0.7.0`.
+Validation dates: 2026-10-09–10. Dataset: `0.7.0`.
 
-Result: development checks passed; a standalone internal test APK was built, verified, and freshly launched offline. Full native acceptance and independent content review remain pending. This report does not establish a completed release.
+Result: development checks passed; a standalone internal test APK was built, verified, and freshly launched offline. Native functional acceptance passed; remaining accessibility, rotation, storage, physical-device performance, and independent content review are recorded below. This report does not establish a completed release.
 
 - Dataset validation and all 27 tests passed, including search normalization, scientific synonyms, combined filters, invalid/duplicate selections, reversible swapping, reference integrity, and both orders of every curated pair across 870 possible ordered different selections.
 - TypeScript, ESLint, formatting, and the Android bundle export passed. Export verification found all 66 photographs and 66 thumbnails among the declared assets, with the bundle and local fonts present.
@@ -17,4 +17,10 @@ Result: development checks passed; a standalone internal test APK was built, ver
 
 The corrected native sequence also passed every detail page and all 66 gallery photographs, complete navigation with atlas state restoration, searchable selection, duplicate rejection, swapping, replacement, and Polish recovery screens. Phase 1 native acceptance is now complete on the existing emulator.
 
-Remaining acceptance: finish native comparison and layout/accessibility testing and offline restart; record startup/list/installation measurements; obtain independent review of descriptions, categories, photographs, and curated distinctions.
+Follow-up on 2026-10-10: all 12 curated pairs passed both native orders, plus a generic pair. Large-font testing exposed obscured comparison rows and clipped tab labels; revision `cb093b1` fixed both. Its verified rebuilt APK passed fresh offline launch, all seven navigation cases, three focused comparison cases, 320 × 568 dp layouts at font scales 1.0 and 2.0, and three representative long-name comparisons at 2.0. Offline restart passed. Exhaustive detail/gallery and pair tests used the original APK; the rebuild received affected reruns and unchanged-asset hash verification.
+
+Three fresh process starts recorded activity times of 870, 768, and 747 ms (median 768 ms; app data and OS caches retained). Emulator scrolling recorded 90/290 janky frames (31.03%) and 17/18/19/20 ms frame-time percentiles; performance remains a follow-up, not a pass. One interrupted run recorded an ANR correlated with Windows host sleep and a seven-hour clock jump; resumed cases passed. Original emulator settings were restored. See [native acceptance](../native-acceptance.md) for methods and limits.
+
+Remaining acceptance: interactive TalkBack, rotation, installed-storage measurement, physical-device/performance follow-up, and independent review of descriptions, categories, photographs, and curated distinctions.
+
+The later gallery-loading commit `365992d` is not part of the tested `cb093b1` APK. Rebuilding and native validation of that change remain pending.

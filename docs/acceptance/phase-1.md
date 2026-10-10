@@ -41,3 +41,5 @@ The standalone APK from revision `8e20e93` passed fresh first offline launch on 
 - Invalid species and unknown routes displayed Polish recovery screens with working atlas links.
 
 The initial native sequence was invalidated by test actions targeting controls obscured by the keyboard. The helper was corrected and the navigation sequence rerun successfully. This acceptance concerns application behavior; it does not establish expert approval of mushroom content. Physical-device validation remains a follow-up.
+
+Follow-up on 2026-10-10: the rebuilt APK from `cb093b1` passed fresh offline Polish launch and all seven navigation regression cases, including exact atlas card-position restoration in the recorded repeat. Small-screen and 200% font checks verified the comparison/tab fix. Phase 1 acceptance remains passed on the existing emulator; see [native acceptance](../native-acceptance.md).
