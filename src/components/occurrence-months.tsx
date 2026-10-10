@@ -34,15 +34,23 @@ export function OccurrenceMonths({ months, note }: { months: Month[]; note: stri
   );
 }
 const styles = StyleSheet.create({
-  section: { gap: theme.spacing.small },
+  section: {
+    gap: theme.spacing.medium,
+    padding: theme.spacing.large,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.radius.medium,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+  },
   months: { flexDirection: 'row', flexWrap: 'wrap', gap: theme.spacing.small },
   month: {
     minWidth: 56,
     padding: theme.spacing.small,
     borderWidth: 1,
     borderColor: theme.colors.border,
-    borderRadius: 8,
+    borderRadius: theme.radius.small,
+    alignItems: 'center',
   },
-  active: { backgroundColor: theme.colors.primarySoft, borderColor: theme.colors.primary },
-  activeText: { fontWeight: '700', color: theme.colors.primary },
+  active: { backgroundColor: theme.colors.primary, borderColor: theme.colors.primary },
+  activeText: { fontWeight: '700', color: theme.colors.surface },
 });

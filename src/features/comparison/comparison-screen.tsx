@@ -8,6 +8,7 @@ import { AppText } from '@/components/app-text';
 import { Button } from '@/components/button';
 import { ComparisonRow } from '@/components/comparison-row';
 import { EdibilityBadge } from '@/components/edibility-badge';
+import { Disclosure } from '@/components/disclosure';
 import { ExternalReference } from '@/components/external-reference';
 import { PlaceholderPanel } from '@/components/placeholder-panel';
 import { SafetyNotice } from '@/components/safety-notice';
@@ -38,7 +39,7 @@ export default function ComparisonScreen() {
 }
 
 function ComparisonContent({ initialSelection }: { initialSelection: ComparisonSelection }) {
-  const { height, fontScale } = useWindowDimensions();
+  const { width, height, fontScale } = useWindowDimensions();
   const compactIdentities = fontScale > 1.3 && height < 700;
   const [selection, setSelection] = useState(initialSelection);
   const first = getMushroom(selection.firstId);
@@ -50,6 +51,7 @@ function ComparisonContent({ initialSelection }: { initialSelection: ComparisonS
         key={`${first?.id ?? ''}|${second?.id ?? ''}`}
         stickyHeaderIndices={selected ? [1] : undefined}
         contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
       >
         <View style={styles.introduction}>
           <AppText variant="eyebrow">{pl.comparison.eyebrow}</AppText>
@@ -57,25 +59,34 @@ function ComparisonContent({ initialSelection }: { initialSelection: ComparisonS
             {pl.comparison.title}
           </AppText>
           <AppText>{pl.comparison.description}</AppText>
-          <SpeciesSelector
-            label={pl.selection.first}
-            selectedId={first?.id}
-            excludedId={second?.id}
-            onSelect={(id) =>
-              setSelection((current) => selectComparisonSpecies(mushrooms, current, 'firstId', id))
-            }
-          />
-          <SpeciesSelector
-            label={pl.selection.second}
-            selectedId={second?.id}
-            excludedId={first?.id}
-            onSelect={(id) =>
-              setSelection((current) => selectComparisonSpecies(mushrooms, current, 'secondId', id))
-            }
-          />
+          <View
+            style={[styles.selectors, width >= 600 && fontScale <= 1.3 && styles.wideSelectors]}
+          >
+            <SpeciesSelector
+              label={pl.selection.first}
+              selectedId={first?.id}
+              excludedId={second?.id}
+              onSelect={(id) =>
+                setSelection((current) =>
+                  selectComparisonSpecies(mushrooms, current, 'firstId', id),
+                )
+              }
+            />
+            <SpeciesSelector
+              label={pl.selection.second}
+              selectedId={second?.id}
+              excludedId={first?.id}
+              onSelect={(id) =>
+                setSelection((current) =>
+                  selectComparisonSpecies(mushrooms, current, 'secondId', id),
+                )
+              }
+            />
+          </View>
           <Button
             label={pl.comparison.swap}
             secondary
+            icon="swap-horizontal-outline"
             disabled={!selected}
             onPress={() => setSelection(swapComparisonSpecies)}
           />
@@ -216,12 +227,14 @@ function ComparisonPhoto({ mushroom }: { mushroom: Mushroom }) {
           />
           <AppText style={styles.credit}>{photo.caption}</AppText>
           <AppText style={styles.credit}>{`${pl.photos.author}: ${photo.author}`}</AppText>
-          <ExternalReference url={photo.sourceUrl} label={pl.photos.source} />
-          <ExternalReference
-            url={photo.licenseUrl}
-            label={`${pl.photos.license}: ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}
-          />
-          <AppText style={styles.credit}>{pl.photos.thumbnail}</AppText>
+          <Disclosure title={pl.photos.attribution} compact>
+            <ExternalReference url={photo.sourceUrl} label={pl.photos.source} />
+            <ExternalReference
+              url={photo.licenseUrl}
+              label={`${pl.photos.license}: ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}
+            />
+            <AppText style={styles.credit}>{pl.photos.thumbnail}</AppText>
+          </Disclosure>
         </>
       )}
       <ActionLink
@@ -237,30 +250,32 @@ const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: theme.colors.background },
   scrollContent: { flexGrow: 1, paddingBottom: theme.spacing.large },
   introduction: {
-    padding: theme.spacing.large,
+    padding: theme.layout.gutter,
     gap: theme.spacing.medium,
     width: '100%',
-    maxWidth: 640,
+    maxWidth: theme.layout.readingWidth,
     alignSelf: 'center',
   },
   sticky: {
     backgroundColor: theme.colors.background,
-    paddingHorizontal: theme.spacing.large,
+    paddingHorizontal: theme.layout.gutter,
     paddingVertical: theme.spacing.small,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.border,
     width: '100%',
-    maxWidth: 640,
+    maxWidth: theme.layout.readingWidth,
     alignSelf: 'center',
   },
   details: {
-    padding: theme.spacing.large,
+    padding: theme.layout.gutter,
     gap: theme.spacing.medium,
     width: '100%',
-    maxWidth: 640,
+    maxWidth: theme.layout.readingWidth,
     alignSelf: 'center',
   },
   columns: { flexDirection: 'row', alignItems: 'stretch' },
+  selectors: { gap: theme.spacing.medium },
+  wideSelectors: { flexDirection: 'row' },
   cell: { flex: 1, minWidth: 0, paddingRight: theme.spacing.small, gap: theme.spacing.small },
   second: {
     paddingRight: 0,
@@ -268,10 +283,20 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderLeftColor: theme.colors.border,
   },
-  name: { fontWeight: '700' },
+  name: { fontWeight: '700', color: theme.colors.primary },
   scientific: { fontStyle: 'italic', fontSize: 13, lineHeight: 18 },
-  photo: { width: '100%', aspectRatio: 1.2, backgroundColor: theme.colors.surface },
+  photo: {
+    width: '100%',
+    aspectRatio: 1.2,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.radius.small,
+  },
   credit: { fontSize: 12, lineHeight: 18 },
   review: { color: theme.colors.warning, fontWeight: '600' },
-  curated: { gap: theme.spacing.small },
+  curated: {
+    gap: theme.spacing.medium,
+    backgroundColor: theme.colors.primarySoft,
+    padding: theme.spacing.medium,
+    borderRadius: theme.radius.medium,
+  },
 });

@@ -16,5 +16,11 @@ export function ExternalReference({ url, label }: { url: string; label: string }
 }
 const styles = StyleSheet.create({
   link: { minHeight: theme.touchTarget, justifyContent: 'center' },
-  label: { color: theme.colors.primary, textDecorationLine: 'underline' },
+  label: {
+    color: theme.colors.primary,
+    fontSize: 13,
+    lineHeight: 20,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
+  },
 });

@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { ActionLink } from '@/components/action-link';
 import { AppText } from '@/components/app-text';
 import { EdibilityBadge } from '@/components/edibility-badge';
+import { Disclosure } from '@/components/disclosure';
 import { ExternalReference } from '@/components/external-reference';
 import { FeatureList } from '@/components/feature-list';
 import { OccurrenceMonths } from '@/components/occurrence-months';
@@ -36,6 +37,7 @@ export default function MushroomDetailsScreen() {
       eyebrow={pl.details.eyebrow}
       title={mushroom.polishName}
       description={mushroom.scientificName}
+      scientific
     >
       <Stack.Screen options={{ title: mushroom.polishName }} />
       <View style={styles.section}>
@@ -45,9 +47,9 @@ export default function MushroomDetailsScreen() {
           <AppText style={styles.review}>{pl.safety.reviewPending}</AppText>
         )}
       </View>
-      <FeatureList title={pl.species.keyFeatures} items={mushroom.keyFeatures} />
       <PhotoGallery key={mushroom.id} photoIds={mushroom.photoIds} />
-      <ActionLink href={compareLink} label={pl.details.comparisonAction} />
+      <ActionLink href={compareLink} label={pl.details.comparisonAction} secondary />
+      <FeatureList title={pl.species.keyFeatures} items={mushroom.keyFeatures} />
       <FeatureList title={pl.species.identificationTips} items={mushroom.identificationTips} />
       {mushroom.synonyms.length > 0 && (
         <View style={styles.section}>
@@ -98,10 +100,7 @@ export default function MushroomDetailsScreen() {
         ))}
       </View>
       <SafetyNotice />
-      <View style={styles.section}>
-        <AppText variant="heading" accessibilityRole="header">
-          {pl.species.references}
-        </AppText>
+      <Disclosure title={pl.species.references}>
         {mushroom.referenceIds.map((referenceId) => {
           const reference = atlasMetadata.references.find((item) => item.id === referenceId);
           return reference ? (
@@ -112,11 +111,8 @@ export default function MushroomDetailsScreen() {
           ) : null;
         })}
         <AppText>{`${pl.details.sourceCheck}: ${mushroom.reviewedAt} · ${pl.details.dataVersion}: ${mushroom.datasetVersion}`}</AppText>
-      </View>
-      <View style={styles.section}>
-        <AppText variant="heading" accessibilityRole="header">
-          {pl.species.credits}
-        </AppText>
+      </Disclosure>
+      <Disclosure title={pl.species.credits}>
         {mushroom.photoIds.map((photoId) => {
           const photo = getPhoto(photoId);
           return photo ? (
@@ -132,20 +128,27 @@ export default function MushroomDetailsScreen() {
             </View>
           ) : null;
         })}
-      </View>
+      </Disclosure>
       <ActionLink href="/" label={pl.details.atlasAction} secondary replace />
     </Page>
   );
 }
 const styles = StyleSheet.create({
-  section: { gap: theme.spacing.small },
+  section: {
+    gap: theme.spacing.medium,
+    padding: theme.spacing.large,
+    backgroundColor: theme.colors.surface,
+    borderRadius: theme.radius.medium,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+  },
   similar: {
     gap: theme.spacing.small,
     padding: theme.spacing.medium,
-    backgroundColor: theme.colors.surface,
+    backgroundColor: theme.colors.background,
     borderRadius: theme.radius.medium,
     marginBottom: theme.spacing.small,
   },
   scientific: { fontStyle: 'italic' },
-  review: { color: theme.colors.warning, fontWeight: '600' },
+  review: { color: theme.colors.warning, fontSize: 12, lineHeight: 18 },
 });

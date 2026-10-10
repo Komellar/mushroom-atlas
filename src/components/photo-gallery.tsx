@@ -5,10 +5,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppText } from '@/components/app-text';
 import { Button } from '@/components/button';
+import { Disclosure } from '@/components/disclosure';
 import { ExternalReference } from '@/components/external-reference';
 import { GalleryImage } from '@/components/gallery-image';
+import { IconButton } from '@/components/icon-button';
 import { getPhoto } from '@/data/atlas';
-import { photoAssets } from '@/data/photo-assets';
+import { photoAssets, thumbnailAssets } from '@/data/photo-assets';
 import { pl } from '@/locales/pl';
 import { theme } from '@/theme/theme';
 import type { MushroomPhoto } from '@/types/atlas';
@@ -16,14 +18,20 @@ import type { MushroomPhoto } from '@/types/atlas';
 function PhotoCaption({ photo }: { photo: MushroomPhoto }) {
   return (
     <View style={styles.caption}>
-      <AppText>{photo.caption}</AppText>
-      <AppText>{`${pl.photos.author}: ${photo.author}`}</AppText>
-      <ExternalReference url={photo.sourceUrl} label={pl.photos.source} />
-      <ExternalReference
-        url={photo.licenseUrl}
-        label={`${pl.photos.license}: ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}
-      />
-      {photo.downloadUrl.includes('/thumb/') && <AppText>{pl.photos.resized}</AppText>}
+      <AppText style={styles.description}>{photo.caption}</AppText>
+      <AppText variant="caption">{`${pl.photos.author}: ${photo.author} · ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}</AppText>
+      <Disclosure key={photo.id} title={pl.photos.attribution} compact>
+        <View style={styles.references}>
+          <ExternalReference url={photo.sourceUrl} label={pl.photos.source} />
+          <ExternalReference
+            url={photo.licenseUrl}
+            label={`${pl.photos.license}: ${photo.license === 'Public domain' ? pl.photos.publicDomain : photo.license}`}
+          />
+        </View>
+        {photo.downloadUrl.includes('/thumb/') && (
+          <AppText variant="caption">{pl.photos.resized}</AppText>
+        )}
+      </Disclosure>
     </View>
   );
 }
@@ -57,27 +65,29 @@ export function PhotoGallery({ photoIds }: { photoIds: string[] }) {
   if (!photo) return null;
   const controls = (
     <View style={styles.controls}>
-      <View style={styles.control}>
-        <Button
-          label={pl.photos.previous}
-          secondary
-          disabled={selected === 0}
-          onPress={() => setSelected(selected - 1)}
-        />
-      </View>
-      <AppText>{`${selected + 1} / ${photoIds.length}`}</AppText>
-      <View style={styles.control}>
-        <Button
-          label={pl.photos.next}
-          secondary
-          disabled={selected === photoIds.length - 1}
-          onPress={() => setSelected(selected + 1)}
-        />
-      </View>
+      <IconButton
+        icon="chevron-back"
+        label={pl.photos.previous}
+        disabled={selected === 0}
+        onPress={() => setSelected((value) => Math.max(0, value - 1))}
+      />
+      <AppText
+        style={styles.counter}
+        accessibilityLiveRegion="polite"
+      >{`${selected + 1} / ${photoIds.length}`}</AppText>
+      <IconButton
+        icon="chevron-forward"
+        label={pl.photos.next}
+        disabled={selected === photoIds.length - 1}
+        onPress={() => setSelected((value) => Math.min(photoIds.length - 1, value + 1))}
+      />
     </View>
   );
   return (
     <View style={styles.gallery}>
+      <AppText variant="heading" accessibilityRole="header">
+        {pl.photos.gallery}
+      </AppText>
       <View>
         <GalleryImage
           key={photo.id}
@@ -86,19 +96,48 @@ export function PhotoGallery({ photoIds }: { photoIds: string[] }) {
           style={styles.image}
           onPress={() => setEnlarged(true)}
         />
-        <Pressable
-          onPress={() => setEnlarged(true)}
-          accessibilityRole="button"
-          accessibilityLabel={pl.photos.enlarge}
-        >
-          <AppText style={styles.enlarge}>{pl.photos.enlarge} ⤢</AppText>
-        </Pressable>
       </View>
-      {controls}
+      <View style={styles.thumbnailStrip}>
+        {photoIds.map((id, index) => {
+          const item = getPhoto(id);
+          if (!item) return null;
+          return (
+            <Pressable
+              key={id}
+              onPress={() => setSelected(index)}
+              accessibilityRole="button"
+              accessibilityLabel={`${pl.photos.select} ${index + 1}: ${item.caption}`}
+              accessibilityState={{ selected: index === selected }}
+              style={[styles.thumbnail, index === selected && styles.selectedThumbnail]}
+            >
+              <Image
+                source={thumbnailAssets[id]}
+                contentFit="contain"
+                style={styles.thumbnailImage}
+                accessible={false}
+              />
+            </Pressable>
+          );
+        })}
+      </View>
+      <View style={styles.toolbar}>
+        {controls}
+        <Button
+          label={pl.photos.enlarge}
+          icon="expand-outline"
+          secondary
+          onPress={() => setEnlarged(true)}
+        />
+      </View>
       <PhotoCaption photo={photo} />
       <Modal visible={enlarged} onRequestClose={() => setEnlarged(false)} animationType="fade">
         <SafeAreaView style={styles.modal} accessibilityViewIsModal>
-          <Button label={pl.photos.close} onPress={() => setEnlarged(false)} />
+          <Button
+            label={pl.photos.close}
+            icon="close-outline"
+            secondary
+            onPress={() => setEnlarged(false)}
+          />
           <ScrollView contentContainerStyle={styles.modalContent}>
             <GalleryImage
               key={photo.id}
@@ -122,20 +161,44 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.primarySoft,
     borderRadius: theme.radius.medium,
   },
-  enlarge: {
-    color: theme.colors.primary,
-    textAlign: 'center',
-    minHeight: theme.touchTarget,
-    padding: theme.spacing.small,
+  toolbar: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: theme.spacing.small,
   },
+  thumbnailStrip: { flexDirection: 'row', flexWrap: 'wrap', gap: theme.spacing.small },
+  thumbnail: {
+    width: 72,
+    height: 60,
+    padding: 3,
+    borderRadius: theme.radius.small,
+    borderWidth: 2,
+    borderColor: theme.colors.border,
+    backgroundColor: theme.colors.surface,
+  },
+  selectedThumbnail: {
+    borderColor: theme.colors.primary,
+    backgroundColor: theme.colors.primarySoft,
+  },
+  thumbnailImage: { width: '100%', height: '100%', borderRadius: 8 },
   controls: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: theme.spacing.small,
+    gap: 10,
     flexWrap: 'wrap',
   },
-  control: { flex: 1, minWidth: 96 },
-  caption: { gap: 4 },
+  counter: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: theme.colors.primary,
+    minWidth: 40,
+    textAlign: 'center',
+  },
+  caption: { gap: theme.spacing.small },
+  description: { fontSize: 14, lineHeight: 22 },
+  references: { flexDirection: 'row', flexWrap: 'wrap', gap: theme.spacing.medium },
   modal: {
     flex: 1,
     backgroundColor: theme.colors.surface,

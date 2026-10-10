@@ -25,6 +25,7 @@ export default function RootLayout() {
           headerTintColor: theme.colors.primary,
           headerStyle: { backgroundColor: theme.colors.surface },
           headerTitleStyle: { fontWeight: '600' },
+          headerShadowVisible: false,
           headerBackTitle: pl.navigation.back,
           contentStyle: { backgroundColor: theme.colors.background },
         }}

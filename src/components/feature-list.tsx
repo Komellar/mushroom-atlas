@@ -11,7 +11,7 @@ export function FeatureList({ title, items }: { title: string; items: string[] }
       </AppText>
       {items.map((item, index) => (
         <View key={`${index}-${item}`} style={styles.row}>
-          <AppText accessible={false}>•</AppText>
+          <View style={styles.dot} accessible={false} />
           <AppText style={styles.item}>{item}</AppText>
         </View>
       ))}
@@ -19,7 +19,21 @@ export function FeatureList({ title, items }: { title: string; items: string[] }
   );
 }
 const styles = StyleSheet.create({
-  section: { gap: theme.spacing.small },
+  section: {
+    gap: theme.spacing.medium,
+    padding: theme.spacing.large,
+    borderRadius: theme.radius.medium,
+    backgroundColor: theme.colors.surface,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+  },
   row: { flexDirection: 'row', gap: theme.spacing.small },
+  dot: {
+    width: 5,
+    height: 5,
+    borderRadius: theme.radius.pill,
+    backgroundColor: theme.colors.primary,
+    marginTop: 10,
+  },
   item: { flex: 1, color: theme.colors.text },
 });

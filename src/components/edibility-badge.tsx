@@ -32,7 +32,7 @@ export function EdibilityBadge({ edibility }: { edibility: Edibility }) {
       accessibilityLabel={pl.edibility[edibility]}
       style={[styles.badge, { backgroundColor: appearance.background }]}
     >
-      <Ionicons name={appearance.icon} color={appearance.color} size={22} accessible={false} />
+      <Ionicons name={appearance.icon} color={appearance.color} size={17} accessible={false} />
       <AppText style={[styles.text, { color: appearance.color }]}>
         {pl.edibility[edibility]}
       </AppText>
@@ -44,11 +44,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'flex-start',
-    gap: theme.spacing.small,
+    gap: 5,
     paddingVertical: 6,
     paddingHorizontal: 12,
-    borderRadius: 12,
+    borderRadius: theme.radius.pill,
     maxWidth: '100%',
   },
-  text: { fontWeight: '700', flexShrink: 1 },
+  text: { fontWeight: '700', flexShrink: 1, fontSize: 12, lineHeight: 18 },
 });

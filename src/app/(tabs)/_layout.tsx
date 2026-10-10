@@ -15,12 +15,21 @@ export default function TabLayout() {
         headerTintColor: theme.colors.primary,
         headerStyle: { backgroundColor: theme.colors.surface },
         headerTitleStyle: { fontWeight: '600' },
+        headerShadowVisible: false,
         tabBarActiveTintColor: theme.colors.primary,
         tabBarInactiveTintColor: theme.colors.muted,
         tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
+        tabBarActiveBackgroundColor: theme.colors.primarySoft,
+        tabBarItemStyle: {
+          marginHorizontal: 12,
+          marginTop: 8,
+          marginBottom: 6,
+          borderRadius: theme.radius.medium,
+          overflow: 'hidden',
+        },
         tabBarStyle: {
-          minHeight: 64,
-          height: 64 + 16 * Math.max(0, fontScale - 1) + insets.bottom,
+          minHeight: 72,
+          height: 72 + 16 * Math.max(0, fontScale - 1) + insets.bottom,
           backgroundColor: theme.colors.surface,
           borderTopColor: theme.colors.border,
         },
@@ -33,8 +42,8 @@ export default function TabLayout() {
           title: pl.appName,
           tabBarLabel: pl.navigation.atlas,
           tabBarAccessibilityLabel: pl.navigation.atlas,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="leaf-outline" color={color} size={size} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons name={focused ? 'leaf' : 'leaf-outline'} color={color} size={size} />
           ),
         }}
       />
