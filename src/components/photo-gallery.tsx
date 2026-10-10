@@ -1,11 +1,12 @@
-import { Image } from 'expo-image';
-import { useState } from 'react';
+import { Image, type ImageRef } from 'expo-image';
+import { useEffect, useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AppText } from '@/components/app-text';
 import { Button } from '@/components/button';
 import { ExternalReference } from '@/components/external-reference';
+import { GalleryImage } from '@/components/gallery-image';
 import { getPhoto } from '@/data/atlas';
 import { photoAssets } from '@/data/photo-assets';
 import { pl } from '@/locales/pl';
@@ -30,6 +31,28 @@ function PhotoCaption({ photo }: { photo: MushroomPhoto }) {
 export function PhotoGallery({ photoIds }: { photoIds: string[] }) {
   const [selected, setSelected] = useState(0);
   const [enlarged, setEnlarged] = useState(false);
+  const [preloaded, setPreloaded] = useState<Record<string, ImageRef>>({});
+
+  useEffect(() => {
+    let active = true;
+    // Load the remaining bundled photos before navigation needs them. Keep decoded
+    // references only for this gallery, so visiting the atlas does not preload it all.
+    for (const photoId of photoIds.slice(1)) {
+      const source = photoAssets[photoId];
+      if (source === undefined) continue;
+      void Image.loadAsync(source)
+        .then((image) => {
+          if (active) setPreloaded((current) => ({ ...current, [photoId]: image }));
+        })
+        .catch(() => {
+          // The visible image handles errors and lets the user retry.
+        });
+    }
+    return () => {
+      active = false;
+    };
+  }, [photoIds]);
+
   const photo = getPhoto(photoIds[selected] ?? '');
   if (!photo) return null;
   const controls = (
@@ -55,30 +78,33 @@ export function PhotoGallery({ photoIds }: { photoIds: string[] }) {
   );
   return (
     <View style={styles.gallery}>
-      <Pressable
-        onPress={() => setEnlarged(true)}
-        accessibilityRole="button"
-        accessibilityLabel={pl.photos.enlarge}
-      >
-        <Image
-          source={photoAssets[photo.id]}
-          accessibilityLabel={photo.caption}
+      <View>
+        <GalleryImage
+          key={photo.id}
+          photo={photo}
+          preloaded={preloaded[photo.id]}
           style={styles.image}
-          contentFit="contain"
+          onPress={() => setEnlarged(true)}
         />
-        <AppText style={styles.enlarge}>{pl.photos.enlarge} ⤢</AppText>
-      </Pressable>
+        <Pressable
+          onPress={() => setEnlarged(true)}
+          accessibilityRole="button"
+          accessibilityLabel={pl.photos.enlarge}
+        >
+          <AppText style={styles.enlarge}>{pl.photos.enlarge} ⤢</AppText>
+        </Pressable>
+      </View>
       {controls}
       <PhotoCaption photo={photo} />
       <Modal visible={enlarged} onRequestClose={() => setEnlarged(false)} animationType="fade">
         <SafeAreaView style={styles.modal} accessibilityViewIsModal>
           <Button label={pl.photos.close} onPress={() => setEnlarged(false)} />
           <ScrollView contentContainerStyle={styles.modalContent}>
-            <Image
-              source={photoAssets[photo.id]}
-              accessibilityLabel={photo.caption}
+            <GalleryImage
+              key={photo.id}
+              photo={photo}
+              preloaded={preloaded[photo.id]}
               style={styles.largeImage}
-              contentFit="contain"
             />
             {controls}
             <PhotoCaption photo={photo} />

@@ -32,6 +32,9 @@ export const pl = {
   },
   edibility: { edible: 'Jadalny', inedible: 'Niejadalny', poisonous: 'Trujący' },
   photos: {
+    loading: 'Ładowanie zdjęcia…',
+    loadError: 'Nie udało się wczytać zdjęcia.',
+    retry: 'Spróbuj ponownie',
     author: 'Zdjęcie',
     license: 'Licencja',
     publicDomain: 'Domena publiczna',

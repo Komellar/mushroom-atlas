@@ -1,7 +1,5 @@
-import type { ImageSourcePropType } from 'react-native';
-
 // Literal imports ensure all photographs and thumbnails are bundled offline.
-export const photoAssets: Record<string, ImageSourcePropType> = {
+export const photoAssets: Record<string, number> = {
   'boletus-edulis-1': require('../../assets/mushrooms/boletus-edulis-1.jpg'),
   'boletus-edulis-2': require('../../assets/mushrooms/boletus-edulis-2.jpg'),
   'boletus-edulis-3': require('../../assets/mushrooms/boletus-edulis-3.jpg'),
@@ -70,7 +68,7 @@ export const photoAssets: Record<string, ImageSourcePropType> = {
   'galerina-marginata-3': require('../../assets/mushrooms/galerina-marginata-3.jpg'),
 };
 
-export const thumbnailAssets: Record<string, ImageSourcePropType> = {
+export const thumbnailAssets: Record<string, number> = {
   'boletus-edulis-1': require('../../assets/mushrooms/thumbnails/boletus-edulis-1.jpg'),
   'boletus-edulis-2': require('../../assets/mushrooms/thumbnails/boletus-edulis-2.jpg'),
   'boletus-edulis-3': require('../../assets/mushrooms/thumbnails/boletus-edulis-3.jpg'),

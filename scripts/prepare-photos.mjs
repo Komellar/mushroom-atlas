@@ -27,7 +27,7 @@ for (const photo of photos) {
 }
 const importRows = (key) =>
   photos.map((photo) => `  '${photo.id}': require('../../${photo[key]}'),`).join('\n');
-const registry = `import type { ImageSourcePropType } from 'react-native';\n\n// Literal imports ensure all photographs and thumbnails are bundled offline.\nexport const photoAssets: Record<string, ImageSourcePropType> = {\n${importRows('assetPath')}\n};\n\nexport const thumbnailAssets: Record<string, ImageSourcePropType> = {\n${importRows('thumbnailPath')}\n};\n`;
+const registry = `// Literal imports ensure all photographs and thumbnails are bundled offline.\nexport const photoAssets: Record<string, number> = {\n${importRows('assetPath')}\n};\n\nexport const thumbnailAssets: Record<string, number> = {\n${importRows('thumbnailPath')}\n};\n`;
 await writeFile(new URL('src/data/photos.json', root), JSON.stringify(photos, null, 2) + '\n');
 await writeFile(new URL('src/data/photo-assets.ts', root), registry);
 console.log(
